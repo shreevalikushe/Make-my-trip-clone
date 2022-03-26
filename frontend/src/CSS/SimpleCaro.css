@@ -1,0 +1,56 @@
+.simpleSliderContainer {
+    position: relative;
+    width: 100%;
+}
+
+.each-simple-slide>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 15vh;
+    padding: 10px 50px;
+    border-radius: 7px;
+    background-color: #fff;
+    margin: 0px 5px;
+}
+
+.homeTitle {
+    font-size: 25px;
+}
+
+
+.simple-left-arrow {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: -15px;
+    top: 25%;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 2px 4px 4px rgb(10 10 10 / 3%);
+}
+
+.simple-right-arrow {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: -15px;
+    top: 25%;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 2px 4px 4px rgb(10 10 10 / 3%);
+}
+
+.simple-left-arrow:hover {
+    cursor: pointer;
+}
+
+.simple-right-arrow:hover {
+    cursor: pointer;
+}
