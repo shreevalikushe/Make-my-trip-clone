@@ -2,20 +2,13 @@ import React, { useState } from 'react'
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import { NavigateBefore, NavigateNext } from '@mui/icons-material';
-import "../CSS/CarousalUI.css"
+import "../CSS/CarousalUI.css";
+import { slider0, slider1, slider2 } from '../CarouselData';
 
 export const CarousalUI = () => {
 
     const [offers, setOffers] = useState(0)
-    const slider0 = [
-        "ALL OFFERS 1", "ALL OFFERS 2", "ALL OFFERS 3", "ALL OFFERS 4", "ALL OFFERS 5", "ALL OFFERS 6"
-    ]
-    const slider1 = [
-        "FLIGHTS 1", "FLIGHTS 2", "FLIGHTS 3", "FLIGHTS 4", "FLIGHTS 5", "FLIGHTS 6"
-    ]
-    const slider2 = [
-        "HOTELS 1", "HOTELS 2", "HOTELS 3", "HOTELS 4", "HOTELS 5", "HOTELS 6"
-    ]
+
 
     const properties = {
         duration: 20000,
@@ -60,14 +53,46 @@ export const CarousalUI = () => {
                         {
                             slider0.map((item) => {
                                 return (
-                                    <div className="each-slide">
-                                        <div className='ind-slide'>
-                                            <p className="homeTitle">{item}</p>
+                                    <>
+                                        <div className="each-slide">
+                                            <div className='ind-slide'>
+                                                <div className='imageSection'>
+                                                    <img src={item.first.thumbnail_image} alt="" />
+                                                    <p>T&C's Apply</p>
+                                                </div>
+                                                <div className='contentSection'>
+                                                    <div>
+                                                        <p className="offerCardTitle">{item.first.title}</p>
+                                                        <p className="offerCardSubTitle">{item.first.subTitle}</p>
+                                                        <div className="divider" />
+                                                        <p className="offerCardOffers">{item.first.offer}</p>
+                                                    </div>
+                                                    <div className='knowMore'>
+                                                        <p>KNOW MORE</p>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div className='ind-slide'>
-                                            <p className="homeTitle">{item}</p>
+                                        <div className='each-slide'>
+                                            <div className='ind-slide'>
+                                                <div className='imageSection'>
+                                                    <img src={item.second.thumbnail_image} alt="" />
+                                                    <p>T&C's Apply</p>
+                                                </div>
+                                                <div className='contentSection'>
+                                                    <div>
+                                                        <p className="offerCardTitle">{item.second.title}</p>
+                                                        <p className="offerCardSubTitle">{item.second.subTitle}</p>
+                                                        <div className="divider" />
+                                                        <p className="offerCardOffers">{item.second.offer}</p>
+                                                    </div>
+                                                    <div className='knowMore'>
+                                                        <p>KNOW MORE</p>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </>
                                 )
                             })
                         }
@@ -77,14 +102,46 @@ export const CarousalUI = () => {
                             {
                                 slider1.map((item) => {
                                     return (
-                                        <div className="each-slide">
-                                            <div className='ind-slide'>
-                                                <p className="homeTitle">{item}</p>
+                                        <>
+                                            <div className="each-slide">
+                                                <div className='ind-slide'>
+                                                    <div className='imageSection'>
+                                                        <img src={item.first.thumbnail_image} alt="" />
+                                                        <p>T&C's Apply</p>
+                                                    </div>
+                                                    <div className='contentSection'>
+                                                        <div>
+                                                            <p className="offerCardTitle">{item.first.title}</p>
+                                                            <p className="offerCardSubTitle">{item.first.subTitle}</p>
+                                                            <div className="divider" />
+                                                            <p className="offerCardOffers">{item.first.offer}</p>
+                                                        </div>
+                                                        <div className='knowMore'>
+                                                            <p>KNOW MORE</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div className='ind-slide'>
-                                                <p className="homeTitle">{item}</p>
+                                            <div className='each-slide'>
+                                                <div className='ind-slide'>
+                                                    <div className='imageSection'>
+                                                        <img src={item.second.thumbnail_image} alt="" />
+                                                        <p>T&C's Apply</p>
+                                                    </div>
+                                                    <div className='contentSection'>
+                                                        <div>
+                                                            <p className="offerCardTitle">{item.second.title}</p>
+                                                            <p className="offerCardSubTitle">{item.second.subTitle}</p>
+                                                            <div className="divider" />
+                                                            <p className="offerCardOffers">{item.second.offer}</p>
+                                                        </div>
+                                                        <div className='knowMore'>
+                                                            <p>KNOW MORE</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </>
                                     )
                                 })
                             }
@@ -94,14 +151,46 @@ export const CarousalUI = () => {
                             {
                                 slider2.map((item) => {
                                     return (
-                                        <div className="each-slide">
-                                            <div className='ind-slide'>
-                                                <p className="homeTitle">{item}</p>
+                                        <>
+                                            <div className="each-slide">
+                                                <div className='ind-slide'>
+                                                    <div className='imageSection'>
+                                                        <img src={item.first.thumbnail_image} alt="" />
+                                                        <p>T&C's Apply</p>
+                                                    </div>
+                                                    <div className='contentSection'>
+                                                        <div>
+                                                            <p className="offerCardTitle">{item.first.title}</p>
+                                                            <p className="offerCardSubTitle">{item.first.subTitle}</p>
+                                                            <div className="divider" />
+                                                            <p className="offerCardOffers">{item.first.offer}</p>
+                                                        </div>
+                                                        <div className='knowMore'>
+                                                            <p>KNOW MORE</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div className='ind-slide'>
-                                                <p className="homeTitle">{item}</p>
+                                            <div className='each-slide'>
+                                                <div className='ind-slide'>
+                                                    <div className='imageSection'>
+                                                        <img src={item.second.thumbnail_image} alt="" />
+                                                        <p>T&C's Apply</p>
+                                                    </div>
+                                                    <div className='contentSection'>
+                                                        <div>
+                                                            <p className="offerCardTitle">{item.second.title}</p>
+                                                            <p className="offerCardSubTitle">{item.second.subTitle}</p>
+                                                            <div className="divider" />
+                                                            <p className="offerCardOffers">{item.second.offer}</p>
+                                                        </div>
+                                                        <div className='knowMore'>
+                                                            <p>KNOW MORE</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </>
                                     )
                                 })
                             }

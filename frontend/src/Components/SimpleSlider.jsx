@@ -7,7 +7,26 @@ import "../CSS/SimpleCaro.css"
 export const SimpleSlider = () => {
 
     const slider = [
-        "Text 1", "Text 2", "Text 3", "Text 4", "Text 5", "Text 6"
+        {
+            image: 'https://promos.makemytrip.com/notification/xhdpi/Vande-Flight-10072020.png',
+            content: "Vande Bharat helpline : Call 0124-4628747 for international flight booking!"
+        },
+        {
+            image: 'https://promos.makemytrip.com/Growth/Images/B2C/2x/language1@2x_20210901.png',
+            content: "We are now available in हिंदी"
+        },
+        {
+            image: 'https://promos.makemytrip.com/Growth/Images/B2C/2x/ic_flight_covid_info_dt.png',
+            content: "Flight booking impacted due to COVID-19?"
+        },
+        {
+            image: 'https://promos.makemytrip.com/notification/xhdpi/Vande-Flight-10072020.png',
+            content: "Booking an international flight?"
+        },
+        {
+            image: 'https://promos.makemytrip.com/Growth/Images/B2C/2x/ic_flight_covid_info_dt.png',
+            content: "Check international destinations open for Indians here, with their guidelines"
+        }
     ]
 
     const properties = {
@@ -34,7 +53,8 @@ export const SimpleSlider = () => {
                             return (
                                 <div className="each-simple-slide">
                                     <div className='simple-ind-slide'>
-                                        <p className="homeTitle">{item}</p>
+                                        <img src={item.image} alt="" />
+                                        <p className="simpleCardContent">{item.content}</p>
                                     </div>
                                 </div>
                             )

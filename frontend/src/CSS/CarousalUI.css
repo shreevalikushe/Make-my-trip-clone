@@ -21,11 +21,8 @@
 }
 
 .each-slide>div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 25vh;
-    padding: 10px 50px;
+    height: 30vh;
+    padding: 10px;
     margin: 20px 10px 5px 10px;
     border-radius: 7px;
 }
@@ -79,6 +76,8 @@
 }
 
 .ind-slide {
+    display: flex;
+    flex-direction: row;
     background-color: "#fff";
     box-shadow: 0 2px 5px 2px rgb(10 10 10 / 10%);
 }
@@ -97,5 +96,69 @@
 }
 
 .indLinks:hover {
+    cursor: pointer;
+}
+
+.imageSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.imageSection img {
+    width: 150px;
+    height: 85%;
+    border-radius: 5px;
+}
+
+.imageSection p {
+    font-size: 12px;
+    color: #9B9B9B;
+}
+
+.contentSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 20px;
+}
+
+.offerCardTitle {
+    font-size: 12px;
+    color: #9B9B9B;
+    margin: 0px 0px 5px;
+}
+
+.offerCardSubTitle {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0px 0px 10px;
+}
+
+.divider {
+    width: 40px;
+    height: 1px;
+    background-color: #eb2026;
+    margin: 0px 0px 10px;
+}
+
+.offerCardOffers {
+    font-size: 14px;
+    color: #9B9B9B;
+}
+
+.knowMore {
+    display: flex;
+    justify-content: end;
+}
+
+.knowMore p {
+    font-size: 14px;
+    color: #008cff;
+    font-weight: bold;
+}
+
+.knowMore p:hover {
     cursor: pointer;
 }
