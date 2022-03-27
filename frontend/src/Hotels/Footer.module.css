@@ -1,0 +1,67 @@
+/* *{
+    padding: 0px;
+    margin: 0px;
+} */
+.container{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    height: 170px;
+    max-width: 100%;
+    background-color: #000000;
+
+    /* margin-top: 50px; */
+  display: flex;
+  justify-content: space-between;
+ 
+  align-items: center;
+  /* padding: 200px; */
+}
+.f_icon{
+
+    display: flex;
+    gap: 30px;
+    margin-left: 180px;
+}
+
+.f_cright{
+
+display: flex;
+flex-direction: column;
+gap: 5px;
+margin-right: 180px;
+
+}
+
+.twitter{
+
+color: white;
+font-size: 30px;
+font-weight: 900;
+
+}
+.facebook{
+    color: white;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.copyright{
+    color: white;
+    font-size: 18px;
+    /* font-weight: 700; */
+}
+.f_cright span {
+     color: white;
+     
+}
+.country{
+    text-decoration: none;
+    color: white;
+    font-weight: 800;
+}
+.counteryName{
+    display: flex;
+    gap: 3px;
+    justify-content: flex-end;
+}
