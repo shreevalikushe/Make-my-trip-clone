@@ -117,6 +117,7 @@ router.post('/otplogin', [
             return res.status(400).json({ error: "Mobile number is not registered" })
         }
 
+        // send the otp for authorized mobile number
         client
             .verify
             .services(process.env.SERVICE_ID)
@@ -138,8 +139,9 @@ router.post('/otplogin', [
     }
 })
 
+// For otp verification
 router.post('/otpverify', [
-    body('code', "Please enter a valid mobile number").isLength({ min: 4, max: 4 }),
+    body('code', "Otp must be 4 digit").isLength({ min: 4, max: 4 }),
 ], async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -151,6 +153,7 @@ router.post('/otpverify', [
     try {
         let user = await User.findOne({ mobile_number })
 
+        // check that otp is verified or not 
         client
             .verify
             .services(process.env.SERVICE_ID)
@@ -160,10 +163,12 @@ router.post('/otpverify', [
                 code: code
             })
             .then((message) => {
+                // if status is not approved send invalid otp error
                 if (message.status !== "approved") {
                     return res.status(400).json({ success: false, error: "Invalid otp" })
                 }
 
+                // if status is approved send the specific user authToken
                 const data = {
                     user: {
                         id: user.id
