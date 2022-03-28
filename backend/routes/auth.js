@@ -6,6 +6,8 @@ const bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
 const fetchUser = require("../middleware/fetchUser");
 
+const client = require("twilio")(process.env.ACCOUNT_SID, process.env.AUTH_TOKEN)
+
 // ROUTE 1: For Register a user
 router.post('/register', [
     body('name', "Please enter a name"),
@@ -93,6 +95,84 @@ router.post('/getuser', fetchUser, async (req, res) => {
         const user = await User.findById(userId).select("-password")
         res.json(user)
 
+    } catch (error) {
+        console.log(error.message);
+        res.status(500).json("Internal Server Error")
+    }
+})
+
+// ROUTE 4: For Login a user with otp
+router.post('/otplogin', [
+    body('mobile_number', "Please enter a valid mobile number").isLength({ min: 10 }),
+], async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() })
+    }
+
+    const { mobile_number } = req.body;
+    try {
+        let user = await User.findOne({ mobile_number })
+        if (!user) {
+            return res.status(400).json({ error: "Mobile number is not registered" })
+        }
+
+        client
+            .verify
+            .services(process.env.SERVICE_ID)
+            .verifications
+            .create({
+                to: `+91${mobile_number}`,
+                channel: 'sms'
+            })
+            .then((data) => {
+                res.status(200).json(data)
+            })
+            .catch((err) => {
+                console.log(err.message)
+                res.status(400).json({ success: false, message: "error in send otp" })
+            })
+    } catch (error) {
+        console.log(error.message);
+        res.status(500).json("Internal Server Error")
+    }
+})
+
+router.post('/otpverify', [
+    body('code', "Please enter a valid mobile number").isLength({ min: 4, max: 4 }),
+], async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() })
+    }
+
+    const { code } = req.body;
+    const { mobile_number } = req.query;
+    try {
+        let user = await User.findOne({ mobile_number })
+
+        client
+            .verify
+            .services(process.env.SERVICE_ID)
+            .verificationChecks
+            .create({
+                to: `+91${mobile_number}`,
+                code: code
+            })
+            .then((message) => {
+                if (message.status !== "approved") {
+                    return res.status(400).json({ success: false, error: "Invalid otp" })
+                }
+
+                const data = {
+                    user: {
+                        id: user.id
+                    }
+                }
+
+                const authToken = jwt.sign(data, process.env.JWT_SECRET_KEY);
+                res.json({ authToken })
+            })
     } catch (error) {
         console.log(error.message);
         res.status(500).json("Internal Server Error")
