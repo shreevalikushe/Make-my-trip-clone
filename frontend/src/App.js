@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { Profiler } from 'react';
 import './App.css';
 import { CarousalUI } from './Components/CarousalUI';
 import { SimpleSlider } from './Components/SimpleSlider';
 import { FlightsCard } from "./Components/FlightsCard"
+import { Trips } from './Components/Trips';
+import { Profile } from './Components/Profile';
 function App() {
   return (
     <div className="container">
@@ -15,6 +17,12 @@ function App() {
       </div>
       <div style={{ marginTop: 50 }}>
         <FlightsCard />
+      </div>
+      <div style={{ marginTop: 50 }}>
+        <Trips />
+      </div>
+      <div style={{ marginTop: 50 }}>
+        <Profile />
       </div>
     </div>
   );
