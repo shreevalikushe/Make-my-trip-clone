@@ -1,0 +1,100 @@
+.container{
+  align-items: center;
+  color: #4a4a4a;
+  display: flex;
+  font-size: 14px;
+  justify-content: space-between;
+  margin: 0px 0px 20px;
+  height: 50px;
+  width: 98%;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+  .selectBox {
+    align-items: center;
+    background-color: #eaf5ff;
+    border-radius: 4px 0px 0px 4px;
+    color: #4a4a4a;
+    display: flex;
+    margin-left: 5px;
+    font-size: 12px;
+    width: 80px;
+    font-weight: 700;
+    line-height: 14px;
+    /* padding: 8px 8px 8px 26px; */
+    height: 100%;
+    text-align: left;
+  }
+  .div {
+    align-items: center;
+    color: #4a4a4a;
+    display: flex;
+    font-size: 14px;
+  }
+  .first {
+    color: #9b9b9b;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+    margin: 0px 5px 0px 0px;
+    width: 56px;
+  }
+  .div2 {
+   
+    color: #4a4a4a;
+    display: flex;
+    font-size: 14px;
+    justify-content: center;
+    align-items: center;
+  }
+  .selectBox1 {
+    /* border: 1px solid green; */
+    background-color: #f2f2f2;
+    color: #4a4a4a;
+    margin: 0 5px;
+    font-size: 0.9em;
+    padding: 2px;
+   
+      
+  }
+  
+  .second {
+    color: #4a4a4a;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 12px;
+  }
+
+
+@media only screen and (max-width: 920px){
+    .container{
+        margin-left:1% ;
+        width: 100%;
+        /* border: 1px solid red; */
+        flex-direction: column;
+        height: 120%;
+    }
+    .div2{
+      margin-top: 20px;
+    }
+
+}
+@media only screen and (max-width: 620px){
+  .div{
+    flex-wrap: wrap;
+  }
+   .selectBox > p{
+    font-size: 0.8em;
+  } 
+  
+  .none{
+    display: none;
+  }
+  .second{
+    font-size: 12px;
+    font-weight: 500;
+    /* border: 1px solid red; */
+  }
+}
