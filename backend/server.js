@@ -8,7 +8,7 @@ const hotelController = require("./controllers/hotels.controller.js")
 
 app.use("/hotels", hotelController)
 const connect = () => {
-  return mongoose.connect(process.env.MONGO_URL);
+  return mongoose.connect(process.env.MONGOOSE_DB_URL);
 };
 app.listen(8000, async (req, res) => {
   try {
