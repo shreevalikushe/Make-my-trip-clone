@@ -139,7 +139,7 @@ router.post('/otplogin', [
     }
 })
 
-// For otp verification
+// Route 5: For otp verification
 router.post('/otpverify', [
     body('code', "Otp must be 4 digit").isLength({ min: 4, max: 4 }),
 ], async (req, res) => {
@@ -181,6 +181,19 @@ router.post('/otpverify', [
     } catch (error) {
         console.log(error.message);
         res.status(500).json("Internal Server Error")
+    }
+})
+
+// ROUTE 6: For Edit user details, Login required
+router.patch('/edituser', fetchUser, async (req, res) => {
+    try {
+        const user = await User.findByIdAndUpdate(req.user.id, req.body, {
+            new: true
+        });
+        res.status(200).json(user);
+    } catch (error) {
+        console.log(error);
+        res.status(500).json("Internal Server Error");
     }
 })
 
