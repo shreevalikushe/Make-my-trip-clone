@@ -1,6 +1,5 @@
 import React from "react";
 import { AllRoutes } from "./AllRoutes/AllRoutes";
-import "./App.css";
 import { Flight } from "./features/flightComponents/Flight";
 
 function App() {
