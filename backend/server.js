@@ -1,8 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
-const authRoute = require("./routes/auth")
-const bookedFlightRoute = require("./routes/BookedFlight")
+const authRoute = require("./routes/auth");
+const bookedFlightRoute = require("./routes/BookedFlight");
 const flightController = require("./controllers/flightController/flight.controller");
 
 const app = express();

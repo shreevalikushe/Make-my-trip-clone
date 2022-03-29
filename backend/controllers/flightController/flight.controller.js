@@ -6,14 +6,22 @@ const router = express.Router();
 router.get("/", async (req, res) => {
   try {
     const flights = await Flight.find();
-    console.log(flights.length);
     res.status(200).send(flights);
   } catch (e) {
     res.status(500).send({ message: e.message });
   }
 });
 
-//POSTl
+//GET BY ID
+router.get("/:id", async (req, res) => {
+  try {
+    const flight = await Flight.findById(req.params.id);
+    res.status(200).send(flight);
+  } catch (e) {
+    res.status(500).send({ message: e.message });
+  }
+});
+//POST
 router.post("/", async (req, res) => {
   try {
     const flight = await Flight.create(req.body);
