@@ -1,0 +1,81 @@
+.mntBox {
+  width: 70%;
+  margin: auto;
+  margin-top: 100px;
+}
+.payment_img {
+  margin-top: 40px;
+  width: 45%;
+}
+.choose_payment_div {
+  border: 1px solid #dfdfe2;
+  margin: 3px;
+  width: 98%;
+  border-radius: 4px;
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 35% 60%;
+  column-gap: 5%;
+}
+.payment_mode {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+.payment_mode_button {
+  width: 100%;
+  padding: 15px 0px 15px 10px;
+  border: 1px solid #eaeaec;
+  border-left: 5px solid #f4f4f5;
+  text-align: left;
+  display: flex;
+  border-right: 0px;
+}
+.payment_mode_select_button {
+  border: 1px solid #53b2fe;
+  border-left: 5px solid #53b2fe;
+  color: hsl(300, 1%, 34%);
+  width: 100%;
+  padding: 15px 0px 15px 10px;
+  background-color: white;
+  text-align: left;
+  display: flex;
+  border-right: 0px;
+}
+.button_name {
+  margin-top: 3%;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+.main_heading_choosing_payment {
+  margin: 40px 0px 25px 10px;
+}
+.para_cash {
+  font-size: 15px;
+  font-weight: 600;
+}
+.capche_div {
+  display: grid;
+  grid-template-columns: 60% 30%;
+  column-gap: 10%;
+}
+.payPlease {
+  justify-content: space-evenly;
+  margin-left: 50px;
+  width: 50%;
+  background-color: #065af3;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+.capche_input {
+  height: 2em;
+  font-size: 15px;
+  font-style: inherit;
+  padding: 6px;
+  padding-left: 15px;
+  width: 70%;
+  border-radius: 6px;
+  border: 1px solid gray;
+  font-weight: 550;
+}
