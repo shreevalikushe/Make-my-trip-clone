@@ -1,0 +1,127 @@
+
+
+/* main navbar wrapper */
+.navbarWrapper{
+    position: sticky;
+    top:0;
+    background-color: white;
+    padding: 1px;
+    z-index: 100;
+}
+/* navbar content */
+.navbarContent{
+    display: flex;
+    padding-bottom: 4px;
+    box-shadow: 1px 1px hsla(0, 0%, 53%, 0.687);
+}
+/* make my trip logo container */
+.logoWrapper{
+    height: auto;
+    display: flex;
+ }
+ /* make my trip anchor tag logo container */
+
+.logoimg{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+ /* make my trip anchor tag img container */
+.logoimg img{
+    width: 70%;
+}
+
+/* .hamburgr_menu */
+.hamburgr_menu{
+    cursor: pointer;
+    display: none;
+}
+.leftSideNavbar{
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+}
+.rightSideNavbar{
+    flex-grow: 5;
+    display: flex;
+}
+.rightSideNavbarMobile{
+    flex-grow: 5;
+    display: flex;
+}
+
+.iconWrapper{
+    display: flex;
+    flex-grow: 12;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.iconWrapper > div{
+    display: grid;
+    place-items: center;
+    color: rgb(85, 84, 84);
+    cursor: pointer;
+}
+
+.iconWrapper > div> span :hover{
+    border: #3339e9;
+}
+.iconWrapper > div > p  {
+    font-size: 0.8em;
+}
+.iconWrapper > div > p:hover{
+    color: red;
+}
+.loginContainer{
+    flex-grow: 2.5;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+} 
+
+
+@media only screen and (max-width: 768px) {
+    
+    .hamburgr_menu{
+        display: block;
+        display: grid;
+        place-items:end;
+        align-items: center;
+        margin-right: 3%;
+        font-size: 1.4em;
+    }
+    
+    .rightSideNavbar{
+        display: none;
+    }
+    .flex_display{
+        display: flex;
+    }
+    .rightSideNavbarMobile{
+        display: flex;
+        flex-direction: column;
+    }
+    .navbarContent{
+        flex-direction: column;
+    }
+    .iconWrapper{
+        flex-direction: column;
+    }
+    .iconWrapper > div{
+        margin-top: 10px;
+        width: 80%;
+       font-size: 1.5em;
+        display: flex;
+    }
+    
+}
+
+
+
+
+
+
+
+
+ 

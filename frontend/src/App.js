@@ -1,14 +1,14 @@
-import React from 'react';
-import './App.css';
-import ProductPage from './HotelsSecondPage/ProductPage';
+import React from "react";
+import { AllRoutes } from "./AllRoutes/AllRoutes";
+import { Flight } from "./features/flightComponents/Flight";
+import Navbar from "./Components/Navbar"
 
 function App() {
   return (
-    <>
-
-    <ProductPage/>
-     
-    </>
+    <div className="App">
+      <Navbar />
+      <AllRoutes />
+    </div>
   );
 }
 
