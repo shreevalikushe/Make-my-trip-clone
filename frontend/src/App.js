@@ -1,18 +1,13 @@
-import React from 'react';
-import './App.css';
-import Navbar from './Components/Navbar';
-import FlightHome from './Components/FlightHome';
-
-
-
-
+import React from "react";
+import { AllRoutes } from "./AllRoutes/AllRoutes";
+import { Flight } from "./features/flightComponents/Flight";
+import Navbar from "./Components/Navbar"
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <Navbar />
-      <FlightHome />
-     
+      <AllRoutes />
     </div>
   );
 }
