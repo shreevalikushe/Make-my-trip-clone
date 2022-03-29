@@ -128,9 +128,7 @@ export const Flight = () => {
 
   return (
     <div>
-      <div>
-        <h1>HERE NAVBAR WILL COME</h1>
-      </div>
+      
       {loading ? (
         <div style={{ width: "100px", margin: "auto" }}>
           <CircularProgress />
