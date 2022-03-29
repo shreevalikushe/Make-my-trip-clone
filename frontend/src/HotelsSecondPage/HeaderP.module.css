@@ -1,0 +1,29 @@
+.container{
+
+    height: 190px;
+    width: 100%;
+    background-color: rgb(207, 239, 255);
+  
+    padding: 3px 0px 10px;
+
+}
+
+.topdiv{
+    margin: 0px 0px 0px 120px;
+}
+
+.topdiv p{
+    
+    display: flex;
+    align-items: center;
+}
+.topdiv p span{
+
+    color: #008CFF;
+    font-weight: bold;
+}
+.gretericon{
+    font-size: 15px;
+    margin-left: 5px;
+    padding: 2px;
+}

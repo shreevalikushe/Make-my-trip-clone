@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import Review  from "./ReviewBooking/Review"
+import ProductPage from './HotelsSecondPage/ProductPage';
 
 function App() {
   return (
     <>
 
-   <Review/>
+    <ProductPage/>
      
     </>
   );
