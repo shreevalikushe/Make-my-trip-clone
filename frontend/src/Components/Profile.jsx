@@ -36,17 +36,49 @@ export const Profile = () => {
                     </div>
                 </div>
                 <div className='profileDetails'>
-                    <div className='indProfileContentTitle'>
-                        <p>NAME</p>
-                        <p>MOBILE NUMBER</p>
-                        <p>EMAIL ID</p>
-                        <p>PASSWORD</p>
+                    <div className='indProfileContent'>
+                        <p className='indProfileContentTitle'>NAME</p>
+                        <p className='indProfileContentValue'>Shubham Gadge</p>
                     </div>
-                    <div className='indProfileContentValue'>
-                        <p>Shubham Gadge</p>
-                        <p>+91-9765778934</p>
-                        <p>shubhamgadge722@gmail.com</p>
-                        <p>Shubham@1234</p>
+                    <div className="profileContentDivider" />
+                    <div className='indProfileContent'>
+                        <p className='indProfileContentTitle'>MOBILE NUMBER</p>
+                        <p className='indProfileContentValue'>+91-9765778934</p>
+                    </div>
+                    <div className="profileContentDivider" />
+                    <div className='indProfileContent'>
+                        <p className='indProfileContentTitle'>EMAIL ID</p>
+                        <p className='indProfileContentValue'>shubhamgadge722@gmail.com</p>
+                    </div>
+                    <div className="profileContentDivider" />
+                    <div className='indProfileContent'>
+                        <p className='indProfileContentTitle'>EMAIL ID</p>
+                        <p className='indProfileContentValue'>shubhamgadge722@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div className="modalContainer">
+                <h2>Edit Profile</h2>
+                <div className='modalInputs'>
+                    <div className='modalIndInput'>
+                        <label htmlFor="name" className='modalInputLabels'>Full Name</label>
+                        <input type="text" id='name' className='profileEditInput' />
+                    </div>
+                    <div className='modalIndInput'>
+                        <label htmlFor="name" className='modalInputLabels'>Mobile Number</label>
+                        <input type="number" id='mobile_number' className='profileEditInput' />
+                    </div>
+                    <div className='modalIndInput'>
+                        <label htmlFor="name" className='modalInputLabels'>Email Id</label>
+                        <input type="text" id='email' className='profileEditInput' />
+                    </div>
+                </div>
+                <div className='modalBtns'>
+                    <div className='modalCancelBtn'>
+                        <p className='modalCancel'>Cancel</p>
+                    </div>
+                    <div className='modalSaveBtn'>
+                        <p className='modalSave'>SAVE</p>
                     </div>
                 </div>
             </div>
