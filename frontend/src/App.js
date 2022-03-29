@@ -1,14 +1,13 @@
 import React from 'react';
-
-// import { Counter } from './features/counter/Counter';
 import './App.css';
-import Hotels from './Hotels/Hotels';
+import Review  from "./ReviewBooking/Review"
 
 function App() {
   return (
     <>
 
-      <Hotels/>
+   <Review/>
+     
     </>
   );
 }
