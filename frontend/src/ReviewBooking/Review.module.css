@@ -1,0 +1,548 @@
+.contain{
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    
+}
+
+.header_review{
+    
+    width: 100%;
+    height: 165px;
+    background-color: rgb(190, 238, 229);
+
+}
+.header_review h2{
+
+    color: #1F4941;
+    font-size: 24px;
+    padding: 45px 0px 0px 160px;
+}
+
+
+.heading_title_top{
+ 
+}
+.hotelinfo{
+
+    width: 880px;
+    margin: auto;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    margin-top: -50px;
+}
+.icon{
+    color: blue;
+}
+.infodiv{
+
+
+
+}
+.hr{
+    margin: 0px 0px 0px 0px;
+}
+
+.destinationdiv{
+
+    display: flex;
+    
+    justify-content: space-between;
+    padding: 15px 30px;
+    align-items: center;
+    /* border: 1px solid #9B9B9B; */
+    
+}
+
+
+.left h1{
+ color: #0061AA;
+ font-size: 12px;
+ font-weight: 600;
+ border-radius: 6px;
+ border: 1px solid #0061AA;
+ text-align: center;
+ padding: 3px 8px;
+ margin-top: 0px;
+ 
+}
+.left p{
+    color: #0061AA;
+    font-size: 11px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.left h3{
+    font-size: 23px;
+    font-weight: 900;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.left .db{
+    margin-top: 5px;
+    color: #9B9B9B;
+    font-style: normal;
+    font-size: 12px;
+}
+
+
+
+
+.right img{
+
+    height: 100px;
+    width: 100px;
+    border-radius: 6px;
+
+}
+
+.date_div{
+
+ display: flex;
+ align-items: center;
+ gap: 50px;
+}
+
+
+.leftd{
+
+    display: flex;
+    gap: 15px;
+    padding: 7px 30px;
+    background-color: #F2F2F266;
+    align-items: center;
+    justify-content: center;
+}
+
+.first{
+   display: flex;
+   flex-direction: column;
+}
+.first p{
+       
+    color: #9B9B9B;
+    font-size: 10px;
+    margin: 0px 0px 3px;
+}
+.first h2{
+    font-size: #000000;
+    font-size: 24px;
+    margin: 0px 0px 3px;
+    font-weight: 900;
+}
+ 
+.second{
+    background-color: #F2F2F266;
+}
+
+.second p{
+     color: #4A4A4A;
+     font-size: 10px;
+     background-color: #FFFFFF;
+     padding:  0px 10px ;
+     border-radius: 10px;
+     border: 1px solid #9B9B9B;   
+
+}
+
+.rightd{
+    border: #F2F2F266;
+    padding: 7px 30px;
+   
+}
+.room{
+    font-size: 17px;
+ 
+   font-weight: 500;
+}
+
+.lastdiv{
+    
+    padding: 20px 30px 30px;
+    
+}
+
+.top_last{
+   
+    border: 1px solid gray;
+    border-radius: 5px;
+
+}
+.top_botom{
+
+    border: 1px solid rgb(255, 128, 128);
+    border-radius: 5px;
+}
+
+.top_f{
+    padding: 15px 30px;
+
+}
+
+.top_f h4{
+    font-weight: 900;
+    margin: 0px 0px 0px 0px;
+}
+
+.top_f p{
+    color: #9B9B9B;
+    font-size: 17px;
+    margin: 5px 0px 0px;
+}
+.top_s{
+    padding: 13px 30px;
+}
+
+.top_s h4{
+    font-size: 17px;
+    font-weight: bold;
+    margin: 0px 0px 0px 0px;
+}
+
+.top_s p{
+
+  font-size: 16px;
+  color: #4A4A4A;
+  margin: 4px 0px 4px 0px;
+}
+.top_s span{
+    color: #D0021B;
+    font-size: 16px;
+}
+
+.top_s .cancellaion{
+
+    color: #008CFF;
+   cursor: pointer;
+}
+.dot{
+    height: 5px;
+    width: 5px;
+    background-color: #4A4A4A;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.botom_l_info{
+     
+    background-color: rgb(255, 88, 81);
+    color: white;
+    font-size: 16px;
+    padding: 6px 30px 9px;
+    font-weight: 900;
+
+
+}
+
+.botom_l_rules{
+
+    background-color: #FFFFFF;
+    padding: 13px 30px;
+
+}
+
+.botom_l_rules .greatthanicon{
+
+    color: #008CFF;
+    font-size: 20px;
+    margin: 0px 0px 0px 10px;
+}
+.botom_l_rules h5{
+    color: #008CFF;
+    margin-top: 0px 0px 0px 0px ;
+     cursor: pointer;
+}
+.rules_icon{
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px 0px 0px 0px ;
+}
+.botom_l_rules h3{
+  font-weight: bold;
+  margin: 0px 0px 12px;
+
+}
+
+.botom_l_rules p{
+
+    font-size: 13px;
+    margin: 4px 0px 4px 0px;
+}
+.top_botom{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+
+/*  */
+
+.iconimg{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.iconimg img{
+
+ height: 30px;
+ width: 40px;
+}
+
+.leftp{
+    display: flex;
+    justify-content: space-between;
+}
+
+.gstdiv{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.gstdiv button{
+   cursor: pointer;
+    color: #008CFF;
+    width: 70px;
+    height: 40px;
+    text-align: center;
+    background-color: white;
+    font-weight: 900;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 20px;
+    margin-left: 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.gstdiv .rupess{
+    font-size: 20px;
+    font-weight: 900;
+    margin-left: 100px;
+    color: black;
+
+}
+
+.gstdiv .gst_inclued{
+    color:#9B9B9B;
+    font-size: 14px;
+}
+
+.paynow_container{
+   
+    width: 880px;
+    margin: auto;
+}
+
+.paynow_container button{
+ 
+    font-size: 18px;
+    color: white;
+    padding: 9px 20px;
+    width: 300px;
+    font-weight: 800;
+     background-color: #008CFF;
+     background-image: linear-gradient(to right, #24C6DC 0%, #514A9D  51%, #24C6DC  100%);
+     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+     border: none;
+     border-radius: 6px;
+}
+
+.paynow_container button {
+   margin: 10px;
+   padding: 15px 45px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   box-shadow: 0 0 20px #eee;
+   border-radius: 10px;
+   display: block;
+ }
+
+ .paynow_container button:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }
+
+
+
+ .pirze_breakup_div{
+
+    background-color: white;
+    width: 323px;
+    height: 360px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border-radius: 7px;
+    padding: 10px 0px 15px 20px;
+    margin-top: -50px;
+ }
+
+
+
+.pirze_breakup_div h3{
+
+    font-weight: 900;
+    
+}
+
+.pirze_breakup_div .room_prize_deatials{
+
+    padding: 0px 20px;
+
+}
+
+.room_prize_deatials .room_night{
+   
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+    align-items: center;
+    justify-content: center
+}
+
+.room_prize_deatials .room_night div h4{
+
+    margin: 0px 0px 0px 0px;
+
+}
+
+.room_prize_deatials .room_night div p{
+    font-size: 13px;
+    margin: 3px 0px 0px;
+    color:#9B9B9B;
+}
+
+.room_prize_deatials .room_night span{
+
+    font-size: 17px;
+    font-weight: bold;
+}
+
+
+.room_prize_deatials .room_discount {
+
+    padding: 3px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.room_prize_deatials .room_discount span{
+
+    display: flex;
+    gap: 5px;
+    color: #1A7971;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.room_prize_deatials .room_discount .infomation_icon{
+    font-size: 20px;
+    color: #008CFF;
+}
+
+
+.room_prize_deatials .room_prize_after_discount{
+
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 0px;
+}
+
+.room_prize_deatials .room_prize_after_discount span{
+
+    font-size: 17px;
+    font-weight: bold;
+    
+}
+.room_prize_deatials .room_discount span{
+    color: black;
+}
+
+.room_prize_deatials .room_donate_for_covid{
+
+    padding: 10px 0px ;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.room_prize_deatials .room_donate_for_covid .donate{
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    justify-content: center;
+}
+.room_prize_deatials .room_donate_for_covid .donate input{
+
+ cursor: pointer;
+ width: 20px;
+ height: 20px;
+   
+}
+.room_prize_deatials .room_donate_for_covid .donate p{
+
+    font-size: 12px;
+    margin: 0px 0px 0px 0px;
+    font-weight: bold;
+
+}
+.room_prize_deatials .room_donate_for_covid  span{
+
+    font-size: 17px;
+    font-weight: bold;
+   
+}
+.room_prize_deatials .room_donate_for_covid .donate .infomation_icon{
+
+     margin-top: 0px;
+    font-size: 20px;
+    color: #008CFF;
+
+}
+.room_prize_deatials .room_donate_for_covid .donate .tc{
+    font-size: 12px;
+    margin: 0px 0px 0px 0px;
+    font-weight: bold;
+    color: #008CFF;
+
+}
+
+.pirze_breakup_div .room_toaal_amount {
+   display: flex;
+   justify-content: space-evenly;
+
+
+}
+
+.pirze_breakup_div .room_toaal_amount .total_amount{
+    font-size: 17px;
+    font-weight: bold;
+}
+
+
+.pirze_breakup_div .room_toaal_amount .rs{
+
+    font-size: 17px;
+    color: #FF0000;
+    font-weight: bold;
+}
+
+
+
+
+
+.paynow_container p{
+    font-size: 14px;
+    color: #4A4A4A;
+}
+
+.paynow_container p span{
+    color: #008CFF;
+    cursor: pointer;
+}
+
+

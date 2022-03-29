@@ -1,0 +1,45 @@
+.container{
+
+   height: 600px; 
+   display: flex;
+   flex-direction: column;
+   background-color: #e7e7e7;
+    align-items: center;
+    /* text-align: center; */
+    justify-content: center;
+   
+}
+
+.hr{
+   width: 80%;
+  background-color: black;
+   height: 0.5px;
+   margin-bottom: 30px;
+}
+.top{
+   
+   padding: 50px;
+   display: flex;
+   gap: 50px;
+ /* margin-left: 180px; */
+
+}
+
+
+.botom{
+   display: flex;
+   gap: 50px;
+   /* margin-left: 180px; */
+  
+}
+
+.left p{
+   font-size: 14px;
+   margin-top: 20px;
+   color:#4A4A4A
+}
+
+.right p{
+   font-size: 14px;
+   margin-top: 20px;
+}

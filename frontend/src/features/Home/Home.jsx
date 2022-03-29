@@ -3,7 +3,10 @@ import { SimpleSlider } from "../../Components/SimpleSlider";
 import { CarousalUI } from "../../Components/CarousalUI";
 import { FlightsCard } from "../../Components/FlightsCard";
 import  FlightHome  from "../../Components/FlightHome";
+import Qna from "../../Hotels/Qna"
+import Details from "../../Hotels/Details"
 
+import Footer from "../../Hotels/Footer"
 import styles from "./home.module.css";
 export const Home = () => {
   return (
@@ -41,7 +44,13 @@ export const Home = () => {
       <div style={{ marginTop: 50 }}>
         <FlightsCard />
       </div>
+      
+      
     </div>
+    <Details/>
+    <Qna/>
+    <Footer/>
+
       </>
   );
 };
