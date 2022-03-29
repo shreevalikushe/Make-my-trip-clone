@@ -53,7 +53,7 @@ export const CarousalUI = () => {
                         {
                             slider0.map((item) => {
                                 return (
-                                    <>
+                                    <div key={item.id}>
                                         <div className="each-slide">
                                             <div className='ind-slide'>
                                                 <div className='imageSection'>
@@ -92,7 +92,7 @@ export const CarousalUI = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                    </>
+                                    </div>
                                 )
                             })
                         }
@@ -102,7 +102,7 @@ export const CarousalUI = () => {
                             {
                                 slider1.map((item) => {
                                     return (
-                                        <>
+                                        <div key={item.id}>
                                             <div className="each-slide">
                                                 <div className='ind-slide'>
                                                     <div className='imageSection'>
@@ -141,7 +141,7 @@ export const CarousalUI = () => {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </>
+                                        </div>
                                     )
                                 })
                             }
@@ -151,7 +151,7 @@ export const CarousalUI = () => {
                             {
                                 slider2.map((item) => {
                                     return (
-                                        <>
+                                        <div key={item.id}>
                                             <div className="each-slide">
                                                 <div className='ind-slide'>
                                                     <div className='imageSection'>
@@ -190,7 +190,7 @@ export const CarousalUI = () => {
                                                     </div>
                                                 </div>
                                             </div>
-                                        </>
+                                        </div>
                                     )
                                 })
                             }

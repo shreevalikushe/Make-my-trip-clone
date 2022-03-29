@@ -1,8 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../CSS/Profile.css'
-import { PersonOutlineOutlined, ExitToAppOutlined, ModeEditOutlineOutlined } from '@mui/icons-material';
+import {
+    PersonOutlineOutlined,
+    ExitToAppOutlined,
+    ModeEditOutlineOutlined,
+    RemoveRedEye,
+    VisibilityOff
+} from '@mui/icons-material';
 
 export const Profile = () => {
+
+    const [show, setShow] = useState(false)
+
+    let pass = "Shubham@1234"
+    let securePass = ""
+    for (var i = 0; i < pass.length; i++) {
+        securePass += "*";
+    }
     return (
         <>
             <div className='profileContainer'>
@@ -51,9 +65,26 @@ export const Profile = () => {
                         <p className='indProfileContentValue'>shubhamgadge722@gmail.com</p>
                     </div>
                     <div className="profileContentDivider" />
-                    <div className='indProfileContent'>
-                        <p className='indProfileContentTitle'>EMAIL ID</p>
-                        <p className='indProfileContentValue'>shubhamgadge722@gmail.com</p>
+                    <div className='indProfilePasswordSection'>
+                        <div className='indProfileContent'>
+                            <p className='indProfileContentTitle'>PASSWORD</p>
+                            {show ?
+                                <p className='indProfileContentValue'>{pass}</p>
+                                :
+                                <p className='indProfileContentValue'>{securePass}</p>
+                            }
+                        </div>
+                        <div>
+                            {show ?
+                                <div onClick={() => setShow(!show)} className="visibilityIcon">
+                                    <VisibilityOff style={{ fontSize: 20, color: '#53b2fe' }} />
+                                </div>
+                                :
+                                <div onClick={() => setShow(!show)} className="visibilityIcon">
+                                    <RemoveRedEye style={{ fontSize: 20, color: '#53b2fe' }} />
+                                </div>
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
