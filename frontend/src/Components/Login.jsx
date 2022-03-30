@@ -4,20 +4,38 @@ import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 
 import styles from "./login.module.css";
+import Registration from "./Registration";
 
 export default function FormDialog() {
   const [open, setOpen] = React.useState(false);
-  const [registrationModal, setRegistrationModal] = useState(true);
+  const [loginModal, setLoginModal] = useState(true);
+  const [registrationModal, setRegistrationModal] = useState(false);
   const [loginModalOtp, setLoginModalOtp] = useState(false);
+  const [loginModalEmailOtp, setLoginModalEmailOtp] = useState(false);
+  const [loginOtpNumberChecker, setLoginOtpNumberChecker] = useState(0);
+  const [loginPassword, setLoginPassword] = useState("");
 
   const handleContinueRegistration = () => {
-    setRegistrationModal(!registrationModal);
+    setLoginModal(!loginModal);
     setLoginModalOtp(!loginModalOtp);
   };
-  const handleBackInLogin = () => {
-    setRegistrationModal(!registrationModal);
-    setLoginModalOtp(!loginModalOtp);
+
+  const handleBackInLoginEmail = () => {
+   setLoginModalOtp(!loginModalOtp);
+    setLoginModalEmailOtp(!loginModalEmailOtp);
   };
+
+  const handleToggleModal = () => {
+    setRegistrationModal(!registrationModal);
+    setLoginModal(!loginModal);
+  };
+
+  const handleBacktoHomePagefromEmailotp = () =>{
+    setLoginModal(!loginModal);
+    setLoginModalEmailOtp(!loginModalEmailOtp);
+
+  }
+
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -27,10 +45,12 @@ export default function FormDialog() {
   };
   const dialogCss = {
     position: "fixed",
-    width: 500,
-    top: 60,
-    left: 400,
-    height: 500,
+    width: "40%",
+    top: "6%",
+    right: "50%",
+    left: "20%",
+    height: 550,
+    minWidth: "350px",
   };
 
   return (
@@ -38,71 +58,163 @@ export default function FormDialog() {
       <div className={styles.btn}>
         <Button onClick={handleClickOpen}>Login or create account</Button>
       </div>
-      <Dialog PaperProps={{ sx: dialogCss }} open={open} onClose={handleClose}>
+     <Dialog  PaperProps={{ sx: dialogCss }} open={open} onClose={handleClose}>
         <DialogContent>
-          <div
-            className={
-              registrationModal ? styles.modalContainer : styles.display_none
-            }
-          >
+          {!loginModalOtp && !loginModalEmailOtp && (
             <div className={styles.personalBusiness}>
-              <div>PERSONAL ACCOUNT</div>
-              <div>MYBIZ ACCOUNT</div>
+              <div
+                onClick={handleToggleModal}
+                className={
+                  registrationModal
+                    ? styles.blackColor
+                    : styles.linearBackground
+                }
+              >
+                SIGN UP
+              </div>
+              <div
+                onClick={handleToggleModal}
+                className={
+                  loginModal ? styles.blackColor : styles.linearBackground
+                }
+              >
+                Login
+              </div>
             </div>
-            <div className={styles.login_sign_text}>Login/Signup</div>
-            <div className={styles.email_mobile_text}>
-              <p>Email or Mobile Number</p>
-              <input type="text" />
-            </div>
-            <div
-              className={styles.continue_text}
-              onClick={handleContinueRegistration}
-            >
-              CONTINUE
-            </div>
-            <div className={styles.loginsignup_text}>Or Login/Signup With</div>
-            <div className={styles.google_login_container}>
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-                alt="google logo"
-              />
-              <div>Login With Google</div>
-            </div>
+          )}
 
-            <div className={styles.terms_text}>
-              By proceeding, you agree to MakeMyTrip's{" "}
-              <span>Privacy Policy</span> ,<span>Privacy Policy</span> and{" "}
-              <span>T&Cs</span>
-            </div>
-          </div>
+          {!registrationModal ? (
+            <Registration />
+          ) : (
+            <>
+              <div
+                className={
+                  loginModal ? styles.display_none : styles.modalContainer
+                }
+              >
+                <div className={styles.login_sign_text}>Login</div>
+                <div className={styles.email_mobile_text}>
+                  <p>Email or Mobile Number</p>
+                  <input type="text" />
+                </div>
+                <div
+                  className={styles.continue_text}
+                  onClick={handleContinueRegistration}
+                >
+                  CONTINUE
+                </div>
+                <div className={styles.loginsignup_text}>
+                   LOGIN
+                </div>
+                <div className={styles.google_login_container}>
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                    alt="google logo"
+                  />
+                  <div>Login With Google</div>
+                </div>
 
-          <div
-            className={
-              loginModalOtp
-                ? styles.loginModalOtpContainer
-                : styles.display_none
-            }
-          >
-            <div className={styles.back_otp_text}onClick={handleBackInLogin}>Back</div>
-            <div className={styles.otp_verifytext}>Verify Your Mobile Number</div>
-            <div className={styles.otp_verifytext_mobile}>OTP has been sent to MOBILE</div>
-            <div>OTP</div>
-            <div className={styles.otp_mobile_input}>
-              <input type="number" />
-            </div>
+                <div className={styles.terms_text}>
+                  By proceeding, you agree to MakeMyTrip's
+                  <span>Privacy Policy</span> ,<span>Privacy Policy</span> and
+                  <span>T&Cs</span>
+                </div>
+              </div>
 
-            <div className={styles.otp_mobile_login_button} >
-              Login
-            </div>
-            <div className={styles.otp_login_forgot_text} >
-               or Login via Password
-            </div>
-          </div>
-          {/* <LoginModalOtp /> */}
+              <div
+                className={
+                  loginModalOtp
+                    ? styles.loginModalOtpContainer
+                    : styles.display_none
+                }
+              >
+                <div
+                  className={styles.back_otp_text}
+                  onClick={handleContinueRegistration}
+                >
+                  Back
+                </div>
+                <div className={styles.otp_verifytext}>
+                  Verify Your Mobile Number
+                </div>
+                <div className={styles.otp_verifytext_mobile}>
+                  OTP has been sent to MOBILE
+                </div>
+                <div className={styles.otp_text}>OTP</div>
+                <div className={styles.otp_mobile_input}>
+                  <input
+                    type="number"
+                    onChange={(e) =>
+                      setLoginOtpNumberChecker(e.currentTarget.value)
+                    }
+                  />
+                </div>
+
+                <button
+                  disabled={loginOtpNumberChecker < 999}
+                  className={
+                    loginOtpNumberChecker > 999
+                      ? styles.otp_mobile_login_button
+                      : styles.colorGrey
+                  }
+                >
+                  Login
+                </button>
+
+                <div
+                  onClick={handleBackInLoginEmail}
+                  className={styles.otp_login_forgot_text}
+                >
+                  or Login via Password
+                </div>
+              </div>
+              {/* <LoginModalOtp /> */}
+
+              {/* loginModalEmailOtp start */}
+              <div
+                className={
+                  loginModalEmailOtp
+                    ? styles.loginModalEmailOtpContainer
+                    : styles.display_none
+                }
+              >
+                <div
+                  onClick={handleBacktoHomePagefromEmailotp}
+                  className={styles.back_otp_text}
+                >
+                  Back
+                </div>
+                <div className={styles.otp_verifytext}>Login With Password</div>
+                <div className={styles.otp_text}>Password</div>
+                <div className={styles.otp_mobile_input}>
+                  <input
+                    type="text"
+                    placeholder="Minimum 6 characters"
+                    onChange={(e) => setLoginPassword(e.target.value)}
+                  />
+                </div>
+                <button
+                  disabled={loginPassword.length > 5}
+                  className={
+                    loginPassword.length > 5
+                      ? styles.otp_mobile_login_button
+                      : styles.colorGrey
+                  }
+                >
+                  Login
+                </button>
+
+                <div
+                  onClick={handleBackInLoginEmail}
+                  className={styles.otp_login_forgot_text}
+                >
+                  or Login via OTP
+                </div>
+              </div>
+              {/* loginModalEmailOtp end */}
+            </>
+          )}
         </DialogContent>
-
-        {/* <Button onClick={handleClose}>Cancel</Button>
-        <Button onClick={handleClose}>Subscribe</Button> */}
       </Dialog>
     </div>
   );
