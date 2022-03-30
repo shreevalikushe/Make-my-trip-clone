@@ -5,16 +5,14 @@ import { FlightsCard } from "../../Components/FlightsCard";
 import FlightHome from "../../Components/FlightHome";
 import Qna from "../../Hotels/Qna"
 import Details from "../../Hotels/Details"
-
 import Footer from "../../Hotels/Footer"
 import styles from "./home.module.css";
+
 export const Home = () => {
   return (
     <>
       <FlightHome />
-
       <div className={styles.container} style={{ boxSizing: 'border-box' }}>
-
         <SimpleSlider />
         <div style={{ marginTop: 50 }}>
           <CarousalUI />
@@ -30,13 +28,10 @@ export const Home = () => {
         </div>
       </div>
       <div className={styles.container}>
-
-
         <Details />
       </div>
       <Qna />
       <Footer />
-
     </>
   );
 };
