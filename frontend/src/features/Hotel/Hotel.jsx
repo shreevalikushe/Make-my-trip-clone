@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from "./Hotel.module.css";
+import { CheckCircleOutlineOutlined } from '@mui/icons-material';
 
 export const Hotel = () => {
     return (
@@ -24,6 +25,51 @@ export const Hotel = () => {
                     </div>
                     <div className={styles.indHotelCardBookBtn}>
                         <p>BOOK THIS NOW</p>
+                    </div>
+                </div>
+                <div className={styles.indHotelContent}>
+                    <div className={styles.ratingsSection}>
+                        <div className={styles.ratingsView}>
+                            <div className={styles.ratings}>
+                                <p>4.6</p>
+                            </div>
+                            <p>Rated Excellent</p>
+                        </div>
+                        <div className={styles.cityView}>
+                            <div className={styles.city}>
+                                <img src="https://imgak.mmtcdn.com/pwa_v3/pwa_hotel_assets/map-bg-new.png" alt="" />
+                            </div>
+                            <p>Panjim</p>
+                        </div>
+                    </div>
+                    <div className={styles.indHotelImgGallery}>
+                        <p>Discover the Best of Luxury</p>
+                        <div className={styles.indHotelImages}>
+                            <img src="https://r1imghtlak.mmtcdn.com/1611e6802dd111e987330242ac110003.jpg?downsize=340:155&crop=340:155" alt="" />
+                            <img src="https://r1imghtlak.mmtcdn.com/1611e6802dd111e987330242ac110003.jpg?downsize=340:155&crop=340:155" alt="" className={styles.indImg} />
+                            <img src="https://r1imghtlak.mmtcdn.com/1611e6802dd111e987330242ac110003.jpg?downsize=340:155&crop=340:155" alt="" className={styles.indImg} />
+                        </div>
+                    </div>
+                    <div className={styles.indHotelImgGallery}>
+                        <p>Property Highlights</p>
+                        <div className={styles.propertyHighlightsChart}>
+                            <div className={styles.propertyHighlights}>
+                                <CheckCircleOutlineOutlined style={{ color: '#4a4a4a', marginRight: 10, fontSize: 20 }} />
+                                <p>300+ guests like you rated their stay Excellent</p>
+                            </div>
+                            <div className={styles.propertyHighlights}>
+                                <CheckCircleOutlineOutlined style={{ color: '#4a4a4a', marginRight: 10, fontSize: 20 }} />
+                                <p>Perfect for one-night stay!</p>
+                            </div>
+                            <div className={styles.propertyHighlights}>
+                                <CheckCircleOutlineOutlined style={{ color: '#4a4a4a', marginRight: 10, fontSize: 20 }} />
+                                <p>Relax with therapeutic treatments at Jiva Spa</p>
+                            </div>
+                            <div className={styles.propertyHighlights}>
+                                <CheckCircleOutlineOutlined style={{ color: '#4a4a4a', marginRight: 10, fontSize: 20 }} />
+                                <p>Awards & Accolades: Best Bar</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
