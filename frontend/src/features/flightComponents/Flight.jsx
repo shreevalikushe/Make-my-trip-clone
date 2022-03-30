@@ -11,7 +11,9 @@ export const Flight = () => {
   const [departure, setDeparture] = useState(true);
   const [arrival, setArrival] = useState(true);
   const [fare, setFare] = useState(true);
-  const [value, setValue] = useState([0, 41]);
+  const [check, setCheck] = useState(true);
+  const [value, setValue] = useState([0, 45]);
+  const [stopCheck, setStopCheck] = useState(true);
   let { loading, error, flights } = useSelector((state) => ({
     loading: state.flight.loading,
     error: state.flight.error,
@@ -19,6 +21,8 @@ export const Flight = () => {
   }));
   const dispatch = useDispatch();
   const getFlight = () => {
+    console.log(stopCheck, check);
+    console.log("getFlight");
     dispatch(flightLoading());
     fetch("http://localhost:1234/flights")
       .then((r) => r.json())
@@ -79,6 +83,8 @@ export const Flight = () => {
     }
   };
   const handleFilters = (info) => {
+    console.log("fliter");
+    console.log(stopCheck, check);
     if (info.startsWith("departure")) {
       if (info === "departure_1") {
         flights = flight.filter(
@@ -122,15 +128,15 @@ export const Flight = () => {
       setFlight(flights);
     }
   };
+
   useEffect(() => {
     getFlight();
   }, []);
 
   return (
     <div>
-      
       {loading ? (
-        <div style={{ width: "100px", margin: "auto" }}>
+        <div style={{ width: "100px", margin: "auto", marginTop: "1000px" }}>
           <CircularProgress />
         </div>
       ) : error ? (
@@ -141,103 +147,134 @@ export const Flight = () => {
             <div className={styles.filterDiv}>
               <div className={styles.first}>
                 <b>Popular Filters</b>
-                <div style={{ flexDirection: "row", margin: "2%" }}>
+                <div className={styles.filterCheck}>
                   <input type="checkbox" />
                   <span>Refundable Fares</span>
                 </div>
-                <div style={{ flexDirection: "row", margin: "2%" }}>
+                <div className={styles.filterCheck}>
                   <input type="checkbox" />
                   <span>Non stop</span>
                 </div>
-                <div style={{ flexDirection: "row", margin: "2%" }}>
+                <div className={styles.filterCheck}>
                   <input type="checkbox" />
                   <span>Indi Go</span>
                 </div>
-                <div style={{ flexDirection: "row", margin: "2%" }}>
+                <div className={styles.filterCheck}>
                   <input type="checkbox" />
                   <span>Morning Departure</span>
                 </div>
-                <div style={{ flexDirection: "row", margin: "2%" }}>
+                <div className={styles.filterCheck}>
                   <input type="checkbox" />
                   <span> Late Departure</span>
                 </div>
-                <div style={{ flexDirection: "row", margin: "2%" }}>
+                <div className={styles.filterCheck}>
                   <input type="checkbox" />
                   <span>Go First</span>
                 </div>
-                <div style={{ flexDirection: "row", margin: "2%" }}>
+                <div className={styles.filterCheck}>
                   <input type="checkbox" />
                   <span>Vistara</span>
                 </div>
-                <div style={{ flexDirection: "row", margin: "2%" }}>
+                <div className={styles.filterCheck}>
                   <input type="checkbox" />
                   <span>Air India</span>
                 </div>
               </div>
               <div
                 className={styles.first}
-                onChange={(e) => handleFilters(e.target.name)}
+                onChange={(e) => {
+                  check ? handleFilters(e.target.name) : getFlight();
+                }}
+                // onChange={(e) => handleFilters(e.target.name)}
               >
                 <b>Departure From New Delhi</b>
-                <div style={{ flexDirection: "row", margin: "2%" }}>
-                  <input type="checkbox" name={"departure_1"} />
+                <div className={styles.filterCheck}>
+                  <input
+                    type="checkbox"
+                    // checked={check}
+                    onClick={() => setCheck(!check)}
+                    name={"departure_1"}
+                  />
                   <span>Before 6 AM</span>
                 </div>
-                <div style={{ flexDirection: "row", margin: "2%" }}>
-                  <input type="checkbox" name="departure_2" />
+                <div className={styles.filterCheck}>
+                  <input
+                    type="checkbox"
+                    onClick={() => setCheck(!check)}
+                    name="departure_2"
+                  />
                   <span>6 AM - 12 PM</span>
                 </div>
-                <div style={{ flexDirection: "row", margin: "2%" }}>
-                  <input type="checkbox" name="departure_3" />
+                <div className={styles.filterCheck}>
+                  <input
+                    type="checkbox"
+                    onClick={() => setCheck(!check)}
+                    name="departure_3"
+                  />
                   <span>12 PM to 6 PM</span>
                 </div>
-                <div style={{ flexDirection: "row", margin: "2%" }}>
-                  <input type="checkbox" name="departure_4" />
+                <div className={styles.filterCheck}>
+                  <input
+                    type="checkbox"
+                    onClick={() => setCheck(!check)}
+                    name="departure_4"
+                  />
                   <span>After 6 PM</span>
                 </div>
               </div>
               <div className={styles.first}>
                 <b>One Way Price</b>
                 <Slider
-                  getAriaLabel={() => "Temperature range"}
+                  // getAriaLabel={() => "Temperature range"}
+
                   value={value}
                   valueLabelDisplay="auto"
                 />
               </div>
               <div
-                onChange={(e) => handleFilters(e.target.name)}
+                onChange={(e) => {
+                  stopCheck ? handleFilters(e.target.name) : getFlight();
+                }}
                 className={styles.first}
               >
                 <b>Stops From New Delhi</b>
 
-                <div style={{ flexDirection: "row", margin: "2%" }}>
-                  <input type="checkbox" name="non_stop" />
+                <div className={styles.filterCheck}>
+                  <input
+                    type="checkbox"
+                    onClick={() => setStopCheck(!stopCheck)}
+                    name="non_stop"
+                  />
                   <span>Non Stop</span>
                 </div>
-                <div style={{ flexDirection: "row", margin: "2%" }}>
-                  <input type="checkbox" name="1_stop" />
+                <div className={styles.filterCheck}>
+                  <input
+                    type="checkbox"
+                    onClick={() => setStopCheck(!stopCheck)}
+                    name="1_stop"
+                  />
                   <span>1 Stop</span>
                 </div>
               </div>
               <div className={styles.first}>
                 <b>Airlines</b>
-                <div style={{ flexDirection: "row", margin: "2%" }}>
+                <div className={styles.filterCheck}>
                   <input type="checkbox" />
                   <span>Air India (3)</span>
                 </div>
-                <div style={{ flexDirection: "row", margin: "2%" }}>
+                <div className={styles.filterCheck}>
                   <input type="checkbox" />
                   <span>Indigo (3)</span>
                 </div>
-                <div style={{ flexDirection: "row", margin: "2%" }}>
+                <div className={styles.filterCheck}>
                   <input type="checkbox" />
                   <span> Vistara (3)</span>
                 </div>
-                <div style={{ flexDirection: "row", margin: "2%" }}>
+                <div className={styles.filterCheck}>
                   <input type="checkbox" />
                   <span> Go First (3)</span>
                 </div>
-                <div style={{ flexDirection: "row", margin: "2%" }}>
+                <div className={styles.filterCheck}>
                   <input type="checkbox" />
                   <span> Spice Jet (3)</span>
                 </div>
