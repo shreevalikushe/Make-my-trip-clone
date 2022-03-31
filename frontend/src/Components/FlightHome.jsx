@@ -10,6 +10,7 @@ import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import DatePicker from "@mui/lab/DatePicker";
 import FareTypes from "./FareTypes";
+import { useNavigate } from "react-router-dom";
 
 const FlightHome = () => {
   const [from, setFrom] = React.useState("");
@@ -17,12 +18,12 @@ const FlightHome = () => {
   const [departure, setDeparture] = React.useState(null);
   const [retrn, setRetrn] = React.useState(null);
 
-  const [travellers, setTravellers] = React.useState(1);
+  const [travellers, setTravellers] = React.useState(null);
   const arr = [1, 2, 3, 4, 5, 6, 7, 8];
-  let ar1 = [0, 1, 2, 3, 4, 5]
+  let ar1 = [0, 1, 2, 3, 4, 5];
   const [openTravellers, setOpenTravellers] = useState(false);
   const [togglePassengerColor, setTogglePassengerColor] = useState(false);
-
+  const navigate = useNavigate();
   const onClickModal = (e) => {
     setOpenTravellers(!openTravellers);
     e.stopPropagation();
@@ -30,10 +31,9 @@ const FlightHome = () => {
 
   const onClickNoOfPass = (val) => {
     setTravellers(val);
-    //  e.stopPropagation()
   };
   const handleSubmit = () => {
-    console.log({ from, to, departure, travellers });
+    navigate("/flights");
   };
   return (
     <div className={styles.flight_wrapper}>
@@ -41,7 +41,7 @@ const FlightHome = () => {
         <div className={styles.tripInternational}>
           <div className={styles.multiple_trip}>
             <div>
-              <input type="radio" name="trip" />
+              <input checked={true} type="radio" name="trip" />
               <div>ONEWAY</div>
             </div>
             <div>
@@ -63,13 +63,16 @@ const FlightHome = () => {
           <div className={styles.fromToConnecting}>
             <div className={styles.fromTo}>
               <div className={styles.from}>
-                <FormControl>
-                  <InputLabel fullWidth sx={{ width: 250 }} id="demo-simple-select-label">
+                <FormControl sx= {{ width: "100%" }}>
+                  <InputLabel
+                    sx={{ width: "100%" }}
+                    id="demo-simple-select-label"
+                  >
                     From
                   </InputLabel>
                   <Select
-                  fullWidth
-                    sx={{ width: 200 }}
+                    fullWidth
+                    sx={{ width: "100%" }}
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
                     value={from}
@@ -87,13 +90,17 @@ const FlightHome = () => {
                 <ConnectingAirportsIcon fontSize="large" color="grey" />
               </div>
               <div className={styles.to}>
-                <FormControl>
-                  <InputLabel fullWidth  sx={{ width: 250 }} id="demo-simple-select-label">
+                <FormControl  sx={{  width: "100%" }}>
+                  <InputLabel
+                    fullWidth
+                    sx={{  width: "100%" }}
+                    id="demo-simple-select-label"
+                  >
                     To
                   </InputLabel>
                   <Select
-                  fullWidth
-                    sx={{ width: 250 }}
+                    
+                    sx={{  width: "100%" }}
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
                     value={to}
@@ -113,13 +120,14 @@ const FlightHome = () => {
           {/* departure and return date start */}
           <div className={styles.DepRetContainer}>
             {/* departure date starts */}
-            <div>
+            <div style={{ width:"100%"}}>
+            < FormControl sx={{width:"100%"}}>
+           
               <LocalizationProvider
-                styles={{ height: "100px" }}
+               sx={{width:"100%"}}
                 dateAdapter={AdapterDateFns}
               >
                 <DatePicker
-                  styles={{ height: "100px" }}
                   label="Departure"
                   value={departure}
                   onChange={(newValue) => {
@@ -128,11 +136,12 @@ const FlightHome = () => {
                   renderInput={(params) => <TextField {...params} />}
                 />
               </LocalizationProvider>
+              </FormControl>
             </div>
             {/* departure date end */}
 
             {/* return date starts (just for ui purpose)*/}
-            <div>
+            {/* <div>
               <LocalizationProvider dateAdapter={AdapterDateFns}>
                 <DatePicker
                   label="Return"
@@ -143,7 +152,7 @@ const FlightHome = () => {
                   renderInput={(params) => <TextField {...params} />}
                 />
               </LocalizationProvider>
-            </div>
+            </div> */}
             {/* return date starts (just for ui purpose)*/}
           </div>
           {/* departure and return date end */}
@@ -154,13 +163,15 @@ const FlightHome = () => {
               <div className={styles.travellersText}>TRAVELLERS</div>
               <div className={styles.noOfTraveller}>
                 <span>{travellers}</span>
-                {travellers > 1 ? "Travellers" : "Traveller"}
+                {travellers > 1 ? "Travellers" : ""}
               </div>
             </div>
 
-            <div className={
+            <div
+              className={
                 openTravellers ? styles.traveller_modal : styles.noDisplay
-              } >
+              }
+            >
               <div className={styles.adultChild}>ADULTS (12y +)</div>
               <div className={styles.passengerButtonContainer}>
                 {arr.map((val) => (
@@ -182,45 +193,49 @@ const FlightHome = () => {
               {/* for children and inf */}
               <div className={styles.infantChildren}>
                 <div>
-                <div className={styles.adultChild}>CHILDREN (2y - 12y )</div>
-              <div className={styles.passengerButtonContainer}>
-                {ar1.map((val) => (
-                  <div
-                    key={val}
-                    className={
-                      val === 0 ? styles.clickPassenger : styles.passengerButton
-                    }
-                    onClick={() => {
-                      setTogglePassengerColor(!togglePassengerColor);
-                      onClickNoOfPass(val);
-                    }}
-                  >
-                    {val}
+                  <div className={styles.adultChild}>CHILDREN (2y - 12y )</div>
+                  <div className={styles.passengerButtonContainer}>
+                    {ar1.map((val) => (
+                      <div
+                        key={val}
+                        className={
+                          val === 0
+                            ? styles.clickPassenger
+                            : styles.passengerButton
+                        }
+                        onClick={() => {
+                          setTogglePassengerColor(!togglePassengerColor);
+                          onClickNoOfPass(val);
+                        }}
+                      >
+                        {val}
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
                 </div>
                 <div>
-                <div className={styles.adultChild}>INFANTS (below 2y)</div>
-              <div className={styles.passengerButtonContainer}>
-                {ar1.map((val) => (
-                  <div
-                    key={val}
-                    className={
-                      val === 0 ? styles.clickPassenger : styles.passengerButton
-                    }
-                    onClick={() => {
-                      setTogglePassengerColor(!togglePassengerColor);
-                      onClickNoOfPass(val);
-                    }}
-                  >
-                    {val}
+                  <div className={styles.adultChild}>INFANTS (below 2y)</div>
+                  <div className={styles.passengerButtonContainer}>
+                    {ar1.map((val) => (
+                      <div
+                        key={val}
+                        className={
+                          val === 0
+                            ? styles.clickPassenger
+                            : styles.passengerButton
+                        }
+                        onClick={() => {
+                          setTogglePassengerColor(!togglePassengerColor);
+                          onClickNoOfPass(val);
+                        }}
+                      >
+                        {val}
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
                 </div>
               </div>
-                {/* for children and inf */}
+              {/* for children and inf */}
 
               <div className={styles.modalApplyText} onClick={onClickModal}>
                 <div>Apply</div>
@@ -231,10 +246,9 @@ const FlightHome = () => {
         {/* location of departure and arrival  including date and passenger end  */}
 
         <FareTypes />
-       
       </div>
       <div className={styles.buttonContainer}>
-      <div type="submit" onClick={handleSubmit}>
+        <div type="submit" onClick={handleSubmit}>
           Search
         </div>
       </div>
