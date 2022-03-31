@@ -37,6 +37,7 @@ export const FlightPayment = () => {
       alert("Enter Valid UPI ID");
     }
   };
+  // flight payment page
   return (
     <div className={styles.mntBox}>
       <div className={styles.main_heading_choosing_payment}>
