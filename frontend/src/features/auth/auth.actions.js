@@ -1,4 +1,4 @@
-import { USER_LOGIN_ERROR, USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS, USER_LOGOUT } from "./auth.actionTypes";
+import { USER_LOGIN_ERROR, USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS, USER_LOGOUT, USER_SIGN_UP } from "./auth.actionTypes";
 
 export const loginRequest = () => ({
     type: USER_LOGIN_REQUEST,
@@ -15,4 +15,9 @@ export const loginError = (error) => ({
 
 export const logout = () => ({
     type: USER_LOGOUT,
+})
+
+export const signUp = (payload) => ({
+    type: USER_SIGN_UP,
+    payload
 })

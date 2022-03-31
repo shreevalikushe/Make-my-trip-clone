@@ -42,7 +42,7 @@ router.post('/register', [
         }
 
         const authToken = jwt.sign(data, process.env.JWT_SECRET_KEY);
-        res.json({ authToken })
+        res.json({ status: 200, authToken })
 
         res.json(user)
     } catch (error) {
@@ -65,12 +65,12 @@ router.post('/login', [
     try {
         let user = await User.findOne({ mobile_number })
         if (!user) {
-            return res.status(400).json({ error: "Invalid Credentials" })
+            return res.status(400).json({ status: 400, error: "Invalid Credentials" })
         }
 
         const passwordCompare = await bcrypt.compare(password, user.password);
         if (!passwordCompare) {
-            return res.status(400).json({ error: "Invalid Credentials" })
+            return res.status(400).json({ status: 400, error: "Invalid Credentials" })
         }
 
         const data = {
@@ -80,7 +80,8 @@ router.post('/login', [
         }
 
         const authToken = jwt.sign(data, process.env.JWT_SECRET_KEY);
-        res.json({ authToken })
+        console.log(authToken)
+        res.send({ status: 200, authToken })
     } catch (error) {
         console.log(error.message);
         res.status(500).json("Internal Server Error")
@@ -89,11 +90,11 @@ router.post('/login', [
 })
 
 // ROUTE 3: For Get a user
-router.post('/getuser', fetchUser, async (req, res) => {
+router.get('/getuser', fetchUser, async (req, res) => {
     try {
         const userId = req.user.id
         const user = await User.findById(userId).select("-password")
-        res.json(user)
+        res.json({ status: 200, user })
 
     } catch (error) {
         console.log(error.message);
@@ -114,7 +115,7 @@ router.post('/otplogin', [
     try {
         let user = await User.findOne({ mobile_number })
         if (!user) {
-            return res.status(400).json({ error: "Mobile number is not registered" })
+            return res.status(400).json({ status: 401, error: "Mobile number is not registered" })
         }
 
         // send the otp for authorized mobile number
@@ -127,7 +128,7 @@ router.post('/otplogin', [
                 channel: 'sms'
             })
             .then((data) => {
-                res.status(200).json(data)
+                res.status(200).json({ status: 200, data })
             })
             .catch((err) => {
                 console.log(err.message)

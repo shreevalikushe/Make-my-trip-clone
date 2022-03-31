@@ -142,6 +142,15 @@
     box-shadow: 0 2px 5px 2px rgb(10 10 10 / 10%);
 }
 
+.bookedFlightCard{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 10px 10px 0px 10px;
+    margin: 10px 0px;
+    box-shadow: 0 2px 5px 2px rgb(10 10 10 / 10%);
+}
+
 .bookedImageSection img{
     padding: 0px;
     width: 150px;
@@ -184,6 +193,11 @@
 .bookedDate {
     font-size: 14px;
     color: #9b9b9b;
+}
+
+.bookedDateSpan {
+    font-size: 14px;
+    color: black;
 }
 
 @media (min-width:575px) and (max-width:882px) {

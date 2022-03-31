@@ -2,11 +2,19 @@ import React, { useState } from "react";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
-
+import {
+  loginError,
+  loginRequest,
+  loginSuccess,
+} from '../features/auth/auth.actions'
 import styles from "./login.module.css";
 import Registration from "./Registration";
+import { useDispatch } from "react-redux";
 
 export default function FormDialog() {
+
+  const dispatch = useDispatch();
+
   const [open, setOpen] = React.useState(false);
   const [loginModal, setLoginModal] = useState(true);
   const [registrationModal, setRegistrationModal] = useState(false);
@@ -14,10 +22,37 @@ export default function FormDialog() {
   const [loginModalEmailOtp, setLoginModalEmailOtp] = useState(false);
   const [loginOtpNumberChecker, setLoginOtpNumberChecker] = useState(0);
   const [loginPassword, setLoginPassword] = useState("");
+  const [mobile, setMobile] = useState("")
+  const [error, setError] = useState(false)
 
-  const handleContinueRegistration = () => {
-    setLoginModal(!loginModal);
-    setLoginModalOtp(!loginModalOtp);
+  const handleContinueRegistration = async () => {
+    if (mobile.length !== 10) {
+      setError(true)
+      return
+    }
+
+    console.log(mobile)
+    try {
+      const response = await fetch('http://localhost:1234/auth/otplogin', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          "mobile_number": Number(mobile)
+        }),
+      })
+      const json = await response.json();
+      console.log(json);
+
+      if (json.status === 401) {
+        return
+      }
+      setLoginModalOtp(!loginModalOtp);
+      setLoginModal(!loginModal);
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   const handleBackInLoginEmail = () => {
@@ -42,6 +77,45 @@ export default function FormDialog() {
   const handleClose = () => {
     setOpen(false);
   };
+
+  const handleChange = (e) => {
+    setError(false)
+    let { value } = e.currentTarget;
+    setMobile(value)
+  }
+
+  const handleLogin = async () => {
+    if (loginPassword.length === 0) {
+      return
+    }
+
+    try {
+      dispatch(loginRequest())
+      const response = await fetch('http://localhost:1234/auth/login', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          "mobile_number": Number(mobile),
+          "password": loginPassword
+        }),
+      })
+      const json = await response.json();
+      console.log(json);
+      if (json.status === 200) {
+        dispatch(loginSuccess(json))
+        setOpen(false)
+      } else {
+        dispatch(loginError(json.error))
+      }
+
+    } catch (error) {
+      console.log(error)
+      dispatch(loginError(error))
+    }
+  }
+
   const dialogCss = {
     width: "40%",
     height: 550,
@@ -91,7 +165,8 @@ export default function FormDialog() {
                 <div className={styles.login_sign_text}>Login</div>
                 <div className={styles.email_mobile_text}>
                   <p>Email or Mobile Number</p>
-                  <input type="text" />
+                  <input type="text" value={mobile} onChange={handleChange} />
+                  {error && <p style={{ color: 'red' }}>Please enter valid mobile number</p>}
                 </div>
                 <div
                   className={styles.continue_text}
@@ -188,12 +263,13 @@ export default function FormDialog() {
                   />
                 </div>
                 <button
-                  disabled={loginPassword.length > 5}
+                  // disabled={loginPassword.length < 5}
                   className={
                     loginPassword.length > 5
                       ? styles.otp_mobile_login_button
                       : styles.colorGrey
                   }
+                  onClick={() => handleLogin()}
                 >
                   Login
                 </button>

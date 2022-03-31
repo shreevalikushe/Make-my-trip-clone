@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Profile.css'
 import {
     PersonOutlineOutlined,
@@ -8,12 +8,23 @@ import {
     VisibilityOff
 } from '@mui/icons-material';
 import { Modal } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import { logout } from '../../features/auth/auth.actions'
+import { getValue } from '../../Utils/LocalStorage';
 
 export const Profile = () => {
 
+    useEffect(() => {
+        getProfile()
+    }, [])
+
+
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
     const [show, setShow] = useState(false)
     const [open, setOpen] = useState(false)
+    const [user, setUser] = useState({})
 
     let pass = "Shubham@1234"
     let securePass = ""
@@ -25,14 +36,39 @@ export const Profile = () => {
         setOpen(false)
     }
 
+    const handleLogout = () => {
+        dispatch(logout())
+        navigate("/")
+    }
+
+    const getProfile = async () => {
+        try {
+            const authToken = getValue('userToken')
+            const response = await fetch('http://localhost:1234/auth/getuser', {
+                method: 'GET',
+                headers: {
+                    'authToken': `${authToken}`,
+                    'content-type': 'application/json',
+                }
+            })
+            const json = await response.json();
+            if (json.status === 200) {
+                setUser(json.user)
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    console.log(user)
     return (
         <div className='myProfileContainer'>
             <div className='profileContainer'>
                 <div className='profilePicView'>
-                    <p>SG</p>
+                    <p>{user.name[0]}</p>
                 </div>
                 <div className='userTitleSection'>
-                    <p className="userTitle">Shubham Gadge</p>
+                    <p className="userTitle">{user.name}</p>
                     <p className="userTag">PERSONAL PROFILE</p>
                 </div>
                 <div className='profileTabs'>
@@ -42,7 +78,7 @@ export const Profile = () => {
                             <p>Profile</p>
                         </div>
                     </a>
-                    <div className='indProfileTab'>
+                    <div className='indProfileTab' onClick={() => handleLogout()}>
                         <ExitToAppOutlined style={{ fontSize: 25, color: '#4a4a4a' }} />
                         <p>Logout</p>
                     </div>
@@ -62,17 +98,17 @@ export const Profile = () => {
                 <div className='profileDetails'>
                     <div className='indProfileContent'>
                         <p className='indProfileContentTitle'>NAME</p>
-                        <p className='indProfileContentValue'>Shubham Gadge</p>
+                        <p className='indProfileContentValue'>{user.name}</p>
                     </div>
                     <div className="profileContentDivider" />
                     <div className='indProfileContent'>
                         <p className='indProfileContentTitle'>MOBILE NUMBER</p>
-                        <p className='indProfileContentValue'>+91-9765778934</p>
+                        <p className='indProfileContentValue'>+91-{user.mobile_number}</p>
                     </div>
                     <div className="profileContentDivider" />
                     <div className='indProfileContent'>
                         <p className='indProfileContentTitle'>EMAIL ID</p>
-                        <p className='indProfileContentValue'>shubhamgadge722@gmail.com</p>
+                        <p className='indProfileContentValue'>{user.email}</p>
                     </div>
                     <div className="profileContentDivider" />
                     <div className='indProfilePasswordSection'>

@@ -8,7 +8,7 @@ const fetchUser = require("../middleware/fetchUser");
 router.get('/flights', fetchUser, async (req, res) => {
     try {
         const bookings = await AllBookedFlights.find({ user: req.user.id })
-        res.json(bookings);
+        res.json({ status: 200, bookings });
 
     } catch (error) {
         console.log(error.message);
@@ -21,7 +21,7 @@ router.post('/flights', fetchUser, async (req, res) => {
     try {
 
         const bookings = await AllBookedFlights.create({ ...req.body, user: req.user.id });
-        res.json(bookings);
+        res.json({ status: 200, bookings });
 
     } catch (error) {
         console.log(error.message);
