@@ -11,7 +11,7 @@ import CreditCardIcon from "@mui/icons-material/CreditCard";
 import DownhillSkiingIcon from "@mui/icons-material/DownhillSkiing";
 import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
 import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from '@mui/icons-material/Close';
+import CloseIcon from "@mui/icons-material/Close";
 import Login from "./Login";
 import {
   WorkOutlineOutlined,
@@ -29,8 +29,6 @@ const Navbar = ({ isUserLoggedIn }) => {
     <>
       <nav className={styles.navbarWrapper}>
         <div className={styles.navbarContent}>
-
-
           {/* 1st part of navbar .ie. left side of navbar */}
           <div className={styles.leftSideNavbar}>
             {/* logo wrapper */}
@@ -43,9 +41,15 @@ const Navbar = ({ isUserLoggedIn }) => {
               </a>
             </div>
             {/* hamberger menu */}
-            <div className={styles.hamburgr_menu} onClick={() => setOpen(!open)}>
-              {open ? <CloseIcon style={{ fontSize: "1.4em" }} /> : <MenuIcon style={{ fontSize: "1.4em" }} />}
-
+            <div
+              className={styles.hamburgr_menu}
+              onClick={() => setOpen(!open)}
+            >
+              {open ? (
+                <CloseIcon style={{ fontSize: "1.4em" }} />
+              ) : (
+                <MenuIcon style={{ fontSize: "1.4em" }} />
+              )}
             </div>
           </div>
 
@@ -161,4 +165,3 @@ const Navbar = ({ isUserLoggedIn }) => {
 };
 
 export default Navbar;
-

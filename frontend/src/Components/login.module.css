@@ -1,4 +1,8 @@
-
+/* .modalContainer{
+  border: 1px solid red;
+  width:700px;
+   margin: auto; 
+} */
 .display_none{
   display: none;
 }
@@ -44,20 +48,22 @@
   padding: 7px 5px;
   padding-left: -5px;
   box-shadow: 0 0 1px 1px #bdb9b9;
+  /* border: 1px solid magenta; */
 }
-.personalBusiness > div:nth-child(1) {
-  background: linear-gradient(93deg, #53b2fe, #065af3);
-  color: aliceblue;
+.personalBusiness > div{
   font-weight: bolder;
-  padding: 6px 25px;
   border-radius: 25px;
   cursor: pointer;
+  width: 50%;
+  text-align: center;
 }
-.personalBusiness > div:nth-child(2) {
-  padding: 6px 25px;
-  font-weight: bolder;
-  color: rgb(62, 60, 60);
-  cursor: pointer;
+.blackColor{
+  color: black;
+  background-color: white;
+}
+.linearBackground {
+  color: white;
+  background: linear-gradient(93deg, #53b2fe, #065af3);
 }
 
 .login_sign_text {
@@ -157,17 +163,17 @@
 }
 
 .otp_verifytext{
-  font-size: 1.5em;
+  font-size: 1.6em;
   font-weight: bold;
-  color: rgb(34, 34, 34);
+  color: rgb(46, 46, 46);
   margin-bottom: 8px;
 }
 .otp_verifytext_mobile{
   color: rgb(34, 34, 34);
   font-size: 0.8em;
 }
-.otp_verifytext_mobile + div{
-  font-weight: bold;
+.otp_text{
+  font-weight: bolder;
   margin-top: 10px;
   margin-bottom: 12px;
   font-size: 0.9em;
@@ -197,6 +203,8 @@
 }
 
 .otp_mobile_login_button{
+  outline: none;
+  border: none;
   margin-top: 20px;
   width: 100%;
     background-color: rgba(0, 145, 255, 0.879);
@@ -209,12 +217,50 @@
     font-size: 1.2em;
     box-shadow: 0 0 1px 1px #bdb9b9;
     border-radius: 4px;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     cursor: pointer;
 }
-.otp_mobile_login_button + div {
+.colorGrey{
+  background-color: rgb(155, 150, 150);
+  outline: none;
+  border: none;
+  margin-top: 20px;
+  width: 100%;
+    cursor: normal;
+    text-align: center;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    color: aliceblue;
+    font-weight: bolder;
+    font-size: 1.2em;
+    box-shadow: 0 0 1px 1px #bdb9b9;
+    border-radius: 4px;
+    margin-bottom: 25px;
+  opacity: 0.2;
+}
+.otp_login_forgot_text {
   text-align: center;
   color: rgba(0, 145, 255, 0.879);
   font-size: 0.8em;
   font-weight: bold;
+  cursor: pointer;
+}
+/* otp area of mobile end */
+
+/* otp area via email  starts */
+.loginModalEmailOtpContainer{
+  /* border: 1px solid red; */
+  padding: 14px;
+}
+
+.otp_mobile_input > input[type=text]{
+  width: 97%;
+  height: 40px;
+  border: 1px solid rgb(174, 168, 168);
+    box-shadow: 0 0 1px 1px #bdb9b9;
+    border-radius: 1px;
+   padding-left:8px;
+   font-weight: bold;
+   font-size: 0.8em;
 }

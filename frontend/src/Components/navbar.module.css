@@ -61,6 +61,7 @@
     flex-grow: 12;
     justify-content: space-evenly;
     align-items: center;
+    padding-top: 15px;
 }
 
 .iconWrapper>div {

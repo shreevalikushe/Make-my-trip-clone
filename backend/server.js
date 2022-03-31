@@ -5,7 +5,7 @@ const cors = require("cors");
 require("dotenv").config();
 app.use(express.json());
 
-const hotelController = require("./controllers/hotels.controller.js")
+const hotelController = require("./controllers/hotels.controller.js");
 const authRoute = require("./routes/auth");
 const bookedFlightRoute = require("./routes/BookedFlight");
 const bookedHotelRoute = require("./routes/BookedHotel");
@@ -22,7 +22,7 @@ app.use("/bookings", bookedFlightRoute);
 app.use("/bookings", bookedHotelRoute);
 app.use("/flights", flightController);
 
-app.listen(1234, async (req, res) => {
+app.listen(process.env.PORT, async (req, res) => {
   await connect();
-  console.log("Listening on port 1234");
+  console.log(`Listening on port ${process.env.PORT}`);
 });

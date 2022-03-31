@@ -81,19 +81,11 @@ export const SingleFlight = ({
           <b>{arrival_time}</b>
           <p>{arrival}</p>
         </div>
-        <div
-          className={styles.inner_cont}
-          style={{
-            fontSize: "14px",
-            fontWeight: "700",
-            marginTop: "2%",
-            marginRight: "0.5%",
-          }}
-        >
+        <div className={styles.inner_cont}>
           <b>{fare}/-</b>
         </div>
         <Button
-          className={styles.inner_cont}
+          className={styles.buttonBookNow}
           style={{
             maxHeight: "30px",
             marginTop: "1.5%",

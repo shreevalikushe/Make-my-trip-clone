@@ -5,18 +5,26 @@ body {
   width: 90%;
   padding-left: 5%;
   padding-right: 5%;
-  /* border: 1px solid black; */
+  margin-top: 2%;
   display: flex;
   flex-direction: row;
+  margin-bottom: 2%;
 }
 .container {
   width: 70%;
   display: flex;
   flex-direction: column;
 }
+.filterCheck {
+  /* display: block; */
+  display: flex;
+  flex-direction: row;
+  margin: 2%;
+  gap: 1rem;
+}
 .filterDiv {
   background-color: white;
-  width: 23%;
+  width: 20%;
   border-radius: 5px;
   margin-right: 2%;
   padding: 2%;
@@ -80,8 +88,7 @@ body {
 .inner_cont {
   width: 13%;
   margin: 0px;
-  margin-right: 5%;
-
+  margin-right: 4%;
   padding: 0px;
 }
 .discount {
@@ -90,6 +97,15 @@ body {
   font-size: 12px;
   margin: 0px;
   text-align: center;
+}
+.buttonBookNow {
+  width: 13%;
+  margin: 0px;
+  margin-right: 5%;
+  padding: 0px;
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 2%;
 }
 .details {
   padding: 1%;
@@ -104,7 +120,42 @@ body {
   margin: 10% 0% 0% 0%;
   /* height: 2px; */
 }
-@media only screen and (max-width: 1350px) {
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .box {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .filterDiv {
+    display: none;
+  }
+  .container {
+    width: 98%;
+    font-size: 10px;
+  }
+  .maincontainer {
+    padding: 2%;
+    margin: 1%;
+    width: 90%;
+  }
+  .guidelineText {
+    font-size: 6px;
+  }
+  .buttonBookNow {
+    width: 10%;
+    margin-left: 5%;
+    padding: 0px;
+    font-size: 8px;
+    font-weight: 700;
+    margin-top: 2%;
+    margin-right: 0.5%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
   .guidelineText {
     padding: 0px;
     font-size: 8px;
