@@ -63,17 +63,16 @@ const FlightHome = () => {
           <div className={styles.fromToConnecting}>
             <div className={styles.fromTo}>
               <div className={styles.from}>
-                <FormControl>
+                <FormControl sx= {{ width: "100%" }}>
                   <InputLabel
-                    fullWidth
-                    sx={{ width: 250 }}
+                    sx={{ width: "100%" }}
                     id="demo-simple-select-label"
                   >
                     From
                   </InputLabel>
                   <Select
                     fullWidth
-                    sx={{ width: 200 }}
+                    sx={{ width: "100%" }}
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
                     value={from}
@@ -91,17 +90,17 @@ const FlightHome = () => {
                 <ConnectingAirportsIcon fontSize="large" color="grey" />
               </div>
               <div className={styles.to}>
-                <FormControl>
+                <FormControl  sx={{  width: "100%" }}>
                   <InputLabel
                     fullWidth
-                    sx={{ width: 250 }}
+                    sx={{  width: "100%" }}
                     id="demo-simple-select-label"
                   >
                     To
                   </InputLabel>
                   <Select
-                    fullWidth
-                    sx={{ width: 250 }}
+                    
+                    sx={{  width: "100%" }}
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
                     value={to}
@@ -121,13 +120,14 @@ const FlightHome = () => {
           {/* departure and return date start */}
           <div className={styles.DepRetContainer}>
             {/* departure date starts */}
-            <div>
+            <div style={{ width:"100%"}}>
+            < FormControl sx={{width:"100%"}}>
+           
               <LocalizationProvider
-                styles={{ height: "100px" }}
+               sx={{width:"100%"}}
                 dateAdapter={AdapterDateFns}
               >
                 <DatePicker
-                  styles={{ height: "100px" }}
                   label="Departure"
                   value={departure}
                   onChange={(newValue) => {
@@ -136,6 +136,7 @@ const FlightHome = () => {
                   renderInput={(params) => <TextField {...params} />}
                 />
               </LocalizationProvider>
+              </FormControl>
             </div>
             {/* departure date end */}
 
