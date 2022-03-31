@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import { NavigateBefore, NavigateNext } from '@mui/icons-material';
 import "../CSS/SimpleCaro.css"
+import { ListenerContext } from '../Contexts/ListenerProvider';
 
 export const SimpleSlider = () => {
 
@@ -34,12 +35,14 @@ export const SimpleSlider = () => {
         }
     ]
 
+    const { width } = useContext(ListenerContext);
+
     const properties = {
         // duration: 20000,
         transitionDuration: 500,
         canSwipe: false,
         autoPlay: false,
-        slidesToShow: 3,
+        slidesToShow: width > 1024 ? 3 : width < 575 ? 1 : 2,
         slidesToScroll: 1,
         prevArrow: <div className='simple-left-arrow arrows'>
             <NavigateBefore style={{ color: '#008cff', fontSize: 30 }} />

@@ -1,13 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const { body, validationResult } = require('express-validator');
-const AllBookedFlights = require("../models/AllBookedFlights");
+const AllBookedHotels = require("../models/AllBookedHotels");
 const fetchUser = require("../middleware/fetchUser");
 
-// ROUTE 1: For Get flights, Login required
-router.get('/flights', fetchUser, async (req, res) => {
+// ROUTE 1: For Get hotels, Login required
+router.get('/hotels', fetchUser, async (req, res) => {
     try {
-        const bookings = await AllBookedFlights.find({ user: req.user.id })
+        const bookings = await AllBookedHotels.find({ user: req.user.id })
         res.json(bookings);
 
     } catch (error) {
@@ -16,11 +16,11 @@ router.get('/flights', fetchUser, async (req, res) => {
     }
 })
 
-// ROUTE 2: For Post flights, Login required
-router.post('/flights', fetchUser, async (req, res) => {
+// ROUTE 2: For Post hotels, Login required
+router.post('/hotels', fetchUser, async (req, res) => {
     try {
 
-        const bookings = await AllBookedFlights.create({ ...req.body, user: req.user.id });
+        const bookings = await AllBookedHotels.create({ ...req.body, user: req.user.id });
         res.json(bookings);
 
     } catch (error) {

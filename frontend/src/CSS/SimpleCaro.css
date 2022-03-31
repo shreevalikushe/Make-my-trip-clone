@@ -62,3 +62,30 @@
 .simple-right-arrow:hover {
     cursor: pointer;
 }
+
+@media (min-width:575px) and (max-width:767px) {
+    .simple-ind-slide img {
+        width: 20%;
+        height: 70%;
+    }
+    
+    .simpleCardContent {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width:574px) {
+    .simple-ind-slide img {
+        width: 20%;
+        height: 70%;
+        margin-right: 10px;
+    }
+    
+    .simpleCardContent {
+        font-size: 14px;
+    }
+
+    .each-simple-slide>div{
+        height: 20vh;
+    }
+}

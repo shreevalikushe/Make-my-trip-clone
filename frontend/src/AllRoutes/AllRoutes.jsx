@@ -4,6 +4,7 @@ import { FlightBooking } from "../features/flightBookingComponents/FlightBooking
 import { Flight } from "../features/flightComponents/Flight";
 import { FlightPayment } from "../features/FlightPayment/FlightPayment";
 import { Home } from "../features/Home/Home";
+import { Hotel } from "../features/Hotel/Hotel";
 import { Profile } from "../features/Profile/Profile";
 import { Trips } from "../features/Trips/Trips";
 export const AllRoutes = () => {
@@ -15,6 +16,7 @@ export const AllRoutes = () => {
       <Route path="/flightpayment/:price" element={<FlightPayment />} />
       <Route path="/myprofile" element={<Profile />} />
       <Route path="/mytrips" element={<Trips />} />
+      <Route path="/hotel" element={<Hotel />} />
     </Routes>
   );
 };
