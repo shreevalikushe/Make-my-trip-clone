@@ -18,10 +18,10 @@
     background-color: var(--color-btn-primary-text);
     padding: 30px 50px 25px 50px;
     border-radius: 10px;
+    box-sizing: border-box;
 }
 
 .each-slide>div {
-    height: 30vh;
     padding: 10px;
     margin: 20px 10px 5px 10px;
     border-radius: 7px;
@@ -161,4 +161,58 @@
 
 .knowMore p:hover {
     cursor: pointer;
+}
+
+@media (min-width:768px) and (max-width:1023px) {
+    .contentSection {
+       width: 100%;
+    }
+}
+
+@media (min-width:575px) and (max-width:767px) {
+    .contentSection {
+       width: 100%;
+    }
+
+    .offerCardTitle {
+        font-size: 10px;
+    }
+    
+    .offerCardSubTitle {
+        font-size: 15px;
+    }
+    
+    .offerCardOffers {
+        font-size: 12px;
+    }
+    
+    .knowMore p {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width:574px) {
+    .contentSection {
+       width: 100%;
+    }
+
+    .sliderContainer {
+        padding: 30px 10px 25px 10px;
+    }
+
+    .offerCardTitle {
+        font-size: 10px;
+    }
+    
+    .offerCardSubTitle {
+        font-size: 15px;
+    }
+    
+    .offerCardOffers {
+        font-size: 12px;
+    }
+    
+    .knowMore p {
+        font-size: 12px;
+    }
 }

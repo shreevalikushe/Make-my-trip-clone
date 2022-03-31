@@ -6,13 +6,16 @@ import { store } from "./app/store";
 import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
+import { ListenerProvider } from "./Contexts/ListenerProvider";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Provider store={store}>
-        <App />
-      </Provider>
+      <ListenerProvider>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </ListenerProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")

@@ -1,22 +1,23 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import { NavigateBefore, NavigateNext } from '@mui/icons-material';
 import "../CSS/CarousalUI.css";
 import { slider0, slider1, slider2 } from '../CarouselData';
+import { ListenerContext } from '../Contexts/ListenerProvider';
 
 export const CarousalUI = () => {
 
     const [offers, setOffers] = useState(0)
-
-
+    const { width } = useContext(ListenerContext)
+    console.log(width)
     const properties = {
         duration: 20000,
         transitionDuration: 500,
         canSwipe: false,
         autoPlay: false,
-        slidesToShow: 2,
-        slidesToScroll: 2,
+        slidesToShow: width < 1024 ? 1 : 2,
+        slidesToScroll: width < 1024 ? 1 : 2,
         prevArrow: <div className='left-arrow arrows'>
             <NavigateBefore style={{ color: '#008cff', fontSize: 30 }} />
         </div>,

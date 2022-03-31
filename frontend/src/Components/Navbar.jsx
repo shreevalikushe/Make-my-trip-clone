@@ -125,7 +125,7 @@ const Navbar = ({ isUserLoggedIn }) => {
             </div>
 
             {/* login container */}
-            {!isUserLoggedIn ?
+            {isUserLoggedIn ?
               <div className={styles.loginContainer}>
                 <Login />
               </div>

@@ -1,13 +1,12 @@
-.container{
-
-   height: 600px; 
+.container{ 
    display: flex;
    flex-direction: column;
    background-color: #e7e7e7;
     align-items: center;
     /* text-align: center; */
     justify-content: center;
-   
+    box-sizing: border-box;
+    padding: 0px 50px 50px 50px;
 }
 
 .hr{
@@ -29,6 +28,7 @@
 .botom{
    display: flex;
    gap: 50px;
+   padding: 0px 50px;
    /* margin-left: 180px; */
   
 }
@@ -42,4 +42,25 @@
 .right p{
    font-size: 14px;
    margin-top: 20px;
+}
+
+@media (min-width:768px) and (max-width:1250px) {
+   .container{
+      padding: 0px 0px 50px 0px;
+   }
+}
+
+@media only screen and (max-width:767px) {
+   .container{
+      width: 100%;
+      padding: 0px 0px 50px 0px;
+   }
+
+   .top{
+      padding: 0px 20px 0px 20px;
+   }
+
+   .bottom{
+      padding: 0px 20px 0px 20px;
+   }
 }
