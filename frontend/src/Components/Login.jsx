@@ -21,7 +21,7 @@ export default function FormDialog() {
   };
 
   const handleBackInLoginEmail = () => {
-   setLoginModalOtp(!loginModalOtp);
+    setLoginModalOtp(!loginModalOtp);
     setLoginModalEmailOtp(!loginModalEmailOtp);
   };
 
@@ -30,11 +30,10 @@ export default function FormDialog() {
     setLoginModal(!loginModal);
   };
 
-  const handleBacktoHomePagefromEmailotp = () =>{
+  const handleBacktoHomePagefromEmailotp = () => {
     setLoginModal(!loginModal);
     setLoginModalEmailOtp(!loginModalEmailOtp);
-
-  }
+  };
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -44,13 +43,11 @@ export default function FormDialog() {
     setOpen(false);
   };
   const dialogCss = {
-    position: "fixed",
     width: "40%",
-    top: "6%",
-    right: "50%",
-    left: "20%",
+
     height: 550,
     minWidth: "350px",
+    margin: "auto",
   };
 
   return (
@@ -58,7 +55,7 @@ export default function FormDialog() {
       <div className={styles.btn}>
         <Button onClick={handleClickOpen}>Login or create account</Button>
       </div>
-     <Dialog  PaperProps={{ sx: dialogCss }} open={open} onClose={handleClose}>
+      <Dialog PaperProps={{ sx: dialogCss }} open={open} onClose={handleClose}>
         <DialogContent>
           {!loginModalOtp && !loginModalEmailOtp && (
             <div className={styles.personalBusiness}>
@@ -103,9 +100,7 @@ export default function FormDialog() {
                 >
                   CONTINUE
                 </div>
-                <div className={styles.loginsignup_text}>
-                   LOGIN
-                </div>
+                <div className={styles.loginsignup_text}>LOGIN</div>
                 <div className={styles.google_login_container}>
                   <img
                     src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"

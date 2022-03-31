@@ -8,6 +8,7 @@ import {
     VisibilityOff
 } from '@mui/icons-material';
 import { Modal } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 export const Profile = () => {
 
@@ -35,17 +36,19 @@ export const Profile = () => {
                     <p className="userTag">PERSONAL PROFILE</p>
                 </div>
                 <div className='profileTabs'>
-                    <div className='indProfileTab'>
-                        <PersonOutlineOutlined style={{ fontSize: 25, color: '#4a4a4a' }} />
-                        <p>Profile</p>
-                    </div>
+                    <a href="#profile2">
+                        <div className='indProfileTab' >
+                            <PersonOutlineOutlined style={{ fontSize: 25, color: '#4a4a4a' }} />
+                            <p>Profile</p>
+                        </div>
+                    </a>
                     <div className='indProfileTab'>
                         <ExitToAppOutlined style={{ fontSize: 25, color: '#4a4a4a' }} />
                         <p>Logout</p>
                     </div>
                 </div>
             </div>
-            <div className='profile2Container'>
+            <div className='profile2Container' id='profile2'>
                 <div className='profileContentView'>
                     <div className='profileContent'>
                         <p className='profileContentTitle'>Profile</p>

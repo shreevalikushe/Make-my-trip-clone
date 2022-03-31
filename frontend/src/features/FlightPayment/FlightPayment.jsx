@@ -9,6 +9,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import styles from "./flightpayment.module.css";
 import payment from "../../imgs/payment.png";
 import { useState } from "react";
+import { Alert } from "@mui/material";
 
 export const FlightPayment = () => {
   const [select1, setSelect1] = useState(true);
@@ -28,16 +29,17 @@ export const FlightPayment = () => {
     setSelect5(false);
     setSelect6(false);
   };
+  const [wrong, setWrong] = useState(false);
   let check = "shreevali@ybl";
   const handlePayment = () => {
     if (UPI === check) {
+      setWrong(false);
       navigate("/");
     } else {
       setUPI("");
-      alert("Enter Valid UPI ID");
+      setWrong(true);
     }
   };
-  // flight payment page
   return (
     <div className={styles.mntBox}>
       <div className={styles.main_heading_choosing_payment}>
@@ -133,6 +135,11 @@ export const FlightPayment = () => {
                 type="text"
                 className={styles.capche_input}
               ></input>
+              {wrong && (
+                <Alert severity="error">
+                  There is an error-kindly fill in correct UPI Id{" "}
+                </Alert>
+              )}
               <button onClick={handlePayment} className={styles.payPlease}>
                 <p>VERIFY AND PAY</p>
               </button>

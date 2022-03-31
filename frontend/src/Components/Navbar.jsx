@@ -13,13 +13,18 @@ import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import Login from "./Login";
+import {
+  WorkOutlineOutlined,
+  PersonOutlineOutlined,
+} from "@mui/icons-material";
 
-const Navbar = () => {
+const Navbar = ({ isUserLoggedIn }) => {
   const [open, setOpen] = useState(false);
+  const [openProfile, setOpenProfile] = useState(false);
   const navigate = useNavigate();
   const handleClickFlight = () => navigate("/flights");
   const handleClickHotels = () => navigate("/hotels");
-
+  console.log("user is logged in? ", isUserLoggedIn);
   return (
     <>
       <nav className={styles.navbarWrapper}>
@@ -58,81 +63,119 @@ const Navbar = () => {
             {/* icons container */}
             <div className={styles.iconWrapper}>
               <div onClick={handleClickFlight}>
-                
+                <span>
                   <FlightIcon
                     className={styles.flightICON}
                     style={{ fontSize: 30, padding: 4 }}
                   ></FlightIcon>
-                
-                <p style={{ marginTop: "0px"   }}>Flights</p>
+                </span>
+                <p style={{ marginTop: "0px" }}>Flights</p>
               </div>
               <div onClick={handleClickHotels}>
-               
+                <span>
                   <HotelIcon style={{ fontSize: 30, padding: 4 }}></HotelIcon>
-              
+                </span>
                 <p style={{ marginTop: "0px" }}>Hotels</p>
               </div>
               <div>
-              
+                <span>
                   <HomeWorkIcon
                     style={{ fontSize: 30, padding: 4 }}
                   ></HomeWorkIcon>
-               
+                </span>
                 <p style={{ marginTop: "0px" }}>Homestays</p>
               </div>
 
               <div>
-              
+                <span>
                   <TrainIcon style={{ fontSize: 30, padding: 4 }}></TrainIcon>
-                
+                </span>
                 <p style={{ marginTop: "0px" }}>Trains</p>
               </div>
               <div>
-              
+                <span>
                   <DirectionsBusFilledIcon
                     style={{ fontSize: 30, padding: 4 }}
                   ></DirectionsBusFilledIcon>
-                
+                </span>
                 <p style={{ marginTop: "0px" }}>Buses</p>
               </div>
               <div>
-                
+                <span>
                   <LocalTaxiIcon
                     style={{ fontSize: 30, padding: 4 }}
                   ></LocalTaxiIcon>
-              
+                </span>
                 <p style={{ marginTop: "0px" }}>Cabs</p>
               </div>
               <div>
-              
+                <span>
                   <CreditCardIcon
                     style={{ fontSize: 30, padding: 4 }}
                   ></CreditCardIcon>
-            
+                </span>
                 <p style={{ marginTop: "0px" }}>Visa</p>
               </div>
               <div>
-             
+                <span>
                   <FlightTakeoffIcon
                     style={{ fontSize: 30, padding: 4 }}
                   ></FlightTakeoffIcon>
-               
+                </span>
                 <p style={{ marginTop: "0px" }}>Charter flights</p>
               </div>
               <div>
-                
+                <span>
                   <DownhillSkiingIcon
                     style={{ fontSize: 30, padding: 4 }}
                   ></DownhillSkiingIcon>
-              
+                </span>
                 <p style={{ marginTop: "0px" }}>Activities</p>
               </div>
             </div>
 
             {/* login container */}
-            <div className={styles.loginContainer}>
-              <Login />
-            </div>
+            {isUserLoggedIn ? (
+              <div className={styles.loginContainer}>
+                <Login />
+              </div>
+            ) : (
+              <div className={styles.loginContainer}>
+                <div
+                  className={styles.userContainer}
+                  onClick={() => setOpenProfile(!openProfile)}
+                >
+                  <div className={styles.user}>
+                    <p>S</p>
+                  </div>
+                  <p>Hi shubham</p>
+                  {openProfile && (
+                    <div className={styles.profileModal}>
+                      <div className={styles.profileModalTab}>
+                        <div
+                          className={styles.indProfileModalTab}
+                          onClick={() => navigate("/myprofile")}
+                        >
+                          <PersonOutlineOutlined
+                            style={{ fontSize: 25, color: "#e4e4e4" }}
+                          />
+                          <p>My Profile</p>
+                        </div>
+                        <div
+                          className={styles.indProfileModalTab}
+                          onClick={() => navigate("/mytrips")}
+                        >
+                          <WorkOutlineOutlined
+                            style={{ fontSize: 25, color: "#e4e4e4" }}
+                          />
+                          <p>My Trips</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </nav>
