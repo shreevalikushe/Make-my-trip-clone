@@ -58,73 +58,73 @@ const Navbar = () => {
             {/* icons container */}
             <div className={styles.iconWrapper}>
               <div onClick={handleClickFlight}>
-                <span>
+                
                   <FlightIcon
                     className={styles.flightICON}
                     style={{ fontSize: 30, padding: 4 }}
                   ></FlightIcon>
-                </span>
-                <p style={{ marginTop: "0px" }}>Flights</p>
+                
+                <p style={{ marginTop: "0px"   }}>Flights</p>
               </div>
               <div onClick={handleClickHotels}>
-                <span>
+               
                   <HotelIcon style={{ fontSize: 30, padding: 4 }}></HotelIcon>
-                </span>
+              
                 <p style={{ marginTop: "0px" }}>Hotels</p>
               </div>
               <div>
-                <span>
+              
                   <HomeWorkIcon
                     style={{ fontSize: 30, padding: 4 }}
                   ></HomeWorkIcon>
-                </span>
+               
                 <p style={{ marginTop: "0px" }}>Homestays</p>
               </div>
 
               <div>
-                <span>
+              
                   <TrainIcon style={{ fontSize: 30, padding: 4 }}></TrainIcon>
-                </span>
+                
                 <p style={{ marginTop: "0px" }}>Trains</p>
               </div>
               <div>
-                <span>
+              
                   <DirectionsBusFilledIcon
                     style={{ fontSize: 30, padding: 4 }}
                   ></DirectionsBusFilledIcon>
-                </span>
+                
                 <p style={{ marginTop: "0px" }}>Buses</p>
               </div>
               <div>
-                <span>
+                
                   <LocalTaxiIcon
                     style={{ fontSize: 30, padding: 4 }}
                   ></LocalTaxiIcon>
-                </span>
+              
                 <p style={{ marginTop: "0px" }}>Cabs</p>
               </div>
               <div>
-                <span>
+              
                   <CreditCardIcon
                     style={{ fontSize: 30, padding: 4 }}
                   ></CreditCardIcon>
-                </span>
+            
                 <p style={{ marginTop: "0px" }}>Visa</p>
               </div>
               <div>
-                <span>
+             
                   <FlightTakeoffIcon
                     style={{ fontSize: 30, padding: 4 }}
                   ></FlightTakeoffIcon>
-                </span>
+               
                 <p style={{ marginTop: "0px" }}>Charter flights</p>
               </div>
               <div>
-                <span>
+                
                   <DownhillSkiingIcon
                     style={{ fontSize: 30, padding: 4 }}
                   ></DownhillSkiingIcon>
-                </span>
+              
                 <p style={{ marginTop: "0px" }}>Activities</p>
               </div>
             </div>

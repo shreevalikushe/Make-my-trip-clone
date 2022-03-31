@@ -56,6 +56,7 @@
     flex-grow: 12;
     justify-content: space-evenly;
     align-items: center;
+    padding-top: 15px;
 }
 .iconWrapper > div{
     display: grid;
@@ -64,9 +65,6 @@
     cursor: pointer;
 }
 
-.iconWrapper > div> span :hover{
-    border: #3339e9;
-}
 .iconWrapper > div > p  {
     font-size: 0.8em;
 }
