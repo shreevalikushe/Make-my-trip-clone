@@ -3,27 +3,115 @@
     height: 190px;
     width: 100%;
     background-color: rgb(207, 239, 255);
-  
     padding: 3px 0px 10px;
 
 }
+.small_container{
 
-.topdiv{
-    margin: 0px 0px 0px 120px;
+    width: 77%;
+    margin: auto;
 }
+
 
 .topdiv p{
     
     display: flex;
     align-items: center;
+    font-size: 14px;
 }
 .topdiv p span{
 
     color: #008CFF;
     font-weight: bold;
+    font-size: 14px;
 }
 .gretericon{
     font-size: 15px;
     margin-left: 5px;
     padding: 2px;
+    color: grey;
+}
+
+
+/* second  middle */
+
+.titleMapDiv{
+
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0px 0px;
+
+}
+
+.titleMapDiv p{
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 55px;
+}
+
+.map_img{
+
+    margin: -10px 0px 0px;
+    border-radius: 6px;
+   height: 100px;
+}
+
+
+
+/* botom div */
+
+.searchDiv{
+
+    /* margin: 10px 0px 0px; */
+   margin-top: -30px;
+   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: -10px;
+
+}
+.leftdiv{
+    display: flex;
+    align-items: center;
+}
+
+.leftdiv_popularity{
+    display: flex;
+    gap: 3px;
+    align-items: center;
+}
+.inside_Droup_down_hover:hover{
+    color: #008CFF;
+}
+.find_location_div{
+
+    display: flex;
+    align-items: center;
+    background-color: #ffff;
+    border-radius: 4px;
+    height: 40px;
+    padding: 0px 0px 0px 30px;
+    box-sizing: border-box;
+    gap: 10px;
+    margin-bottom: 17px;
+    margin-top: -3px;
+}
+
+
+
+.find_location_div input{
+        
+    border: none;
+    width: 237px;
+    border-radius: 4px;
+    outline: none;
+}
+.find_location_div
+input,
+input::-webkit-input-placeholder {
+    font-size: 13px;
+    line-height: 3;
+    color: gray;
+    font-weight:600;
 }
