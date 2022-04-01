@@ -11,7 +11,7 @@ const client = require("twilio")(
   process.env.AUTH_TOKEN
 );
 
-// ROUTE 1: For Register a user
+// ROUTE 1: For Register a users
 router.post(
   "/register",
   [
@@ -53,8 +53,6 @@ router.post(
 
       const authToken = jwt.sign(data, process.env.JWT_SECRET_KEY);
       res.json({ status: 200, authToken });
-
-      res.json(user);
     } catch (error) {
       console.log(error.message);
       res.status(500).json("Internal Server Error");
@@ -114,10 +112,10 @@ router.get("/getuser", fetchUser, async (req, res) => {
   try {
     const userId = req.user.id;
     const user = await User.findById(userId).select("-password");
-    res.json({ status: 200, user });
+    res.send({ status: 200, user });
   } catch (error) {
-    console.log(error.message);
-    res.status(500).send("Internal Server Error");
+    // console.log(error.message);
+    res.send("Internal Server Error");
   }
 });
 
