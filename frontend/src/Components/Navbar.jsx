@@ -17,14 +17,16 @@ import {
   WorkOutlineOutlined,
   PersonOutlineOutlined
 } from '@mui/icons-material';
+import { getValue } from "../Utils/LocalStorage";
 
-const Navbar = ({ isUserLoggedIn }) => {
+const Navbar = ({ isUserLoggedIn, user }) => {
   const [open, setOpen] = useState(false);
   const [openProfile, setOpenProfile] = useState(false);
   const navigate = useNavigate();
   const handleClickFlight = () => navigate('/flights');
   const handleClickHotels = () => navigate('/hotels');
   console.log("user is logged in? ", isUserLoggedIn)
+  console.log("user name", user)
   return (
     <>
       <nav className={styles.navbarWrapper}>
@@ -137,9 +139,9 @@ const Navbar = ({ isUserLoggedIn }) => {
               <div className={styles.loginContainer}>
                 <div className={styles.userContainer} onClick={() => setOpenProfile(!openProfile)}>
                   <div className={styles.user}>
-                    <p>S</p>
+                    <p>{user ? user.split("")[0] : ""}</p>
                   </div>
-                  <p>Hi shubham</p>
+                  <p>Hi {user ? user.split(" ")[0] : ""}</p>
                   {openProfile &&
                     <div className={styles.profileModal}>
                       <div className={styles.profileModalTab}>

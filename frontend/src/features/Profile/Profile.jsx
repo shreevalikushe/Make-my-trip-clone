@@ -4,13 +4,11 @@ import {
     PersonOutlineOutlined,
     ExitToAppOutlined,
     ModeEditOutlineOutlined,
-    RemoveRedEye,
-    VisibilityOff
 } from '@mui/icons-material';
 import { Modal } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from "react-redux";
-import { logout } from '../../features/auth/auth.actions'
+import { getUserName, logout } from '../../features/auth/auth.actions'
 import { getValue } from '../../Utils/LocalStorage';
 
 export const Profile = () => {
@@ -25,6 +23,15 @@ export const Profile = () => {
     const [show, setShow] = useState(false)
     const [open, setOpen] = useState(false)
     const [user, setUser] = useState({})
+    const [credentials, setCredentials] = useState({
+        name: "",
+        mobile_number: "",
+        email: ""
+    })
+
+    const onChange = (e) => {
+        setCredentials({ ...credentials, [e.target.name]: e.target.value })
+    }
 
     let pass = "Shubham@1234"
     let securePass = ""
@@ -60,12 +67,48 @@ export const Profile = () => {
         }
     }
 
-    console.log(user)
+    const handleEdit = async () => {
+        if (credentials.name.length === 0 && credentials.mobile_number.length === 0 &&
+            credentials.email.length === 0) {
+            return
+        }
+        try {
+            const authToken = getValue('userToken')
+            const data = {
+                "name": credentials.name,
+                "mobile_number": Number(credentials.mobile_number),
+                "email": credentials.email,
+            }
+            console.log(data)
+            const response = await fetch('http://localhost:1234/auth/edituser', {
+                method: 'PUT',
+                mode: 'cors',
+                cache: 'no-cache',
+                headers: {
+                    "authToken": `${authToken}`,
+                    'content-type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            const json = await response.json();
+            console.log(json);
+
+            if (json.status === 200) {
+                setOpen(false);
+                dispatch(getUserName(credentials.name))
+                getProfile()
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+
     return (
         <div className='myProfileContainer'>
             <div className='profileContainer'>
                 <div className='profilePicView'>
-                    <p>{user.name[0]}</p>
+                    <p>{user.name ? user.name.split("")[0] : ""}</p>
                 </div>
                 <div className='userTitleSection'>
                     <p className="userTitle">{user.name}</p>
@@ -110,28 +153,6 @@ export const Profile = () => {
                         <p className='indProfileContentTitle'>EMAIL ID</p>
                         <p className='indProfileContentValue'>{user.email}</p>
                     </div>
-                    <div className="profileContentDivider" />
-                    <div className='indProfilePasswordSection'>
-                        <div className='indProfileContent'>
-                            <p className='indProfileContentTitle'>PASSWORD</p>
-                            {show ?
-                                <p className='indProfileContentValue'>{pass}</p>
-                                :
-                                <p className='indProfileContentValue'>{securePass}</p>
-                            }
-                        </div>
-                        <div>
-                            {show ?
-                                <div onClick={() => setShow(!show)} className="visibilityIcon">
-                                    <VisibilityOff style={{ fontSize: 20, color: '#53b2fe' }} />
-                                </div>
-                                :
-                                <div onClick={() => setShow(!show)} className="visibilityIcon">
-                                    <RemoveRedEye style={{ fontSize: 20, color: '#53b2fe' }} />
-                                </div>
-                            }
-                        </div>
-                    </div>
                 </div>
             </div>
             <Modal
@@ -145,22 +166,25 @@ export const Profile = () => {
                         <div className='modalInputs'>
                             <div className='modalIndInput'>
                                 <label htmlFor="name" className='modalInputLabels'>Full Name</label>
-                                <input type="text" id='name' className='profileEditInput' />
+                                <input type="text" id='name' className='profileEditInput'
+                                    name="name" onChange={onChange} value={credentials.name} />
                             </div>
                             <div className='modalIndInput'>
                                 <label htmlFor="name" className='modalInputLabels'>Mobile Number</label>
-                                <input type="number" id='mobile_number' className='profileEditInput' />
+                                <input type="number" id='mobile_number'
+                                    className='profileEditInput' name="mobile_number" onChange={onChange} value={credentials.mobile_number} />
                             </div>
                             <div className='modalIndInput'>
-                                <label htmlFor="name" className='modalInputLabels'>Email Id</label>
-                                <input type="text" id='email' className='profileEditInput' />
+                                <label htmlFor="name" className='modalInputLabels' name="name">Email Id</label>
+                                <input type="text" id='email'
+                                    className='profileEditInput' name="email" onChange={onChange} value={credentials.email} />
                             </div>
                         </div>
                         <div className='modalBtns'>
                             <div className='modalCancelBtn' onClick={() => setOpen(false)}>
                                 <p className='modalCancel'>Cancel</p>
                             </div>
-                            <div className='modalSaveBtn'>
+                            <div className='modalSaveBtn' onClick={() => handleEdit()}>
                                 <p className='modalSave'>SAVE</p>
                             </div>
                         </div>

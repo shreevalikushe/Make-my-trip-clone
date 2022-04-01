@@ -1,4 +1,4 @@
-import { USER_LOGIN_ERROR, USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS, USER_LOGOUT, USER_SIGN_UP } from "./auth.actionTypes";
+import { USER_LOGIN_ERROR, USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS, USER_LOGOUT, USER_SIGN_UP, USER_NAME } from "./auth.actionTypes";
 import { updateValue } from "../../Utils/LocalStorage"
 import { initialState } from "./auth.constants";
 
@@ -33,6 +33,7 @@ export const authReducer = (state = initialState, { type, payload }) => {
         }
         case USER_LOGOUT: {
             updateValue("userToken", "")
+            updateValue("userName", "")
             return {
                 ...state.auth,
                 isUserLoggedIn: false,
@@ -46,6 +47,17 @@ export const authReducer = (state = initialState, { type, payload }) => {
                 isUserLoggedIn: true,
                 isLoading: false,
                 error: false,
+            }
+        }
+        case USER_NAME: {
+            updateValue("userName", payload)
+            return {
+                ...state.auth,
+                isUserLoggedIn: true,
+                isLoading: false,
+                error: false,
+                userName: payload,
+                ...payload
             }
         }
         default: {

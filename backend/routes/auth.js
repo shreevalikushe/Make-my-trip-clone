@@ -177,7 +177,7 @@ router.post('/otpverify', [
                 }
 
                 const authToken = jwt.sign(data, process.env.JWT_SECRET_KEY);
-                res.json({ authToken })
+                res.json({ status: 200, authToken })
             })
     } catch (error) {
         console.log(error.message);
@@ -186,12 +186,12 @@ router.post('/otpverify', [
 })
 
 // ROUTE 6: For Edit user details, Login required
-router.patch('/edituser', fetchUser, async (req, res) => {
+router.put('/edituser', fetchUser, async (req, res) => {
     try {
         const user = await User.findByIdAndUpdate(req.user.id, req.body, {
             new: true
         });
-        res.status(200).json(user);
+        res.status(200).json({ status: 200, user }).select("-password");
     } catch (error) {
         console.log(error);
         res.status(500).json("Internal Server Error");

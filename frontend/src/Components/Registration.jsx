@@ -5,7 +5,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import { updateValue } from "../Utils/LocalStorage";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { signUp } from "../features/auth/auth.actions";
+import { getUserName, signUp } from "../features/auth/auth.actions";
 
 const Registration = () => {
 
@@ -44,6 +44,7 @@ const Registration = () => {
       if (json.status === 200) {
         navigate("/")
         dispatch(signUp(json))
+        dispatch(getUserName(credentials.name))
       }
     } catch (error) {
       console.log(error)

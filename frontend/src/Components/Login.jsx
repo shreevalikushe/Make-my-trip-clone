@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import {
+  getUserName,
   loginError,
   loginRequest,
   loginSuccess,
@@ -10,12 +11,14 @@ import {
 import styles from "./login.module.css";
 import Registration from "./Registration";
 import { useDispatch } from "react-redux";
+import { getValue } from "../Utils/LocalStorage";
+import { Navigate } from "react-router-dom";
+import { ListenerContext } from "../Contexts/ListenerProvider";
 
 export default function FormDialog() {
 
   const dispatch = useDispatch();
 
-  const [open, setOpen] = React.useState(false);
   const [loginModal, setLoginModal] = useState(true);
   const [registrationModal, setRegistrationModal] = useState(false);
   const [loginModalOtp, setLoginModalOtp] = useState(false);
@@ -24,14 +27,13 @@ export default function FormDialog() {
   const [loginPassword, setLoginPassword] = useState("");
   const [mobile, setMobile] = useState("")
   const [error, setError] = useState(false)
-
+  const { open, setOpen } = useContext(ListenerContext)
   const handleContinueRegistration = async () => {
     if (mobile.length !== 10) {
       setError(true)
       return
     }
 
-    console.log(mobile)
     try {
       const response = await fetch('http://localhost:1234/auth/otplogin', {
         method: 'POST',
@@ -54,6 +56,33 @@ export default function FormDialog() {
       console.log(error)
     }
   };
+
+  const handleOtp = async () => {
+    console.log("verifyOtp")
+    if (loginOtpNumberChecker.length !== 4) {
+      return
+    }
+    try {
+      const response = await fetch(`http://localhost:1234/auth/otpverify?mobile_number=${mobile}`, {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          "code": Number(loginOtpNumberChecker)
+        }),
+      })
+      const json = await response.json();
+      console.log(json);
+      if (json.status === 200) {
+        dispatch(loginSuccess(json))
+        getProfile()
+        setOpen(false);
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   const handleBackInLoginEmail = () => {
     setLoginModalOtp(!loginModalOtp);
@@ -105,7 +134,7 @@ export default function FormDialog() {
       console.log(json);
       if (json.status === 200) {
         dispatch(loginSuccess(json))
-        setOpen(false)
+        getProfile()
       } else {
         dispatch(loginError(json.error))
       }
@@ -113,6 +142,26 @@ export default function FormDialog() {
     } catch (error) {
       console.log(error)
       dispatch(loginError(error))
+    }
+  }
+
+  const getProfile = async () => {
+    try {
+      const authToken = getValue('userToken')
+      const response = await fetch('http://localhost:1234/auth/getuser', {
+        method: 'GET',
+        headers: {
+          'authToken': `${authToken}`,
+          'content-type': 'application/json',
+        }
+      })
+      const json = await response.json();
+      if (json.status === 200) {
+        dispatch(getUserName(json.user.name))
+        setOpen(false)
+      }
+    } catch (error) {
+      console.log(error)
     }
   }
 
@@ -226,6 +275,7 @@ export default function FormDialog() {
                       ? styles.otp_mobile_login_button
                       : styles.colorGrey
                   }
+                  onClick={() => handleOtp()}
                 >
                   Login
                 </button>

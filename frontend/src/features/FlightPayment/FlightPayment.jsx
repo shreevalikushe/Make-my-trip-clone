@@ -10,8 +10,20 @@ import styles from "./flightpayment.module.css";
 import payment from "../../imgs/payment.png";
 import { useState } from "react";
 import { Alert } from "@mui/material";
+import { useSelector } from "react-redux";
+import { getValue } from "../../Utils/LocalStorage";
 
 export const FlightPayment = () => {
+  const { loading, error, flight } = useSelector((state) => ({
+    loading: state.flightBooking.loading,
+    flight: state.flightBooking.flightBooking,
+    error: state.flightBooking.error,
+  }));
+  const { hotelLoading, hotelError, hotel } = useSelector((state) => ({
+    hotelLoading: state.hotelBooking.hotelLoading,
+    hotel: state.hotelBooking.hotelBooking,
+    hotelError: state.hotelBooking.hotelError,
+  }));
   const [select1, setSelect1] = useState(true);
   const [select2, setSelect2] = useState(false);
   const [select3, setSelect3] = useState(false);
@@ -31,15 +43,83 @@ export const FlightPayment = () => {
   };
   const [wrong, setWrong] = useState(false);
   let check = "shreevali@ybl";
-  const handlePayment = () => {
+  const handlePayment = async () => {
     if (UPI === check) {
-      setWrong(false);
-      navigate("/");
+      if (Object.keys(flight).length !== 0) {
+        bookFlight()
+      }
+      if (Object.keys(hotel).length !== 0) {
+        bookHotel()
+      }
     } else {
       setUPI("");
       setWrong(true);
     }
   };
+
+  const bookFlight = async () => {
+    try {
+      const authToken = getValue('userToken')
+      const data = {
+        "name": flight.name,
+        "departure_time": flight.departure_time,
+        "arrival_time": flight.arrival_time,
+        "fare": Number(price),
+        "stops": flight.stops,
+        "departure": flight.departure,
+        "arrival": flight.arrival,
+      }
+      console.log(data)
+      const response = await fetch('http://localhost:1234/bookings/flights', {
+        method: 'POST',
+        headers: {
+          "authToken": `${authToken}`,
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+      const json = await response.json();
+      console.log(json);
+
+      if (json.status === 200) {
+        setWrong(false);
+        navigate("/");
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const bookHotel = async () => {
+    try {
+      const authToken = getValue('userToken')
+      const data = {
+        "name": hotel.name,
+        "location": hotel.location,
+        "country": hotel.country,
+        "price": Number(price),
+        "cover": hotel.cover
+      }
+      console.log(data)
+      const response = await fetch('http://localhost:1234/bookings/hotels', {
+        method: 'POST',
+        headers: {
+          "authToken": `${authToken}`,
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+      const json = await response.json();
+      console.log(json);
+
+      if (json.status === 200) {
+        setWrong(false);
+        navigate("/");
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
   return (
     <div className={styles.mntBox}>
       <div className={styles.main_heading_choosing_payment}>
