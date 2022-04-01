@@ -41,6 +41,11 @@ export const Profile = () => {
 
     const handleClose = () => {
         setOpen(false)
+        setCredentials({
+            name: "",
+            mobile_number: "",
+            email: ""
+        })
     }
 
     const handleLogout = () => {
@@ -102,7 +107,6 @@ export const Profile = () => {
             console.log(error)
         }
     }
-
 
     return (
         <div className='myProfileContainer'>
