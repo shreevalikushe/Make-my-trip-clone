@@ -1,79 +1,106 @@
 import React, { useState } from "react";
 import styles from "./registration.module.css";
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import VisibilityIcon from "@mui/icons-material/Visibility";
 import { updateValue } from "../Utils/LocalStorage";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { getUserName, signUp } from "../features/auth/auth.actions";
 
 const Registration = () => {
-
-  const navigate = useNavigate()
-  const dispatch = useDispatch()
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [togglePassword, setTogglePassword] = useState(false);
   const [credentials, setCredentials] = useState({
     name: "",
     mobile_number: "",
     password: "",
-    email: ""
-  })
+    email: "",
+  });
 
   const onChange = (e) => {
-    setCredentials({ ...credentials, [e.target.name]: e.target.value })
-  }
+    setCredentials({ ...credentials, [e.target.name]: e.target.value });
+  };
 
   const handleSignUp = async () => {
     try {
       const data = {
-        "name": credentials.name,
-        "mobile_number": credentials.mobile_number,
-        "email": credentials.email,
-        "password": credentials.password,
-      }
-      const response = await fetch('http://localhost:1234/auth/register', {
-        method: 'POST',
+        name: credentials.name,
+        mobile_number: credentials.mobile_number,
+        email: credentials.email,
+        password: credentials.password,
+      };
+      const response = await fetch("http://localhost:1234/auth/register", {
+        method: "POST",
         headers: {
-          'content-type': 'application/json',
+          "content-type": "application/json",
         },
         body: JSON.stringify(data),
-      })
+      });
       const json = await response.json();
       console.log(json);
 
       if (json.status === 200) {
-        navigate("/")
-        dispatch(signUp(json))
-        dispatch(getUserName(credentials.name))
+        navigate("/");
+        dispatch(signUp(json));
+        dispatch(getUserName(credentials.name));
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   };
 
   return (
     <div className={styles.registrationContainer}>
-      <div className={styles.email_mobile_text} >
+      <div className={styles.email_mobile_text}>
         <p>Name</p>
-        <input type="text" name="name" value={credentials.name} onChange={onChange} />
+        <input
+          type="text"
+          name="name"
+          value={credentials.name}
+          onChange={onChange}
+        />
       </div>
       <div className={styles.email_mobile_text}>
         <p> Mobile Number</p>
-        <input type="number" name="mobile_number" value={credentials.mobile_number} onChange={onChange} />
+        <input
+          type="number"
+          name="mobile_number"
+          value={credentials.mobile_number}
+          onChange={onChange}
+        />
       </div>
       <div className={styles.email_mobile_text}>
         <p>Password</p>
-        <input type={togglePassword ? "text" : "password"} name="password" value={credentials.password} onChange={onChange} />
+        <input
+          type={togglePassword ? "text" : "password"}
+          name="password"
+          value={credentials.password}
+          onChange={onChange}
+        />
       </div>
       <div className={styles.email_mobile_text}>
-        <p>Confirm Password</p>
-        <input type="email" name="email" value={credentials.email} onChange={onChange} />
-        <div className={styles.VisibilityIconContainer} onClick={() => setTogglePassword(!togglePassword)}>
-          {togglePassword ? <VisibilityOffIcon /> : < VisibilityIcon />}
+        <p> Email</p>
+        <input
+          type="email"
+          name="email"
+          value={credentials.email}
+          onChange={onChange}
+        />
+        <div
+          className={styles.VisibilityIconContainer}
+          onClick={() => setTogglePassword(!togglePassword)}
+        >
+          {togglePassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
         </div>
       </div>
 
-      <button className={styles.otp_mobile_login_button} onClick={() => handleSignUp()}>Sign Up</button>
+      <button
+        className={styles.otp_mobile_login_button}
+        onClick={() => handleSignUp()}
+      >
+        Sign Up
+      </button>
 
       <div style={{ textAlign: "center", marginTop: 0 }}>or</div>
       <div className={styles.google_login_container}>
