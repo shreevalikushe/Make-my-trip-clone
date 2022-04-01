@@ -155,7 +155,7 @@ body {
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 1323px) {
   .guidelineText {
     padding: 0px;
     font-size: 8px;

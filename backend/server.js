@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
 app.use(express.json());
+app.use(cors());
 
 const hotelController = require("./controllers/hotels.controller.js");
 const authRoute = require("./routes/auth");
@@ -11,7 +12,6 @@ const bookedFlightRoute = require("./routes/BookedFlight");
 const bookedHotelRoute = require("./routes/BookedHotel");
 const flightController = require("./controllers/flightController/flight.controller");
 
-app.use(cors());
 const connect = () => {
   return mongoose.connect(process.env.MONGOOSE_DB_URL);
 };

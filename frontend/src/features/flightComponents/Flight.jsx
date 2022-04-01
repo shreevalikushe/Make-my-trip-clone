@@ -136,7 +136,7 @@ export const Flight = () => {
   return (
     <div>
       {loading ? (
-        <div style={{ width: "100px", margin: "auto", marginTop: "1000px" }}>
+        <div style={{ width: "100px", margin: "auto", marginTop: "100px" }}>
           <CircularProgress />
         </div>
       ) : error ? (
