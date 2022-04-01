@@ -22,7 +22,7 @@ export const SingleFlight = ({
   const dispatch = useDispatch();
   const handlePageChange = (id) => {
     dispatch(flightBookingLoading());
-    fetch(`http://localhost:1234/flights/${id}`)
+    fetch(`https://makemytripback.herokuapp.com/flights/${id}`)
       .then((r) => r.json())
       .then((r) => {
         dispatch(addBookingFlights(r));
