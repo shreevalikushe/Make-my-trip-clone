@@ -167,6 +167,7 @@ export default function FormDialog() {
 
   const dialogCss = {
     width: "40%",
+
     height: 550,
     minWidth: "350px",
     margin: "auto",

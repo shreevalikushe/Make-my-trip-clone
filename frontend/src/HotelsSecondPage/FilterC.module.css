@@ -1,0 +1,41 @@
+.Fcontainer {
+  /* padding-right: 5%; */
+  padding-left: 5%;
+  background-color: white;
+  margin-right: 20px;
+}
+
+.suggestGoadiv {
+}
+
+.suggestGoadiv input {
+  height: 19px;
+  width: 19px;
+  cursor: pointer;
+}
+.suggestGoadiv .boxdiv {
+  display: flex;
+  gap: 30px;
+  margin: 0px 0px 12px;
+  align-items: center;
+}
+
+.checkboxdiv {
+  display: flex;
+  align-items: center;
+}
+.suggestGoadiv .checkboxdiv span {
+  color: #4a4a4a;
+  font-size: 14px;
+}
+
+.boxdiv .vlaue {
+  font-size: 12px;
+  color: #9b9b9b;
+}
+.iconhome {
+  height: 17px;
+  width: 17px;
+  margin-left: 5px;
+  margin-right: 5px;
+}

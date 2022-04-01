@@ -57,21 +57,27 @@ const Navbar = ({ isUserLoggedIn, user }) => {
 
           {/* 2nd part of navbar will start which contains logo and login */}
 
-          <div className={open ? styles.rightSideNavbarMobile : styles.rightSideNavbar}>
+          <div
+            className={
+              open ? styles.rightSideNavbarMobile : styles.rightSideNavbar
+            }
+          >
             {/* icons container */}
             <div className={styles.iconWrapper}>
               <div onClick={handleClickFlight}>
-
                 <span>
-                  <FlightIcon className={styles.flightICON} style={{ fontSize: 30, padding: 4 }}></FlightIcon>
+                  <FlightIcon
+                    className={styles.flightICON}
+                    style={{ fontSize: 30, padding: 4 }}
+                  ></FlightIcon>
                 </span>
-                <p>Flights</p>
+                <p style={{ marginTop: "0px" }}>Flights</p>
               </div>
               <div onClick={handleClickHotels}>
                 <span>
                   <HotelIcon style={{ fontSize: 30, padding: 4 }}></HotelIcon>
                 </span>
-                <p>Hotels</p>
+                <p style={{ marginTop: "0px" }}>Hotels</p>
               </div>
               <div>
                 <span>
@@ -79,14 +85,14 @@ const Navbar = ({ isUserLoggedIn, user }) => {
                     style={{ fontSize: 30, padding: 4 }}
                   ></HomeWorkIcon>
                 </span>
-                <p>Homestays</p>
+                <p style={{ marginTop: "0px" }}>Homestays</p>
               </div>
 
               <div>
                 <span>
                   <TrainIcon style={{ fontSize: 30, padding: 4 }}></TrainIcon>
                 </span>
-                <p>Trains</p>
+                <p style={{ marginTop: "0px" }}>Trains</p>
               </div>
               <div>
                 <span>
@@ -94,7 +100,7 @@ const Navbar = ({ isUserLoggedIn, user }) => {
                     style={{ fontSize: 30, padding: 4 }}
                   ></DirectionsBusFilledIcon>
                 </span>
-                <p>Buses</p>
+                <p style={{ marginTop: "0px" }}>Buses</p>
               </div>
               <div>
                 <span>
@@ -102,7 +108,7 @@ const Navbar = ({ isUserLoggedIn, user }) => {
                     style={{ fontSize: 30, padding: 4 }}
                   ></LocalTaxiIcon>
                 </span>
-                <p>Cabs</p>
+                <p style={{ marginTop: "0px" }}>Cabs</p>
               </div>
               <div>
                 <span>
@@ -110,7 +116,7 @@ const Navbar = ({ isUserLoggedIn, user }) => {
                     style={{ fontSize: 30, padding: 4 }}
                   ></CreditCardIcon>
                 </span>
-                <p>Visa</p>
+                <p style={{ marginTop: "0px" }}>Visa</p>
               </div>
               <div>
                 <span>
@@ -118,7 +124,7 @@ const Navbar = ({ isUserLoggedIn, user }) => {
                     style={{ fontSize: 30, padding: 4 }}
                   ></FlightTakeoffIcon>
                 </span>
-                <p>Charter flights</p>
+                <p style={{ marginTop: "0px" }}>Charter flights</p>
               </div>
               <div>
                 <span>
@@ -126,39 +132,52 @@ const Navbar = ({ isUserLoggedIn, user }) => {
                     style={{ fontSize: 30, padding: 4 }}
                   ></DownhillSkiingIcon>
                 </span>
-                <p>Activities</p>
+                <p style={{ marginTop: "0px" }}>Activities</p>
               </div>
             </div>
 
             {/* login container */}
             {!isUserLoggedIn ?
-              <div className={styles.loginContainer}>
+              (<div className={styles.loginContainer}>
                 <Login />
               </div>
-              :
-              <div className={styles.loginContainer}>
-                <div className={styles.userContainer} onClick={() => setOpenProfile(!openProfile)}>
-                  <div className={styles.user}>
-                    <p>{user ? user.split("")[0] : ""}</p>
-                  </div>
-                  <p>Hi {user ? user.split(" ")[0] : ""}</p>
-                  {openProfile &&
-                    <div className={styles.profileModal}>
-                      <div className={styles.profileModalTab}>
-                        <div className={styles.indProfileModalTab} onClick={() => navigate("/myprofile")}>
-                          <PersonOutlineOutlined style={{ fontSize: 25, color: '#e4e4e4' }} />
-                          <p>My Profile</p>
-                        </div>
-                        <div className={styles.indProfileModalTab} onClick={() => navigate("/mytrips")}>
-                          <WorkOutlineOutlined style={{ fontSize: 25, color: '#e4e4e4' }} />
-                          <p>My Trips</p>
+              ) : (
+                <div className={styles.loginContainer}>
+                  <div
+                    className={styles.userContainer}
+                    onClick={() => setOpenProfile(!openProfile)}
+                  >
+                    <div className={styles.user}>
+                      <p>{user ? user.split("")[0] : ""}</p>
+                    </div>
+                    <p>Hi {user ? user.split(" ")[0] : ""}</p>
+                    {openProfile &&
+                      <div className={styles.profileModal}>
+                        <div className={styles.profileModalTab}>
+                          <div
+                            className={styles.indProfileModalTab}
+                            onClick={() => navigate("/myprofile")}
+                          >
+                            <PersonOutlineOutlined
+                              style={{ fontSize: 25, color: "#e4e4e4" }}
+                            />
+                            <p>My Profile</p>
+                          </div>
+                          <div
+                            className={styles.indProfileModalTab}
+                            onClick={() => navigate("/mytrips")}
+                          >
+                            <WorkOutlineOutlined
+                              style={{ fontSize: 25, color: "#e4e4e4" }}
+                            />
+                            <p>My Trips</p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  }
+                    }
+                  </div>
                 </div>
-              </div>
-            }
+              )}
           </div>
         </div>
       </nav>
