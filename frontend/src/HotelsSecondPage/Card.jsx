@@ -2,6 +2,8 @@ import React from 'react'
 import style_c from "./Card.module.css"
 import mtripicon from "../images/mtripicon.jpg"
 import { AiOutlineInfoCircle } from 'react-icons/ai';
+import { IoIosCheckmark } from 'react-icons/io';
+
 
 const Card = () => {
   return (
@@ -32,55 +34,42 @@ const Card = () => {
 
           {/* middle */}
               <div className={style_c.middlediv}>
-                      
-                   {/* first */}
-                   <div className={style_c.first_div}>
-                        
-                      <span>A beach hotel</span>
 
-                      <div className={style_c.rating}>
+                  
+                 <div className={style_c.firstdiv}>
+                         
+                         <h2>Artist Cottage  </h2>
+
+                         <div>
+                         <div className={style_c.ratingdiv}>
+                            
+                            <img src={mtripicon} alt="not found" />
+                             
+                             <p> <b>4.3</b>/5 (Very Good) </p>
+
+                         </div>
+
+                          <p className={style_c.p_tagrating}> <b>6</b>  RATINGS</p>
+
+
+                         </div>
                        
-                       <div className={style_c.icon_ratingdiv}>
+                 </div>
 
-                        <img src={mtripicon} alt="icon" />
+                  <span className={style_c.place_name}>Morjim</span>  
 
+                   <span className={style_c.couple_friendly}>Couple Friendly</span>
 
-                         
-                         
-                          <p className={style_c.rating_p}><span>3.9</span> /5 (Good)</p>
-                         
-                       </div>
-                          
-                       <p> <b>24</b>  RATINGS</p>
+                     <div className={style_c.checkdiv}>
+                     <IoIosCheckmark className={style_c.check}/>
+                     <span className={style_c.breakfast}>   Breakfast Included</span> 
+                     </div>
+                     
 
-                      </div>
-
-                   </div>
-                   {/* second */}
-                   <div className={style_c.second_div}>
-                     <span>Arambol Beach</span>
-
-                    </div>
-                    {/* third */}
-                    <div className={style_c.third_div}>
-
-                     <span>DORM & ROOM IN HOSTEL</span>
-                     <p>2 bedrooms | 2 beds |Cafe</p>
-
-                   </div>
-                   {/* fourth */}
-                   <div className={style_c.fourth_div}>
-                          <span>Couple Friendly</span>
-                    </div>
-                    {/* fifth */}
-                    <div className={style_c.fifth_div}>
-              
-                           <b>Free Cancellation till  check in</b>
-                  </div>
-             
-                 
+                  
               </div>
 
+       {/* last div */}
               <div className={style_c.rightdiv}>
 
                      <div>

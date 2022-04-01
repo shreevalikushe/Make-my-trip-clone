@@ -17,6 +17,7 @@ const ProductPage = () => {
     
 
        <FilterC/>
+       
        <Card/>
        
       
