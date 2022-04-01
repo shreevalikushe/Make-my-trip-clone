@@ -3,7 +3,6 @@ import MoneyIcon from "@mui/icons-material/Money";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
-import PhoneIphoneOutlinedIcon from "@mui/icons-material/PhoneIphoneOutlined";
 import PaymentsOutlinedIcon from "@mui/icons-material/PaymentsOutlined";
 import { useNavigate, useParams } from "react-router-dom";
 import styles from "./flightpayment.module.css";
@@ -11,7 +10,7 @@ import payment from "../../imgs/payment.png";
 import { useState } from "react";
 import { Alert } from "@mui/material";
 
-export const FlightPayment = () => {
+export const Payment = () => {
   const [select1, setSelect1] = useState(true);
   const [select2, setSelect2] = useState(false);
   const [select3, setSelect3] = useState(false);

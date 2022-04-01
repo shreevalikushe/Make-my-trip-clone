@@ -1,0 +1,170 @@
+.container {
+  /* max-height: 300px; */
+  width: 90%;
+  border: 1px solid gray;
+  border-radius: 4px;
+  display: flex;
+
+  height: 280px;
+  justify-content: space-between;
+  /* padding: 20px; */
+  /* margin: auto; */
+  margin-top: 20px;
+
+  /* background-color: red; */
+  /* box-sizing: border-box; */
+}
+
+.container:hover {
+  border: 1px solid #008cff;
+  /* color: red; */
+  /* cursor: pointer; */
+}
+/* left */
+
+.leftdiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.leftdiv .bigimg img {
+  cursor: pointer;
+  height: 170px;
+  width: 247px;
+  padding: 20px;
+  border-radius: 4px 4px 0px 0px;
+}
+.leftdiv .smallimg {
+  display: flex;
+  gap: 5px;
+}
+.leftdiv .smallimg img {
+  height: 48px;
+  width: 58px;
+}
+
+/* middle */
+
+.middlediv {
+  /* background-color: aquamarine; */
+  margin: 0px 0px 0px 20px;
+}
+.middlediv .first_div {
+  display: flex;
+}
+
+.middlediv .first_div span {
+  font-size: 24px;
+  /* font-weight: bold; */
+}
+
+.middlediv .first_div.rating {
+  display: flex;
+  flex-direction: column;
+}
+
+.middlediv .first_div .rating p {
+  font-size: 11px;
+  color: #4a4a4a;
+}
+.middlediv .first_div .rating p span {
+  font-size: 11px;
+  /* font-weight: bold; */
+}
+.rating {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+}
+
+.rating > p {
+  margin: 0px;
+  padding: 0px;
+}
+.icon_ratingdiv {
+  display: flex;
+  /* gap: 3px; */
+  align-items: center;
+  justify-content: center;
+  margin: 0px 50px;
+}
+
+.icon_ratingdiv img {
+  height: 17px;
+}
+
+.icon_ratingdiv .rating_p {
+  font-size: 10px;
+  font-weight: bold;
+  color: #fff;
+  /* background-color: red; */
+}
+.icon_ratingdiv .rating_p span {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/* last */
+.rightdiv {
+  background-color: rgb(222, 240, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: right;
+  width: 220px;
+}
+.cost {
+  margin: 120px 0px;
+  padding: 20px;
+}
+
+.cutting_cost {
+  font-size: 16px;
+  color: #9b9b9b;
+  /* margin: 0px 0px 5px; */
+  text-decoration: line-through;
+  margin-top: 0px;
+}
+.actuall_cost {
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 0px;
+}
+
+.taxes_cost {
+  font-size: 12px;
+  color: #4a4a4a;
+}
+
+.romm_cost {
+  font-size: 10px;
+  color: #9b9b9b;
+}
+
+/* last discount container */
+
+.discount_container {
+  padding: 11px 20px;
+  background-color: rgb(196, 236, 227);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  /* width: 62%; */
+  /* margin: auto; */
+  margin-bottom: 20px;
+  width: 86.5%;
+}
+
+.infoicon {
+  margin: 0px 10px 0px 0px;
+  color: #1a7179;
+}
+
+.discount_title {
+  color: #1a7179;
+  font-size: 14px;
+  font-weight: bold;
+}

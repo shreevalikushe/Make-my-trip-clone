@@ -24,7 +24,7 @@ const Navbar = ({ isUserLoggedIn }) => {
   const navigate = useNavigate();
   const handleClickFlight = () => navigate("/flights");
   const handleClickHotels = () => navigate("/hotels");
-  console.log("user is logged in? ", isUserLoggedIn);
+  // console.log("user is logged in? ", isUserLoggedIn);
   return (
     <>
       <nav className={styles.navbarWrapper}>

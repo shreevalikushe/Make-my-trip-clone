@@ -22,7 +22,7 @@ export const FlightBooking = () => {
   const [surge, setSurge] = useState(false);
   const finalAmount = 2 * price + 1860;
   const handleButton = () => {
-    navigate(`/flightpayment/${finalAmount}`);
+    navigate(`/payment/${finalAmount}`);
   };
   return (
     <div>
