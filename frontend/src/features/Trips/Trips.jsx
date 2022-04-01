@@ -32,7 +32,9 @@ export const Trips = () => {
         }
       );
       const json = await response.json();
+      console.log(json);
       if (json.status === 200) {
+        console.log(json.bookings);
         setFlights(json.bookings);
       } else {
       }
@@ -40,7 +42,7 @@ export const Trips = () => {
       console.log(error);
     }
   };
-
+  console.log(flights, hotels);
   const getHotels = async () => {
     try {
       const authToken = getValue("userToken");
@@ -56,6 +58,7 @@ export const Trips = () => {
       );
       const json = await response.json();
       if (json.status === 200) {
+        console.log(json.bookings);
         setHotels(json.bookings);
       } else {
       }
