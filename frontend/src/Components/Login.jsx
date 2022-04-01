@@ -34,15 +34,18 @@ export default function FormDialog() {
     }
 
     try {
-      const response = await fetch("http://localhost:1234/auth/otplogin", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify({
-          mobile_number: Number(mobile),
-        }),
-      });
+      const response = await fetch(
+        "https://makemytripback.herokuapp.com/auth/otplogin",
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({
+            mobile_number: Number(mobile),
+          }),
+        }
+      );
       const json = await response.json();
       console.log(json);
 
@@ -63,7 +66,7 @@ export default function FormDialog() {
     }
     try {
       const response = await fetch(
-        `http://localhost:1234/auth/otpverify?mobile_number=${mobile}`,
+        `https://makemytripback.herokuapp.com/auth/otpverify?mobile_number=${mobile}`,
         {
           method: "POST",
           headers: {
@@ -122,16 +125,19 @@ export default function FormDialog() {
 
     try {
       dispatch(loginRequest());
-      const response = await fetch("http://localhost:1234/auth/login", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify({
-          mobile_number: Number(mobile),
-          password: loginPassword,
-        }),
-      });
+      const response = await fetch(
+        "https://makemytripback.herokuapp.com/auth/login",
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({
+            mobile_number: Number(mobile),
+            password: loginPassword,
+          }),
+        }
+      );
       const json = await response.json();
       console.log(json);
       if (json.status === 200) {
@@ -149,13 +155,16 @@ export default function FormDialog() {
   const getProfile = async () => {
     try {
       const authToken = getValue("userToken");
-      const response = await fetch("http://localhost:1234/auth/getuser", {
-        method: "GET",
-        headers: {
-          authToken: `${authToken}`,
-          "content-type": "application/json",
-        },
-      });
+      const response = await fetch(
+        "https://makemytripback.herokuapp.com/auth/getuser",
+        {
+          method: "GET",
+          headers: {
+            authToken: `${authToken}`,
+            "content-type": "application/json",
+          },
+        }
+      );
       const json = await response.json();
       if (json.status === 200) {
         dispatch(getUserName(json.user.name));

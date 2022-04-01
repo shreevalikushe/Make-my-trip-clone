@@ -20,7 +20,7 @@ const ProductPage = () => {
   const dispatch = useDispatch();
   const getHotels = () => {
     dispatch(hotelLoading());
-    fetch("http://localhost:1234/hotels")
+    fetch("https://makemytripback.herokuapp.com/hotels")
       .then((r) => r.json())
       .then((r) => {
         dispatch(addHotels(r));

@@ -30,13 +30,16 @@ const Registration = () => {
         email: credentials.email,
         password: credentials.password,
       };
-      const response = await fetch("http://localhost:1234/auth/register", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        "https://makemytripback.herokuapp.com/auth/register",
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
       const json = await response.json();
       console.log(json);
 

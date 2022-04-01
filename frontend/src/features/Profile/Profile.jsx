@@ -49,13 +49,16 @@ export const Profile = () => {
   const getProfile = async () => {
     try {
       const authToken = getValue("userToken");
-      const response = await fetch("http://localhost:1234/auth/getuser", {
-        method: "GET",
-        headers: {
-          authToken: `${authToken}`,
-          "content-type": "application/json",
-        },
-      });
+      const response = await fetch(
+        "https://makemytripback.herokuapp.com/auth/getuser",
+        {
+          method: "GET",
+          headers: {
+            authToken: `${authToken}`,
+            "content-type": "application/json",
+          },
+        }
+      );
       const json = await response.json();
       if (json.status === 200) {
         setUser(json.user);
@@ -81,16 +84,19 @@ export const Profile = () => {
         email: credentials.email,
       };
       console.log(data);
-      const response = await fetch("http://localhost:1234/auth/edituser", {
-        method: "PUT",
-        mode: "cors",
-        cache: "no-cache",
-        headers: {
-          authToken: `${authToken}`,
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        "https://makemytripback.herokuapp.com/auth/edituser",
+        {
+          method: "PUT",
+          mode: "cors",
+          cache: "no-cache",
+          headers: {
+            authToken: `${authToken}`,
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
       const json = await response.json();
       console.log(json);
 
