@@ -11,7 +11,7 @@ const client = require("twilio")(
   process.env.AUTH_TOKEN
 );
 
-// ROUTE 1: For Register a user
+// ROUTE 1: For Register a users
 router.post(
   "/register",
   [
