@@ -43,8 +43,6 @@ router.post('/register', [
 
         const authToken = jwt.sign(data, process.env.JWT_SECRET_KEY);
         res.json({ status: 200, authToken })
-
-        res.json(user)
     } catch (error) {
         console.log(error.message);
         res.status(500).json("Internal Server Error")
@@ -191,7 +189,7 @@ router.put('/edituser', fetchUser, async (req, res) => {
         const user = await User.findByIdAndUpdate(req.user.id, req.body, {
             new: true
         });
-        res.status(200).json({ status: 200, user }).select("-password");
+        res.status(200).json({ status: 200, user });
     } catch (error) {
         console.log(error);
         res.status(500).json("Internal Server Error");

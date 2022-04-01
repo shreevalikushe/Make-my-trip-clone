@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./Hotel.module.css";
 import { CheckCircleOutlineOutlined } from "@mui/icons-material";
 import { useNavigate, useParams } from "react-router-dom";
@@ -10,6 +10,7 @@ import {
 } from "./hotelBooking";
 import { useDispatch, useSelector } from "react-redux";
 import { CircularProgress } from "@mui/material";
+import { ListenerContext } from "../../Contexts/ListenerProvider";
 
 export const Hotel = () => {
   const { id } = useParams();
@@ -34,6 +35,17 @@ export const Hotel = () => {
   //   getSingleHotel();
   // }, [id]);
   console.log(singleHotel, "singleHotel");
+  const { setOpen } = useContext(ListenerContext)
+
+  const isUserLoggedIn = useSelector((state) => state.auth.isUserLoggedIn)
+  const handleBook = () => {
+    if (isUserLoggedIn) {
+      navigate(`/payment/${singleHotel.price}`)
+    }
+    else {
+      setOpen(true)
+    }
+  }
   return (
     <>
       {loading ? (
@@ -67,7 +79,7 @@ export const Hotel = () => {
                   </div>
                 </div>
                 <div className={styles.indHotelCardBookBtn}>
-                  <p onClick={() => navigate(`/payment/${singleHotel.price}`)}>
+                  <p onClick={() => handleBook()}>
                     BOOK THIS NOW
                   </p>
                 </div>
