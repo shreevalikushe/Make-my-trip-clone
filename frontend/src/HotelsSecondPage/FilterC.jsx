@@ -8,7 +8,10 @@ const FilterC = () => {
         <h2>Select Filters</h2>
         {/*  City Filter */}
         <h4>Suggested For City</h4>
-        <div className={stylef.suggestGoadiv}>
+        <div
+          className={stylef.suggestGoadiv}
+          onChange={() => console.log("hi")}
+        >
           {/* first */}
           <div className={stylef.boxdiv}>
             <div className={stylef.checkboxdiv}>
@@ -16,7 +19,7 @@ const FilterC = () => {
               <span>Delhi</span>
             </div>
 
-            <div className={stylef.vlaue}>(220)</div>
+            <div className={stylef.vlaue}>(15)</div>
           </div>
 
           <div className={stylef.boxdiv}>
@@ -25,7 +28,7 @@ const FilterC = () => {
               <span>Bengauru</span>
             </div>
 
-            <div className={stylef.vlaue}>(220)</div>
+            <div className={stylef.vlaue}>(15)</div>
           </div>
 
           <div className={stylef.boxdiv}>
@@ -34,7 +37,7 @@ const FilterC = () => {
               <span>Mumbai</span>
             </div>
 
-            <div className={stylef.vlaue}>(220)</div>
+            <div className={stylef.vlaue}>(15)</div>
           </div>
         </div>
 
@@ -183,7 +186,7 @@ const FilterC = () => {
               <span> ₹ 0 - ₹ 1500 </span>
             </div>
 
-            <div className={stylef.vlaue}>(220)</div>
+            <div className={stylef.vlaue}></div>
           </div>
           {/*  2*/}
           <div className={stylef.boxdiv}>
@@ -192,7 +195,7 @@ const FilterC = () => {
               <span> ₹ 1500 - ₹ 3000 </span>
             </div>
 
-            <div className={stylef.vlaue}>(220)</div>
+            <div className={stylef.vlaue}></div>
           </div>
           {/* 3 */}
           <div className={stylef.boxdiv}>
@@ -201,7 +204,7 @@ const FilterC = () => {
               <span> ₹ 3000 - ₹ 14500 </span>
             </div>
 
-            <div className={stylef.vlaue}>(220)</div>
+            <div className={stylef.vlaue}></div>
           </div>
           {/* 4 */}
           <div className={stylef.boxdiv}>
@@ -210,7 +213,7 @@ const FilterC = () => {
               <span>₹ 14500 - ₹30000 </span>
             </div>
 
-            <div className={stylef.vlaue}>(220)</div>
+            <div className={stylef.vlaue}></div>
           </div>
           {/* 5 */}
           <div className={stylef.boxdiv}>
@@ -219,7 +222,7 @@ const FilterC = () => {
               <span>₹ 30000+</span>
             </div>
 
-            <div className={stylef.vlaue}>(44)</div>
+            <div className={stylef.vlaue}></div>
           </div>
         </div>
       </div>
