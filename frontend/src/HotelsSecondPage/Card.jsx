@@ -31,6 +31,7 @@ const Card = ({
       })
       .catch((e) => dispatch(hotelBookingError()));
     setTimeout(() => {
+      // navigate(`/hotels/review/${_id}`);
       navigate(`/hotels/${_id}`);
     }, 1000);
   };
