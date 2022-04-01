@@ -29,7 +29,7 @@ export const FlightBooking = () => {
 
   const handleButton = () => {
     if (isUserLoggedIn) {
-      navigate(`/flightpayment/${finalAmount}`);
+      navigate(`/payment/${finalAmount}`);
     }
     else {
       setOpen(true)
