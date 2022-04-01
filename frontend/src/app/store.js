@@ -9,6 +9,7 @@ export const store = configureStore({
   reducer: {
     flight: flightReducer,
     flightBooking: flightBookingReducer,
+    hotelBooking: hotelBookingReducer,
     auth: authReducer,
     hotel: hotelReducer,
     hotelBooking: hotelBookingReducer,

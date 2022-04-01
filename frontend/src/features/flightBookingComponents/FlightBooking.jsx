@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import img1 from "../../imgs/img1.png";
 import promo from "../../imgs/promo.png";
 import styles from "./flightbooking.module.css";
@@ -9,6 +9,8 @@ import { CircularProgress } from "@mui/material";
 import { useSelector } from "react-redux";
 import { Form } from "./Form";
 import { useNavigate } from "react-router-dom";
+import Login from "../../Components/Login";
+import { ListenerContext } from "../../Contexts/ListenerProvider";
 
 export const FlightBooking = () => {
   const navigate = useNavigate();
@@ -21,8 +23,17 @@ export const FlightBooking = () => {
   const [bfare, setBfare] = useState(false);
   const [surge, setSurge] = useState(false);
   const finalAmount = 2 * price + 1860;
+  const { setOpen } = useContext(ListenerContext)
+
+  const isUserLoggedIn = useSelector((state) => state.auth.isUserLoggedIn)
+
   const handleButton = () => {
-    navigate(`/payment/${finalAmount}`);
+    if (isUserLoggedIn) {
+      navigate(`/payment/${finalAmount}`);
+    }
+    else {
+      setOpen(true)
+    }
   };
   return (
     <div>
@@ -157,7 +168,7 @@ export const FlightBooking = () => {
                         padding: "0px",
                       }}
                     >
-                      {}{" "}
+                      { }{" "}
                     </p>
                   </b>
                 </div>
