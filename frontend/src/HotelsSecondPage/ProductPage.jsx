@@ -32,26 +32,26 @@ const ProductPage = () => {
     if (tag === "Delhi") {
       tag = "New Delhi";
     }
-    const filteredHotel = hotels.filter((item) => item.location === tag);
+    const filteredHotel = hotel.filter((item) => item.location === tag);
     setHotel(filteredHotel);
   };
   const handlePriceFilter = (name) => {
     console.log(name);
     if (name === "first") {
-      const filterPrice = hotels.filter((item) => {
+      const filterPrice = hotel.filter((item) => {
         console.log(item.price);
         return item.price <= 7000;
       });
       setHotel(filterPrice);
     }
     if (name === "second") {
-      const filterPrice = hotels.filter((item) => {
+      const filterPrice = hotel.filter((item) => {
         return item.price >= 7000 && item.price <= 8000;
       });
       setHotel(filterPrice);
     }
     if (name === "third") {
-      const filterPrice = hotels.filter((item) => {
+      const filterPrice = hotel.filter((item) => {
         return item.price >= 8000 && item.price <= 10000;
       });
       setHotel(filterPrice);

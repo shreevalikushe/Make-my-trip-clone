@@ -1,39 +1,29 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./Hotel.module.css";
 import { CheckCircleOutlineOutlined } from "@mui/icons-material";
 import { useNavigate, useParams } from "react-router-dom";
-import { useEffect } from "react";
-import {
-  addHotelBooking,
-  hotelBookingError,
-  hotelBookingLoading,
-} from "./hotelBooking";
 import { useDispatch, useSelector } from "react-redux";
-import { CircularProgress } from "@mui/material";
 
+import { CircularProgress } from "@mui/material";
+import { ListenerContext } from "../../Contexts/ListenerProvider";
 export const Hotel = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  // const getSingleHotel = () => {
-  //   dispatch(hotelBookingLoading());
-  //   fetch(`http://localhost:1234/hotels/${id}`)
-  //     .then((r) => r.json())
-  //     .then((r) => {
-  //       dispatch(addHotelBooking(r));
-  //       console.log(r);
-  //     })
-  //     .catch((e) => dispatch(hotelBookingError()));
-  // };
+  const { setOpen } = useContext(ListenerContext);
   const navigate = useNavigate();
   const { loading, error, singleHotel } = useSelector((state) => ({
     loading: state.hotelBooking.loading,
     error: state.hotelBooking.error,
     singleHotel: state.hotelBooking.hotelBooking,
   }));
-  // useEffect(() => {
-  //   getSingleHotel();
-  // }, [id]);
-  console.log(singleHotel, "singleHotel");
+  const isUserLoggedIn = useSelector((state) => state.auth.isUserLoggedIn);
+  const handleButton = () => {
+    if (isUserLoggedIn) {
+      navigate(`/payment/${singleHotel.price}`);
+    } else {
+      setOpen(true);
+    }
+  };
   return (
     <>
       {loading ? (
@@ -67,9 +57,7 @@ export const Hotel = () => {
                   </div>
                 </div>
                 <div className={styles.indHotelCardBookBtn}>
-                  <p onClick={() => navigate(`/payment/${singleHotel.price}`)}>
-                    BOOK THIS NOW
-                  </p>
+                  <p onClick={handleButton}>BOOK THIS NOW</p>
                 </div>
               </div>
               <div className={styles.indHotelContent}>
