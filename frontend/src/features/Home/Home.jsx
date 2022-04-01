@@ -27,7 +27,7 @@ export const Home = () => {
   return (
     <>
       <FlightHome />
-      {/* <Mmt/> */}
+      <Mmt/>
       <div className={styles.container} style={{ boxSizing: 'border-box' }}>
        
         <SimpleSlider />

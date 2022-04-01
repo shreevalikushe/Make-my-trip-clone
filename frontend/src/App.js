@@ -10,10 +10,10 @@ function App() {
   console.log("isUserLoggedIn", isUserLoggedIn)
   return (
     <div className="App">
-      {/* <Navbar isUserLoggedIn={isUserLoggedIn} />
-      <AllRoutes /> */}
-
-      <ProductPage/>
+      <Navbar isUserLoggedIn={isUserLoggedIn} />
+      <AllRoutes />
+      
+      {/* <ProductPage/> */}
 
     </div>
   );
