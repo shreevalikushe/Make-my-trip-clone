@@ -11,6 +11,9 @@ function App() {
     <div className="App">
       <Navbar isUserLoggedIn={isUserLoggedIn} />
       <AllRoutes />
+
+      {/* <ProductPage/> */}
+
     </div>
   );
 }
