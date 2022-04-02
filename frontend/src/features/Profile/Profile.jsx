@@ -56,6 +56,7 @@ export const Profile = () => {
     const getProfile = async () => {
         try {
             const authToken = getValue('userToken')
+            console.log(authToken)
             const response = await fetch('http://localhost:1234/auth/getuser', {
                 method: 'GET',
                 headers: {
@@ -112,10 +113,10 @@ export const Profile = () => {
         <div className='myProfileContainer'>
             <div className='profileContainer'>
                 <div className='profilePicView'>
-                    <p>{user.name ? user.name.split("")[0] : ""}</p>
+                    <p>{(user?.name ?? "") ? user.name.split("")[0] : ""}</p>
                 </div>
                 <div className='userTitleSection'>
-                    <p className="userTitle">{user.name}</p>
+                    <p className="userTitle">{user?.name ?? ""}</p>
                     <p className="userTag">PERSONAL PROFILE</p>
                 </div>
                 <div className='profileTabs'>

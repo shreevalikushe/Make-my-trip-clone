@@ -45,12 +45,7 @@ export const FlightPayment = () => {
   let check = "shreevali@ybl";
   const handlePayment = async () => {
     if (UPI === check) {
-      if (Object.keys(flight).length !== 0) {
-        bookFlight()
-      }
-      if (Object.keys(hotel).length !== 0) {
-        bookHotel()
-      }
+      bookFlight()
     } else {
       setUPI("");
       setWrong(true);
@@ -90,36 +85,7 @@ export const FlightPayment = () => {
     }
   }
 
-  const bookHotel = async () => {
-    try {
-      const authToken = getValue('userToken')
-      const data = {
-        "name": hotel.name,
-        "location": hotel.location,
-        "country": hotel.country,
-        "price": Number(price),
-        "cover": hotel.cover
-      }
-      console.log(data)
-      const response = await fetch('http://localhost:1234/bookings/hotels', {
-        method: 'POST',
-        headers: {
-          "authToken": `${authToken}`,
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      })
-      const json = await response.json();
-      console.log(json);
 
-      if (json.status === 200) {
-        setWrong(false);
-        navigate("/");
-      }
-    } catch (error) {
-      console.log(error)
-    }
-  }
   return (
     <div className={styles.mntBox}>
       <div className={styles.main_heading_choosing_payment}>
