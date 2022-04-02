@@ -44,7 +44,7 @@ const Registration = () => {
       console.log(json);
 
       if (json.status === 200) {
-        navigate("/");
+        // navigate("/");
         dispatch(signUp(json));
         dispatch(getUserName(credentials.name));
       }
