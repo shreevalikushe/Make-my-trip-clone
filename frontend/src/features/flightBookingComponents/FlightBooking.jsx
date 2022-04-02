@@ -23,16 +23,15 @@ export const FlightBooking = () => {
   const [bfare, setBfare] = useState(false);
   const [surge, setSurge] = useState(false);
   const finalAmount = 2 * price + 1860;
-  const { setOpen } = useContext(ListenerContext)
+  const { setOpen } = useContext(ListenerContext);
 
-  const isUserLoggedIn = useSelector((state) => state.auth.isUserLoggedIn)
+  const isUserLoggedIn = useSelector((state) => state.auth.isUserLoggedIn);
 
   const handleButton = () => {
     if (isUserLoggedIn) {
-      navigate(`/payment/${finalAmount}`);
-    }
-    else {
-      setOpen(true)
+      navigate(`/flightpayment/${finalAmount}`);
+    } else {
+      setOpen(true);
     }
   };
   return (
@@ -168,7 +167,7 @@ export const FlightBooking = () => {
                         padding: "0px",
                       }}
                     >
-                      { }{" "}
+                      {}{" "}
                     </p>
                   </b>
                 </div>
