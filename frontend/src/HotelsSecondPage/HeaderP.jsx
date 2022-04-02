@@ -95,13 +95,13 @@ const HeaderP = () => {
               
            <div className={styleH.topdiv}>
 
-                 <p> <span>Home</span> <FiChevronRight className={styleH.gretericon}/>  Hotels and more in Goa  </p>
+                 <p> <span>Home</span> <FiChevronRight className={styleH.gretericon}/>  Hotels and more  </p>
            </div>
          
          {/* middle */}
          <div className={styleH.titleMapDiv}>
            
-           <p>Hotels, Villas, Apartments and more in Goa</p>
+           <p>Hotels, Villas, Apartments and more</p>
           
            <img src={mapimg} alt="not found" className={styleH.map_img} />
               
@@ -177,7 +177,7 @@ const HeaderP = () => {
              <div className={styleH.rightdiv}>
 
                <div className={styleH.find_location_div}>
-               <BiSearch/>
+               <BiSearch className={styleH.searchincon}/>
                <input type="text" placeholder='Search Location or Property'  />
                    
                </div>
