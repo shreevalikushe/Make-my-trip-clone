@@ -24,7 +24,7 @@ export const Flight = () => {
     console.log(stopCheck, check);
     console.log("getFlight");
     dispatch(flightLoading());
-    fetch("http://localhost:1234/flights")
+    fetch("https://makemytripback.herokuapp.com/flights")
       .then((r) => r.json())
       .then((r) => {
         dispatch(addFlights(r));
@@ -136,7 +136,7 @@ export const Flight = () => {
   return (
     <div>
       {loading ? (
-        <div style={{ width: "100px", margin: "auto", marginTop: "1000px" }}>
+        <div style={{ width: "100px", margin: "auto", marginTop: "100px" }}>
           <CircularProgress />
         </div>
       ) : error ? (

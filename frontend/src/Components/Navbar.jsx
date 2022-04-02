@@ -15,16 +15,18 @@ import CloseIcon from "@mui/icons-material/Close";
 import Login from "./Login";
 import {
   WorkOutlineOutlined,
-  PersonOutlineOutlined,
-} from "@mui/icons-material";
+  PersonOutlineOutlined
+} from '@mui/icons-material';
+import { getValue } from "../Utils/LocalStorage";
 
-const Navbar = ({ isUserLoggedIn }) => {
+const Navbar = ({ isUserLoggedIn, user }) => {
   const [open, setOpen] = useState(false);
   const [openProfile, setOpenProfile] = useState(false);
   const navigate = useNavigate();
-  const handleClickFlight = () => navigate("/flights");
-  const handleClickHotels = () => navigate("/hotels");
-  console.log("user is logged in? ", isUserLoggedIn);
+  const handleClickFlight = () => navigate('/flights');
+  const handleClickHotels = () => navigate('/hotels');
+  console.log("user is logged in? ", isUserLoggedIn)
+  console.log("user name", user)
   return (
     <>
       <nav className={styles.navbarWrapper}>
@@ -135,47 +137,47 @@ const Navbar = ({ isUserLoggedIn }) => {
             </div>
 
             {/* login container */}
-            {isUserLoggedIn ? (
-              <div className={styles.loginContainer}>
+            {!isUserLoggedIn ?
+              (<div className={styles.loginContainer}>
                 <Login />
               </div>
-            ) : (
-              <div className={styles.loginContainer}>
-                <div
-                  className={styles.userContainer}
-                  onClick={() => setOpenProfile(!openProfile)}
-                >
-                  <div className={styles.user}>
-                    <p>S</p>
-                  </div>
-                  <p>Hi shubham</p>
-                  {openProfile && (
-                    <div className={styles.profileModal}>
-                      <div className={styles.profileModalTab}>
-                        <div
-                          className={styles.indProfileModalTab}
-                          onClick={() => navigate("/myprofile")}
-                        >
-                          <PersonOutlineOutlined
-                            style={{ fontSize: 25, color: "#e4e4e4" }}
-                          />
-                          <p>My Profile</p>
-                        </div>
-                        <div
-                          className={styles.indProfileModalTab}
-                          onClick={() => navigate("/mytrips")}
-                        >
-                          <WorkOutlineOutlined
-                            style={{ fontSize: 25, color: "#e4e4e4" }}
-                          />
-                          <p>My Trips</p>
+              ) : (
+                <div className={styles.loginContainer}>
+                  <div
+                    className={styles.userContainer}
+                    onClick={() => setOpenProfile(!openProfile)}
+                  >
+                    <div className={styles.user}>
+                      <p>{user ? user.split("")[0] : ""}</p>
+                    </div>
+                    <p>Hi {user ? user.split(" ")[0] : ""}</p>
+                    {openProfile &&
+                      <div className={styles.profileModal}>
+                        <div className={styles.profileModalTab}>
+                          <div
+                            className={styles.indProfileModalTab}
+                            onClick={() => navigate("/myprofile")}
+                          >
+                            <PersonOutlineOutlined
+                              style={{ fontSize: 25, color: "#e4e4e4" }}
+                            />
+                            <p>My Profile</p>
+                          </div>
+                          <div
+                            className={styles.indProfileModalTab}
+                            onClick={() => navigate("/mytrips")}
+                          >
+                            <WorkOutlineOutlined
+                              style={{ fontSize: 25, color: "#e4e4e4" }}
+                            />
+                            <p>My Trips</p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  )}
+                    }
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
           </div>
         </div>
       </nav>
