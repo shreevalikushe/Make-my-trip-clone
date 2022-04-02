@@ -17,6 +17,7 @@ const FlightHome = () => {
   const [to, setTo] = React.useState("");
   const [departure, setDeparture] = React.useState(null);
   const [retrn, setRetrn] = React.useState(null);
+  const [selectedButtonColor, setSelectedButtonColor] = useState(1)
 
   const [travellers, setTravellers] = React.useState(null);
   const arr = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -161,7 +162,7 @@ const FlightHome = () => {
           <div className={styles.travellerContainer}>
             <div onClick={onClickModal}>
               <div className={styles.travellersText}>TRAVELLERS</div>
-              <div className={styles.noOfTraveller}>
+              <div className={styles.noOfTraveller} style={{marginTop:"-6px"}}>
                 <span>{travellers}</span>
                 {travellers > 1 ? "Travellers" : ""}
               </div>
@@ -177,12 +178,11 @@ const FlightHome = () => {
                 {arr.map((val) => (
                   <div
                     key={val}
-                    className={
-                      val === 2 ? styles.clickPassenger : styles.passengerButton
-                    }
+                    className={`${selectedButtonColor === val ? styles.clickPassenger : styles.passengerButton}`}
                     onClick={() => {
                       setTogglePassengerColor(!togglePassengerColor);
                       onClickNoOfPass(val);
+                      setSelectedButtonColor(val)
                     }}
                   >
                     {val}

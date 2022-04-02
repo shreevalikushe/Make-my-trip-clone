@@ -24,7 +24,7 @@ export const Flight = () => {
     console.log(stopCheck, check);
     console.log("getFlight");
     dispatch(flightLoading());
-    fetch("http://localhost:1234/flights")
+    fetch("https://makemytripback.herokuapp.com/flights")
       .then((r) => r.json())
       .then((r) => {
         dispatch(addFlights(r));

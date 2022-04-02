@@ -23,7 +23,7 @@ const Card = ({
   const dispatch = useDispatch();
   const getSingleHotel = (id) => {
     dispatch(hotelBookingLoading());
-    fetch(`http://localhost:1234/hotels/${id}`)
+    fetch(`https://makemytripback.herokuapp.com/hotels/${id}`)
       .then((r) => r.json())
       .then((r) => {
         dispatch(addHotelBooking(r));
@@ -31,6 +31,7 @@ const Card = ({
       })
       .catch((e) => dispatch(hotelBookingError()));
     setTimeout(() => {
+      // navigate(`/hotels/review/${_id}`);
       navigate(`/hotels/${_id}`);
     }, 1000);
   };

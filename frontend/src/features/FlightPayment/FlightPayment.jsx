@@ -54,25 +54,28 @@ export const FlightPayment = () => {
 
   const bookFlight = async () => {
     try {
-      const authToken = getValue('userToken')
+      const authToken = getValue("userToken");
       const data = {
-        "name": flight.name,
-        "departure_time": flight.departure_time,
-        "arrival_time": flight.arrival_time,
-        "fare": Number(price),
-        "stops": flight.stops,
-        "departure": flight.departure,
-        "arrival": flight.arrival,
-      }
-      console.log(data)
-      const response = await fetch('http://localhost:1234/bookings/flights', {
-        method: 'POST',
-        headers: {
-          "authToken": `${authToken}`,
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      })
+        name: flight.name,
+        departure_time: flight.departure_time,
+        arrival_time: flight.arrival_time,
+        fare: Number(price),
+        stops: flight.stops,
+        departure: flight.departure,
+        arrival: flight.arrival,
+      };
+      console.log(data);
+      const response = await fetch(
+        "https://makemytripback.herokuapp.com/bookings/flights",
+        {
+          method: "POST",
+          headers: {
+            authToken: `${authToken}`,
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
       const json = await response.json();
       console.log(json);
 
@@ -81,10 +84,9 @@ export const FlightPayment = () => {
         navigate("/");
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
-
+  };
 
   return (
     <div className={styles.mntBox}>

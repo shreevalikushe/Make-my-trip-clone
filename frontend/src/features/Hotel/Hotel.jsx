@@ -2,12 +2,6 @@ import React, { useContext } from "react";
 import styles from "./Hotel.module.css";
 import { CheckCircleOutlineOutlined } from "@mui/icons-material";
 import { useNavigate, useParams } from "react-router-dom";
-import { useEffect } from "react";
-import {
-  addHotelBooking,
-  hotelBookingError,
-  hotelBookingLoading,
-} from "./hotelBooking";
 import { useDispatch, useSelector } from "react-redux";
 import { CircularProgress } from "@mui/material";
 import { ListenerContext } from "../../Contexts/ListenerProvider";
@@ -15,37 +9,17 @@ import { ListenerContext } from "../../Contexts/ListenerProvider";
 export const Hotel = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  // const getSingleHotel = () => {
-  //   dispatch(hotelBookingLoading());
-  //   fetch(`http://localhost:1234/hotels/${id}`)
-  //     .then((r) => r.json())
-  //     .then((r) => {
-  //       dispatch(addHotelBooking(r));
-  //       console.log(r);
-  //     })
-  //     .catch((e) => dispatch(hotelBookingError()));
-  // };
+
   const navigate = useNavigate();
   const { loading, error, singleHotel } = useSelector((state) => ({
     loading: state.hotelBooking.loading,
     error: state.hotelBooking.error,
     singleHotel: state.hotelBooking.hotelBooking,
   }));
-  // useEffect(() => {
-  //   getSingleHotel();
-  // }, [id]);
-  console.log(singleHotel, "singleHotel");
-  const { setOpen } = useContext(ListenerContext)
 
-  const isUserLoggedIn = useSelector((state) => state.auth.isUserLoggedIn)
-  const handleBook = () => {
-    if (isUserLoggedIn) {
-      navigate(`/payment/${singleHotel.price}`)
-    }
-    else {
-      setOpen(true)
-    }
-  }
+  const handleButton = () => {
+    navigate(`/hotels/review/${id}`);
+  };
   return (
     <>
       {loading ? (
@@ -79,11 +53,9 @@ export const Hotel = () => {
                   </div>
                 </div>
                 <div className={styles.indHotelCardBookBtn}>
-                  <p onClick={() => handleBook()}>
-                    BOOK THIS NOW
-                  </p>
-                </div>
-              </div>
+                  <p onClick={handleButton}>REVIEW HERE </p>
+                </div >
+              </div >
               <div className={styles.indHotelContent}>
                 <div className={styles.ratingsSection}>
                   <div className={styles.ratingsView}>
@@ -162,8 +134,8 @@ export const Hotel = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+            </div >
+          </div >
         )
       )}
     </>

@@ -9,6 +9,7 @@ import { Hotel } from "../features/Hotel/Hotel";
 import { Profile } from "../features/Profile/Profile";
 import { Trips } from "../features/Trips/Trips";
 import ProductPage from "../HotelsSecondPage/ProductPage";
+import Review from "../ReviewBooking/Review";
 export const AllRoutes = () => {
   return (
     <Routes>
@@ -21,6 +22,7 @@ export const AllRoutes = () => {
       <Route path="/mytrips" element={<Trips />} />
       <Route path="/hotels/:id" element={<Hotel />} />
       <Route path="/hotels" element={<ProductPage />} />
+      <Route path="/hotels/review/:id" element={<Review />} />
     </Routes>
   );
 };
