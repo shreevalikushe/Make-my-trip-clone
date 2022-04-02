@@ -1,0 +1,166 @@
+body {
+  background-color: #e5eef4;
+}
+.box {
+  width: 90%;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-top: 2%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2%;
+}
+.container {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+.filterCheck {
+  /* display: block; */
+  display: flex;
+  flex-direction: row;
+  margin: 2%;
+  gap: 1rem;
+}
+.filterDiv {
+  background-color: white;
+  width: 20%;
+  border-radius: 5px;
+  margin-right: 2%;
+  padding: 2%;
+  height: fit-content;
+}
+.first {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.sort {
+  background-color: white;
+  margin-top: 1%;
+}
+.sortInnerDiv {
+  padding: 0.5%;
+  margin: 1.5%;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+}
+.singleflight {
+  margin-top: 1%;
+  height: fit-content;
+  padding: 0.5%;
+  border-radius: 5px;
+  background-color: white;
+}
+.heading {
+  margin: 0px;
+  padding: 0px;
+  /* margin-left: 30%; */
+}
+.guidelines {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+
+  height: fit-content;
+  border-radius: 5px;
+  /* margin-left: 30%; */
+  padding: 0.5%;
+}
+
+.guidelineImg {
+  max-width: 45px;
+  max-height: 45px;
+}
+.guidelineText {
+  padding: 3px;
+  font-size: 10px;
+  margin: 0px;
+  text-align: center;
+}
+.maincontainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.inner_cont {
+  width: 13%;
+  margin: 0px;
+  margin-right: 4%;
+  padding: 0px;
+}
+.discount {
+  background-color: rgb(255, 237, 209);
+  padding: 3px;
+  font-size: 12px;
+  margin: 0px;
+  text-align: center;
+}
+.buttonBookNow {
+  width: 13%;
+  margin: 0px;
+  margin-right: 5%;
+  padding: 0px;
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 2%;
+}
+.details {
+  padding: 1%;
+  text-align: right;
+  color: #0091ff;
+  font-size: 13px;
+  cursor: pointer;
+}
+.line {
+  border-top: 3px solid rgb(81, 226, 194);
+  width: 55%;
+  margin: 10% 0% 0% 0%;
+  /* height: 2px; */
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .box {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .filterDiv {
+    display: none;
+  }
+  .container {
+    width: 98%;
+    font-size: 10px;
+  }
+  .maincontainer {
+    padding: 2%;
+    margin: 1%;
+    width: 90%;
+  }
+  .guidelineText {
+    font-size: 6px;
+  }
+  .buttonBookNow {
+    width: 10%;
+    margin-left: 5%;
+    padding: 0px;
+    font-size: 8px;
+    font-weight: 700;
+    margin-top: 2%;
+    margin-right: 0.5%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 1323px) {
+  .guidelineText {
+    padding: 0px;
+    font-size: 8px;
+    padding: 3px;
+    margin: 0px;
+    text-align: center;
+  }
+}

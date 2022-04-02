@@ -1,0 +1,149 @@
+.container {
+  height: 190px;
+  width: 100%;
+  background-color: rgb(207, 239, 255);
+  padding: 3px 0px 10px;
+}
+.small_container {
+  width: 77%;
+  margin: auto;
+}
+
+.topdiv p {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+.topdiv p span {
+  color: #008cff;
+  font-weight: bold;
+  font-size: 14px;
+}
+.gretericon {
+  font-size: 15px;
+  margin-left: 5px;
+  padding: 2px;
+  color: grey;
+}
+
+/* second  middle */
+
+.titleMapDiv {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0px 0px;
+}
+
+.titleMapDiv p {
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 55px;
+}
+
+.map_img {
+  margin: -10px 0px 0px;
+  border-radius: 6px;
+  height: 100px;
+}
+
+/* botom div */
+
+.searchDiv {
+  /* margin: 10px 0px 0px; */
+  margin-top: -30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: -10px;
+}
+.leftdiv {
+  display: flex;
+  align-items: center;
+}
+
+.leftdiv_popularity {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+.inside_Droup_down_hover:hover {
+  color: #008cff;
+}
+.find_location_div {
+  display: flex;
+  align-items: center;
+  background-color: #ffff;
+  border-radius: 4px;
+  height: 40px;
+  padding: 0px 0px 0px 30px;
+  box-sizing: border-box;
+  gap: 10px;
+  margin-bottom: 17px;
+  margin-top: -3px;
+}
+
+.find_location_div input {
+  border: none;
+  width: 237px;
+  border-radius: 4px;
+  outline: none;
+}
+.find_location_div input,
+input::-webkit-input-placeholder {
+  font-size: 13px;
+  line-height: 3;
+  color: gray;
+  font-weight: 600;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    /*  top div */
+    .topdiv p {
+        font-size: 10px;
+      }
+      .topdiv p span {
+        font-size: 11px;
+      }
+      .gretericon {
+        font-size: 11px;  
+      }   
+
+/* second  middle */
+
+.titleMapDiv {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0px 0px;
+  }
+  
+  .titleMapDiv p {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 25px;
+  }
+  
+  .map_img {
+    margin: -10px 0px 0px;
+    border-radius: 3px;
+    height: 45px;
+    width: 160px;
+  }
+
+/* botom div */
+
+
+
+
+
+
+
+
+
+
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+}

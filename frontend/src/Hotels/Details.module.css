@@ -1,0 +1,26 @@
+
+.container{
+ background-color: #f2f2f2;
+}
+.smalldiv p{
+    
+ font-size: 13.5px;
+ color: #4A4A4A;
+   
+  
+}
+
+.smalldiv h5{
+   
+    /* margin-top: -7px;
+    margin-bottom: -7px; */
+    font-weight: 900;
+   
+}
+
+
+.smalldiv p span:hover {
+    cursor:  pointer;
+    color: rgb(71, 71, 221);
+}
+

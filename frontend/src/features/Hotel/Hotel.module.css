@@ -1,0 +1,331 @@
+.indHotelContainer {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+}
+
+.cover {
+  position: relative;
+}
+
+.coverImg img {
+  width: 100%;
+  height: 300px;
+}
+
+.indHotelDetails {
+  position: absolute;
+  right: 50px;
+  top: 60%;
+  width: 350px;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.indHotelCover img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.indImg {
+  margin-left: 15px;
+}
+
+.indHotelCardTitle {
+  margin: 15px 0 15px;
+  font-size: 20px;
+  text-overflow: ellipsis;
+  font-weight: 600;
+}
+
+.indHotelCardDetails {
+  display: flex;
+  justify-content: space-between;
+  line-height: 8px;
+}
+
+.indHotelCardAdults {
+  margin: 0 0 4px;
+  font-size: 12px;
+  color: #4a4a4a;
+}
+
+.indHotelCardRefund {
+  font-size: 14px;
+  color: #ff0000;
+}
+
+.indHotelCardRoom {
+  font-size: 14px;
+  color: #4a4a4a;
+}
+
+.indHotelCardDuration {
+  font-size: 12px;
+  color: #4a4a4a;
+  margin: 0 0 4px;
+}
+
+.indHotelCardCost {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.indHotelCardBookBtn {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(94deg, #53b2fe, #065af3);
+  margin: 24px 0 0;
+  border-radius: 10px;
+}
+
+.indHotelCardBookBtn p {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.indHotelContent {
+  padding: 20px 50px 80px 50px;
+  background-color: #f2f2f2;
+}
+
+.ratingsSection {
+  display: flex;
+}
+
+.ratingsView {
+  display: flex;
+}
+
+.cityView {
+  flex-direction: row;
+  display: flex;
+  margin-left: 100px;
+}
+
+.ratings {
+  width: 60px;
+  height: 60px;
+  background-color: #249995;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.ratings p {
+  margin: auto;
+  color: #fff;
+  font-size: 24px;
+}
+
+.indHotelContent p {
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.indHotelImgGallery {
+  margin-top: 40px;
+}
+
+.indHotelImages {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.indHotelImages img {
+  width: 240px;
+  height: 180px;
+  border-radius: 10px;
+}
+
+.propertyHighlightsChart {
+  width: 60%;
+  border: 1px solid #d4d4d4;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+.propertyHighlights {
+  display: flex;
+  align-items: center;
+}
+
+.propertyHighlights p {
+  font-size: 14px;
+  color: #4a4a4a;
+}
+
+@media (min-width: 1024px) and (max-width: 1240px) {
+  .indHotelDetails {
+    top: 50%;
+  }
+
+  .ratingsSection {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cityView {
+    margin-top: 40px;
+  }
+
+  .city {
+    margin-left: 0%;
+  }
+
+  .indHotelContent {
+    padding: 50px 50px 80px 50px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .indHotelDetails {
+    top: 40%;
+  }
+
+  .ratingsSection {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cityView {
+    margin-top: 40px;
+  }
+
+  .city {
+    margin-left: 0%;
+  }
+
+  .indHotelImages img {
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+  }
+
+  .indHotelContent {
+    padding: 50px 50px 80px 50px;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 767px) {
+  .coverImg img {
+    width: 100%;
+    height: 50vh;
+  }
+
+  .indHotelDetails {
+    /* bottom: 0px; */
+    margin-top: 30px;
+    left: 50px;
+  }
+
+  .ratingsSection {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cityView {
+    margin-top: 40px;
+  }
+
+  .city {
+    margin-left: 0%;
+  }
+
+  .indHotelImages img {
+    width: 150px;
+    height: 100px;
+    border-radius: 10px;
+  }
+
+  .indHotelCover img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+
+  .indHotelCardTitle {
+    font-size: 16px;
+  }
+
+  .indHotelContent {
+    padding: 450px 50px 80px 50px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .coverImg img {
+    width: 100%;
+    height: 50vh;
+  }
+
+  .indHotelDetails {
+    top: 64vh;
+    margin-top: 30px;
+    width: 70%;
+    margin: auto;
+    /* left: 50px; */
+  }
+
+  .ratingsSection {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cityView {
+    margin-top: 40px;
+  }
+
+  .city {
+    width: 60px;
+    height: 60px;
+    margin-left: 0%;
+    border-radius: 10px;
+  }
+
+  .indHotelImages {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+  }
+
+  .indHotelImages img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+
+  .indImg {
+    margin-left: 0px;
+    margin-top: 15px;
+  }
+
+  .indHotelCover img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+
+  .indHotelCardTitle {
+    font-size: 16px;
+  }
+
+  .indHotelContent {
+    padding: 400px 50px 80px 50px;
+  }
+
+  .propertyHighlightsChart {
+    width: 85%;
+    margin: auto;
+  }
+}

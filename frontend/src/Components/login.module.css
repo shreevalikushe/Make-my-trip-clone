@@ -1,0 +1,266 @@
+/* .modalContainer{
+  border: 1px solid red;
+  width:700px;
+   margin: auto; 
+} */
+.display_none{
+  display: none;
+}
+
+.btn {
+  background: linear-gradient(
+    to right,
+    #8fdcfa 0%,
+    #619ff0 50%,
+    #6c9feb 50%,
+    #3339e9 100%
+  );
+  color: white;
+  border-radius: 150px;
+}
+.btn button {
+  color: white;
+  font-size: 0.6em;
+  padding: auto 15px;
+}
+
+@media only screen and (max-width: 768px) {
+  .btn {
+    margin: 10px 0;
+  }
+  .btn button {
+    font-size: 0.8em;
+  }
+}
+
+
+.modalContainer {
+  /* border: 1px solid red; */
+  padding: 1%;
+}
+
+.personalBusiness {
+  margin-top: 20px;
+  border: 1px solid rgb(174, 168, 168);
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 7px 5px;
+  padding-left: -5px;
+  box-shadow: 0 0 1px 1px #bdb9b9;
+  /* border: 1px solid magenta; */
+}
+.personalBusiness > div{
+  font-weight: bolder;
+  border-radius: 25px;
+  cursor: pointer;
+  width: 50%;
+  text-align: center;
+}
+.blackColor{
+  color: black;
+  background-color: white;
+}
+.linearBackground {
+  color: white;
+  background: linear-gradient(93deg, #53b2fe, #065af3);
+}
+
+.login_sign_text {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: rgb(19, 18, 18);
+  font-size: 1.7em;
+  /* border: 1px solid red; */
+}
+.email_mobile_text {
+  font-weight: 600;
+  color: rgb(38, 37, 37);
+  font-size: 0.9em;
+  /* border: 1px solid red; */
+  margin-bottom: 15px;
+}
+.email_mobile_text > input[type=text]{
+    margin-top: 5px;
+    width:100%;
+    height: 40px;
+    border: 1px solid rgb(174, 168, 168);
+    box-shadow: 0 0 1px 1px #bdb9b9;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: 1.4em;
+}
+
+.continue_text{
+    width: 100%;
+    background-color: rgba(0, 145, 255, 0.879);
+    text-align: center;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    color: aliceblue;
+    font-weight: bolder;
+    font-size: 1.2em;
+    box-shadow: 0 0 1px 1px #bdb9b9;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+.loginsignup_text{
+    display: grid;
+    place-items: center;
+    color: rgb(60, 59, 59);
+    font-size: 0.8em;
+    margin-bottom: 15px;
+}
+.google_login_container > img{
+    width: 4%;
+}
+.google_login_container{
+    /* border: 1px solid magenta; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border: 1px solid rgb(174, 168, 168);
+    box-shadow: 0 0 1px 1px #bdb9b9;
+    border-radius: 1px;
+}
+.google_login_container > div{
+    margin-left: 15px;
+    font-weight: bold;
+    color: rgb(52, 49, 49);
+}
+.terms_text{
+    margin-top: 20px;
+   text-align: center;
+    font-size: 0.6em;
+}
+.terms_text span{
+    color: #065af3;
+}
+
+.loginModalOtpContainer{
+  padding: 15px;
+  /* border: 1px solid red; */
+}
+
+/* otp area of mobile starts */
+.back_otp_text{
+  font-weight: 700;
+  font-size: 0.99em;
+  padding-left:3px;
+  padding-right: 3px;
+  color: rgb(0, 94, 255);
+  cursor: pointer;
+  width: 10%;
+  margin-bottom: 20px;
+}
+.back_otp_text:hover{
+  color: white;
+  background: rgb(0, 94, 255); ;
+}
+
+.otp_verifytext{
+  font-size: 1.6em;
+  font-weight: bold;
+  color: rgb(46, 46, 46);
+  margin-bottom: 8px;
+}
+.otp_verifytext_mobile{
+  color: rgb(34, 34, 34);
+  font-size: 0.8em;
+}
+.otp_text{
+  font-weight: bolder;
+  margin-top: 10px;
+  margin-bottom: 12px;
+  font-size: 0.9em;
+  color: rgb(116, 113, 113);
+}
+.otp_mobile_input{
+  width: 100%;
+  /* border: 1px solid green; */
+  margin-top: 10px;
+}
+
+.otp_mobile_input > input[type=number]{
+  width: 100%;
+  height: 45px;
+  border: 1px solid rgb(174, 168, 168);
+    box-shadow: 0 0 1px 1px #bdb9b9;
+    border-radius: 1px;
+   padding-left:8px;
+   letter-spacing: 1px;
+   font-size: 1.3em;
+}
+.otp_mobile_input > input[type=number]::-webkit-inner-spin-button{
+  -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+.otp_mobile_login_button{
+  outline: none;
+  border: none;
+  margin-top: 20px;
+  width: 100%;
+    background-color: rgba(0, 145, 255, 0.879);
+    text-align: center;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    color: aliceblue;
+    font-weight: bolder;
+    font-size: 1.2em;
+    box-shadow: 0 0 1px 1px #bdb9b9;
+    border-radius: 4px;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+.colorGrey{
+  background-color: rgb(155, 150, 150);
+  outline: none;
+  border: none;
+  margin-top: 20px;
+  width: 100%;
+    cursor: normal;
+    text-align: center;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    color: aliceblue;
+    font-weight: bolder;
+    font-size: 1.2em;
+    box-shadow: 0 0 1px 1px #bdb9b9;
+    border-radius: 4px;
+    margin-bottom: 25px;
+  opacity: 0.2;
+}
+.otp_login_forgot_text {
+  text-align: center;
+  color: rgba(0, 145, 255, 0.879);
+  font-size: 0.8em;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* otp area of mobile end */
+
+/* otp area via email  starts */
+.loginModalEmailOtpContainer{
+  /* border: 1px solid red; */
+  padding: 14px;
+}
+
+.otp_mobile_input > input[type=text]{
+  width: 97%;
+  height: 40px;
+  border: 1px solid rgb(174, 168, 168);
+    box-shadow: 0 0 1px 1px #bdb9b9;
+    border-radius: 1px;
+   padding-left:8px;
+   font-weight: bold;
+   font-size: 0.8em;
+}

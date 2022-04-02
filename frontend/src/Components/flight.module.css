@@ -1,0 +1,301 @@
+.flight_wrapper {
+  background: linear-gradient(
+    to top,
+    rgb(14, 38, 172) 0%,
+    rgb(2, 8, 97) 50%,
+    rgb(12, 3, 97) 50%,
+    rgb(0, 1, 32) 100%
+  );
+  padding: 1px;
+  position: relative;
+  /* border: 1px solid green; */
+  height: auto;
+}
+.flight_container {
+  /* border: 10px solid green; */
+  background-color: white;
+  width: 80%;
+  margin: 50px auto;
+  padding: 20px;
+  font-size: bold;
+  height: auto;
+}
+.tripInternational {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: bold;
+  flex-wrap: wrap;
+  max-width: 900px;
+}
+.book {
+  flex-grow: 8;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: bold;
+}
+@media only screen and (max-width: 820px) {
+  .book {
+    display: none;
+  }
+}
+.multiple_trip {
+  flex-grow: 1;
+  display: flex;
+  height: 70px;
+  justify-content: flex-start;
+}
+.multiple_trip > div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+.multiple_trip > div > div {
+  margin-left: 6px;
+}
+
+/* search bar from and to start */
+.bookingSearch {
+  display: flex;
+  flex-wrap: wrap;
+  /* border: 1px solid red; */
+}
+.bookingSearch > div:nth-child(1){
+  width: 46%;
+  /* border: 1px solid red; */
+  margin-right: 14px;
+}
+.bookingSearch > div:nth-child(2){
+  width: 23%;
+  /* border: 1px solid green; */
+  display: grid;
+    place-items: center;
+}
+.bookingSearch > div:nth-child(3){
+  width: 23%;
+  /* border: 1px solid green; */
+}
+
+/* .fromToConnecting {
+  width: 50%;
+} */
+
+.departureArrivalConnecting {
+  position: relative;
+}
+.from {
+  width: 100%;
+  /* border: 1px solid magenta; */
+}
+.to{
+  width: 100%;
+  /* border: 1px solid green; */
+}
+.fromTo {
+  display: flex;
+  z-index: 1;
+}
+
+.connectingIcon {
+  /* border: 1px solid black; */
+  display: grid;
+  place-items: center;
+  background-color: white;
+}
+
+/* //Departire nad return date css starts */
+.DepRetContainer {
+  
+  flex-grow: 0.3;
+  width: 20%;
+
+ 
+}
+
+/* no. of travellers */
+.travellerContainer {
+  border: 1px solid rgb(191, 179, 179);
+  border-radius: 5px;
+  /* flex-grow: 0.3; */
+  width: 20%;
+  height: 55px;
+  position: relative;
+  cursor: pointer;
+  margin-left: 15px;
+}
+.travellerContainer:hover {
+  background-color: aliceblue;
+}
+
+.travellersText {
+  /* padding-top: 7px; */
+  padding-left: 10px;
+  /* font-size: 1.2em; */
+  font-weight: bold;
+  color: rgb(62, 59, 59);
+}
+
+.travellersText:after {
+  border: solid #008cff;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 5px;
+  content: "";
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  vertical-align: top;
+  margin: 3px 0 0 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.noOfTraveller {
+  font-weight: 600;
+  color: black;
+  font-size: 1.4em;
+  padding-left: 8px;
+}
+.noOfTraveller span {
+  font-weight: 900;
+  font-size: 1.1em;
+  margin-right: 8px;
+}
+
+.noDisplay {
+  display: none;
+}
+.traveller_modal {
+  position: absolute;
+  width: 400px;
+  height: 100px;
+  height: 200px;
+  z-index: 20;
+  top: 30px;
+  left: -100%;
+  background: white;
+  /* border: 1px solid red; */
+  padding: 15px;
+}
+.adultChild {
+  font-size: 0.8em;
+  font-weight: bold;
+  color: gray;
+  margin-top: 10px;
+}
+
+.modalApplyText {
+  background: linear-gradient(
+    to right,
+    #8fdcfa 0%,
+    #619ff0 50%,
+    #6c9feb 50%,
+    #3339e9 100%
+  );
+  width: 20%;
+  margin: auto;
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+  padding: 4px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.passengerButtonContainer {
+  display: flex;
+  margin-top: 4px;
+}
+
+.passengerButton {
+  margin: 5px 0 5px;
+  padding: 4px 10px;
+  font-size: small;
+  cursor: pointer;
+}
+.clickPassenger {
+  margin: 5px 0 5px;
+  padding: 4px 10px;
+  font-size: small;
+  cursor: pointer;
+  background-color: rgb(0, 123, 255);
+}
+.passengerButton:hover {
+  background-color: rgb(179, 170, 170);
+}
+
+.infantChildren {
+  margin-left: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttonContainer {
+  cursor: pointer;
+  background: linear-gradient(
+    to right,
+    #8fdcfa 0%,
+    #619ff0 50%,
+    #6c9feb 50%,
+    #3339e9 100%
+  );
+  position: absolute;
+  bottom: 7.5%;
+  left: 47%;
+  padding: 0.1% 45px;
+  border-radius: 40px;
+  color: white;
+  font-size: 2em;
+  font-weight: 900;
+}
+
+@media only screen and (max-width: 1320px) {
+
+  .fromToConnecting {
+    margin: auto;
+    margin-bottom: 20px;
+  }
+  
+  .travellerContainer {
+    width: 30%;
+    padding-left: 4px;
+    margin-top: 20px;
+    padding-bottom: 4px;
+    margin-bottom: 15px;
+  }
+}
+@media only screen and (max-width: 1020px) {
+  .bookingSearch > div:nth-child(1){
+    width: 100%;
+    
+  }
+  .bookingSearch > div:nth-child(2){
+    width: 47%;
+    
+  }
+  .bookingSearch > div:nth-child(3){
+    width: 47%;
+    
+  }
+
+  .travellerContainer{
+    flex-grow: 1;
+  }
+  .buttonContainer {
+    bottom: 5%;
+    left: 40%;
+  }
+}
+@media only screen and (max-width: 1050px) {
+  .fromToConnecting {
+    margin-left: 1%;
+   
+  }
+  
+
+  .buttonContainer {
+    bottom: 5.5%;
+    left: 32%;
+  }
+}

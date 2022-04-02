@@ -1,0 +1,92 @@
+.registrationContainer {
+  margin-top: 20px;
+}
+
+.login_sign_text {
+  margin-top: 20px;
+  font-weight: 700;
+  color: rgb(34, 33, 33);
+  font-size: 1.7em;
+}
+
+.email_mobile_text {
+  font-weight: 600;
+  color: rgb(38, 37, 37);
+  font-size: 0.9em;
+  width: 90%;
+  /* position: relative; */
+  margin: auto;
+}
+.email_mobile_text > p {
+  margin-bottom: 0;
+}
+.email_mobile_text > input {
+  width: 90%;
+  height: 35px;
+  border: 1px solid rgb(174, 168, 168);
+  box-shadow: 0 0 1px 1px #bdb9b9;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 1.4em;
+}
+
+.email_mobile_text > input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.VisibilityIconContainer {
+  position: absolute;
+  top: 47%;
+  right: 20%;
+}
+
+.otp_mobile_login_button {
+  outline: none;
+  border: none;
+  margin-top: 20px;
+  width: 100%;
+  background-color: rgba(0, 145, 255, 0.879);
+  text-align: center;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  color: aliceblue;
+  font-weight: bolder;
+  font-size: 1.2em;
+  box-shadow: 0 0 1px 1px #bdb9b9;
+  border-radius: 4px;
+
+  cursor: pointer;
+}
+
+.google_login_container > img {
+  width: 4%;
+}
+.google_login_container {
+  /* border: 1px solid magenta; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  border: 1px solid rgb(174, 168, 168);
+  box-shadow: 0 0 1px 1px #bdb9b9;
+  border-radius: 1px;
+}
+.google_login_container > div {
+  margin-left: 15px;
+  font-weight: bold;
+  color: rgb(52, 49, 49);
+}
+
+.terms_text {
+  /* border: 1px solid red; */
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.6em;
+}
+.terms_text span {
+  color: #065af3;
+}

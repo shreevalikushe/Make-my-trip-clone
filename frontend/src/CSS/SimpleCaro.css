@@ -1,0 +1,91 @@
+.simpleSliderContainer {
+    position: relative;
+    width: 100%;
+}
+
+.each-simple-slide>div {
+    height: 15vh;
+    padding: 0px 30px;
+    border-radius: 7px;
+    background-color: #fff;
+    margin: 0px 5px;
+}
+
+.simple-ind-slide {
+    display: flex;
+    align-items: center;
+}
+
+.simple-ind-slide img {
+    width: 20%;
+    height: 70%;
+    margin-right: 10px;
+}
+
+.simpleCardContent {
+    font-size: 16px;
+    color: #4A4A4A;
+}
+
+.simple-left-arrow {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: -15px;
+    top: 25%;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 2px 4px 4px rgb(10 10 10 / 3%);
+}
+
+.simple-right-arrow {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: -15px;
+    top: 25%;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 2px 4px 4px rgb(10 10 10 / 3%);
+}
+
+.simple-left-arrow:hover {
+    cursor: pointer;
+}
+
+.simple-right-arrow:hover {
+    cursor: pointer;
+}
+
+@media (min-width:575px) and (max-width:767px) {
+    .simple-ind-slide img {
+        width: 20%;
+        height: 70%;
+    }
+    
+    .simpleCardContent {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width:574px) {
+    .simple-ind-slide img {
+        width: 20%;
+        height: 70%;
+        margin-right: 10px;
+    }
+    
+    .simpleCardContent {
+        font-size: 14px;
+    }
+
+    .each-simple-slide>div{
+        height: 20vh;
+    }
+}
