@@ -4,7 +4,9 @@ const Mmt = () => {
   return (
     <>
       <div className={style_m.container}>
+
         <div className={style_m.bigcard}>
+
           <div className={style_m.title}>
             <h4> INTRODUCING </h4>
             <h1>MMT Luxe</h1>
@@ -43,6 +45,7 @@ const Mmt = () => {
               </div>
              
             </div>
+
             <div className={style_m.smallcard}>
               <img
                 src="https://promos.makemytrip.com/Hotels_product/Luxe/themes.png"
@@ -55,6 +58,8 @@ const Mmt = () => {
              
             </div>
           </div>
+
+          
         </div>
       </div>
     </>
