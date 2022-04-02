@@ -8,6 +8,7 @@ import Details from "../../Hotels/Details"
 import Footer from "../../Hotels/Footer"
 import styles from "./home.module.css";
 import { ListenerContext } from "../../Contexts/ListenerProvider";
+import Mmt from "../../Hotels/Mmt"
 
 export const Home = () => {
 
@@ -26,7 +27,9 @@ export const Home = () => {
   return (
     <>
       <FlightHome />
+      <Mmt/>
       <div className={styles.container} style={{ boxSizing: 'border-box' }}>
+       
         <SimpleSlider />
         <div style={{ marginTop: 50 }}>
           <CarousalUI />

@@ -5,6 +5,7 @@ import Navbar from "./Components/Navbar";
 import { useSelector } from "react-redux";
 import { getValue } from "./Utils/LocalStorage";
 
+import ProductPage from "./HotelsSecondPage/ProductPage"
 function App() {
   const isUserLoggedIn = useSelector((state) => state.auth.isUserLoggedIn);
   console.log("isUserLoggedIn", isUserLoggedIn);
@@ -15,7 +16,7 @@ function App() {
       <Navbar isUserLoggedIn={isUserLoggedIn} user={user} />
       {/* <Review /> */}
       <AllRoutes />
-
+      
       {/* <ProductPage/> */}
     </div>
   );
