@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./registration.module.css";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import VisibilityIcon from "@mui/icons-material/Visibility";
@@ -6,6 +6,7 @@ import { updateValue } from "../Utils/LocalStorage";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { getUserName, signUp } from "../features/auth/auth.actions";
+import { ListenerContext } from "../Contexts/ListenerProvider";
 
 const Registration = () => {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ const Registration = () => {
     password: "",
     email: "",
   });
-
+  const { setOpen } = useContext(ListenerContext);
   const onChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
@@ -44,7 +45,7 @@ const Registration = () => {
       console.log(json);
 
       if (json.status === 200) {
-        navigate("/");
+        setOpen(false)
         dispatch(signUp(json));
         dispatch(getUserName(credentials.name));
       }
