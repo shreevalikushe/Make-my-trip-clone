@@ -1,44 +1,67 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+# MakeMyTrip - (Clone)
 
-## Available Scripts
+<p>A clone of the MakeMyTrip Website. MakeMyTrip is an Indian online travel company, it provides online travel services including airline tickets, domestic and international holiday packages, hotel reservations, rail, and bus tickets.</p>
+  
+  <p>A clone of the website MakeMyTrip developed using ReactJS, ReduxJS, routes and Material UI on the front-end, MaterialUI for styling and ExpressJS and MongoDB for back-end. </p>
+  
+  # Technology Stack Used 💻
+- React
+- Redux Toolkit
+- Material UI
+- ExpressJS
+- MongoDB
 
-In the project directory, you can run:
+## How to run the project 📑
 
-### `npm start`
+In this project we were able to built a near to perfect clone of the original website. Please fork the repository and then use it on your own.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+You can also take the glimpse of our Project, just follow the below steps:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+    1.enter the frontend folder and type npm start in the terminal.
 
-### `npm test`
+    2.enter the backend folder and type npm run serve on another terminal.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br>
 
-### `npm run build`
+## Snapshots 📷
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Home Page
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+![Header]()
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+  
+  
+  
+  
+## Features ✨
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. Multiple hotel and flight pages with filtering and sorting options
+2. My trips and Profile section
+3. Dynamic Payment and price features
+<br/>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Demo 🎥
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+-Deployed Link: [MakeMyTrip-clone](https://make-my-trip-clone.vercel.app/)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+<br/>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Team Members and Contributors 😇
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+👤 **Shreevali Kushe**
+
+- Github: [Shreevali Kushe](https://github.com/shreevalikushe)
+
+👤 **Shubham Gadge**
+
+- Github: [Shubham Gadge](https://github.com/shubham-955)
+
+👤 **Suraj Himanshu**
+
+- Github: [Suraj Himanshu](https://github.com/surajhimanshu)
+
+👤 **Anil Kumar**
+
+- Github: [Anil Kumar](https://github.com/anil843324)
