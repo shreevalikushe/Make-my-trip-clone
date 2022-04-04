@@ -31,15 +31,15 @@ You can also take the glimpse of our Project, just follow the below steps:
 
 2. Flights Page
 
-![Flight Page]()
+![Flight Page](https://github.com/shreevalikushe/Make-my-trip-clone/blob/master/frontend/src/images/flights.png)
 
 3. Hotels Page
 
-![Hotel Page]()
+![Hotel Page](https://github.com/shreevalikushe/Make-my-trip-clone/blob/master/frontend/src/images/hotels.png)
 
 4. Login Popup Form
 
-![Login]()
+![Login](https://github.com/shreevalikushe/Make-my-trip-clone/blob/master/frontend/src/images/login.png)
 
 ## Features ✨
 
