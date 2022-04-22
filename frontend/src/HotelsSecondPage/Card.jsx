@@ -3,6 +3,9 @@ import style_c from "./Card.module.css";
 import mtripicon from "../images/mtripicon.jpg";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
+
+import {FcCheckmark} from "react-icons/fc"
+
 import {
   addHotelBooking,
   hotelBookingError,
@@ -60,40 +63,48 @@ const Card = ({
           <div className={style_c.middlediv}>
             {/* first */}
             <div className={style_c.first_div}>
-              <span>{name}</span>
+              <span> <b> {name}</b></span>
 
               <div className={style_c.rating}>
                 <div className={style_c.icon_ratingdiv}>
                   <img src={mtripicon} alt="icon" />
 
-                  <p className={style_c.rating_p}>
-                    <span>{ratings}</span> /5{" "}
+                  <p   style={{color:"white"}} className={style_c.rating_p} >
+                    <span style={{color:'white'}}> {ratings}</span>/5
                     {ratings >= 4 ? "Good" : "Okay-ish"}
                   </p>
                 </div>
 
                 <p>
-                  {" "}
+                 
                   <b>24</b> RATINGS
                 </p>
               </div>
+             
+
             </div>
+
+
+
             {/* second */}
+            
             <div className={style_c.second_div}>
-              <span>{location}</span>
+              <span> <b style={{color:"#9B9B9B",fontSize:"13px"}}>{location}</b> </span>
+              <span> <b style={{color:"#9B9B9B",fontSize:"13px"}}>{country}</b> </span>
             </div>
             {/* third */}
-            <div className={style_c.third_div}>
-              <span>{country}</span>
+            {/* <div className={style_c.third_div}>
               <p>2 bedrooms | 2 beds |Cafe</p>
-            </div>
+            </div> */}
             {/* fourth */}
             <div className={style_c.fourth_div}>
               <span>Couple Friendly</span>
             </div>
             {/* fifth */}
             <div className={style_c.fifth_div}>
-              <b>Free Cancellation till check in</b>
+
+             <FcCheckmark className={style_c.ticicon}/>
+              <p>   Breakfast included</p>
             </div>
           </div>
 

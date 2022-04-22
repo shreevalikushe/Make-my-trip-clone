@@ -26,32 +26,48 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  border: 5px  solid white;
+  /* gap: -50px; */
 }
 
+.leftdiv {
+  padding: 20px;
+
+}
 .leftdiv .bigimg img {
   cursor: pointer;
   height: 170px;
   width: 247px;
-  padding: 20px;
+  /* border-radius: 5px 5px; */
+  /* border: 5px solid red; */
   border-radius: 4px 4px 0px 0px;
 }
 .leftdiv .smallimg {
   display: flex;
-  gap: 5px;
+  gap: 10px;
 }
 .leftdiv .smallimg img {
   height: 48px;
-  width: 58px;
+  width: 75px;
+  /* border: 5px solid red; */
 }
 
 /* middle */
 
 .middlediv {
   /* background-color: aquamarine; */
-  margin: 0px 0px 0px 20px;
+  /* margin: 0px 0px 0px 20px; */
+  margin-top: 8px;
+  width: 600px;
 }
 .middlediv .first_div {
   display: flex;
+  align-items: center;
+  justify-content: center; 
+  gap: 0px; 
+  /* background-color: red;  */
+  justify-content: space-between;
 }
 
 .middlediv .first_div span {
@@ -90,6 +106,8 @@
   align-items: center;
   justify-content: center;
   margin: 0px 50px;
+  gap: 6px;
+  /* margin-right: -20px; */
 }
 
 .icon_ratingdiv img {
@@ -98,14 +116,46 @@
 
 .icon_ratingdiv .rating_p {
   font-size: 10px;
-  font-weight: bold;
   color: #fff;
-  /* background-color: red; */
+  padding: 4px;
+  border-radius: 4px;
+   background-color: #249995;
+  
 }
 .icon_ratingdiv .rating_p span {
   font-weight: bold;
   font-size: 12px;
 }
+
+.fourth_div{
+   background-color: #EBEBEB;
+   max-width: fit-content;
+   padding: 4px;
+   border-radius: 5px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+  
+}
+.fourth_div span{
+  color: #4A4A4A;
+  font-size: 12px;
+  /* font-weight: bold; */
+}
+.fifth_div{
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  /* justify-content: center; */
+}
+.fifth_div p{
+
+  color: #1A7971;
+  font-size: 13px;
+}
+
+
+
 
 /* last */
 .rightdiv {
