@@ -81,9 +81,9 @@
   border-radius: 7px;
 }
 
-/* for mobile */
 
-/* Extra small devices (phones, 600px and down) */
+/* Extra for small device */
+
 @media only screen and (max-width: 600px) {
   .container {
     background-color: #f2f2f2;
@@ -111,6 +111,42 @@
   .cardsdiv {
     display: flex;
     flex-direction: column;
+  }
+}
+
+
+/* for mobile */
+
+/*  small devices (phones, 600px and down) */
+@media only screen and (max-width: 320px) {
+  .container {
+    background-color: #f2f2f2;
+
+    margin: 0px 0px 0px 0px;
+    padding-left: 10px;
+
+    cursor: pointer;
+    overflow: hidden;
+    box-sizing: border-box;
+   
+  }
+
+  .bigcard {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+      rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    height: 1250px;
+    width: 300px;
+    background-color: #fffbf4;
+    border-radius: 7px;
+    
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cardsdiv {
+    display: flex;
+    flex-direction: column;
+   
   }
 }
 
